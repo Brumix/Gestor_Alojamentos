@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj"
   "Gestor_Alojamentos.exe"

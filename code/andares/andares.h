@@ -1,0 +1,8 @@
+//
+// Created by Bruno Miguel on 01/11/2020.
+//
+
+#ifndef GESTOR_ALOJAMENTOS_ANDARES_H
+#define GESTOR_ALOJAMENTOS_ANDARES_H
+
+#endif //GESTOR_ALOJAMENTOS_ANDARES_H
