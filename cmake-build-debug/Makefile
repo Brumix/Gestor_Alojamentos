@@ -142,33 +142,6 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
-code/andares/andares.obj: code/andares/andares.c.obj
-
-.PHONY : code/andares/andares.obj
-
-# target to build an object file
-code/andares/andares.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj
-.PHONY : code/andares/andares.c.obj
-
-code/andares/andares.i: code/andares/andares.c.i
-
-.PHONY : code/andares/andares.i
-
-# target to preprocess a source file
-code/andares/andares.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.i
-.PHONY : code/andares/andares.c.i
-
-code/andares/andares.s: code/andares/andares.c.s
-
-.PHONY : code/andares/andares.s
-
-# target to generate assembly for a file
-code/andares/andares.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.s
-.PHONY : code/andares/andares.c.s
-
 code/main.obj: code/main.c.obj
 
 .PHONY : code/main.obj
@@ -196,32 +169,32 @@ code/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s
 .PHONY : code/main.c.s
 
-edificio_linkedlist/edificio_linkedlist.obj: edificio_linkedlist/edificio_linkedlist.c.obj
+edificio/edificio.obj: edificio/edificio.c.obj
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.obj
+.PHONY : edificio/edificio.obj
 
 # target to build an object file
-edificio_linkedlist/edificio_linkedlist.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.obj
+edificio/edificio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj
+.PHONY : edificio/edificio.c.obj
 
-edificio_linkedlist/edificio_linkedlist.i: edificio_linkedlist/edificio_linkedlist.c.i
+edificio/edificio.i: edificio/edificio.c.i
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.i
+.PHONY : edificio/edificio.i
 
 # target to preprocess a source file
-edificio_linkedlist/edificio_linkedlist.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.i
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.i
+edificio/edificio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.i
+.PHONY : edificio/edificio.c.i
 
-edificio_linkedlist/edificio_linkedlist.s: edificio_linkedlist/edificio_linkedlist.c.s
+edificio/edificio.s: edificio/edificio.c.s
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.s
+.PHONY : edificio/edificio.s
 
 # target to generate assembly for a file
-edificio_linkedlist/edificio_linkedlist.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.s
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.s
+edificio/edificio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.s
+.PHONY : edificio/edificio.c.s
 
 # Help Target
 help:
@@ -232,15 +205,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
-	@echo ... code/andares/andares.obj
-	@echo ... code/andares/andares.i
-	@echo ... code/andares/andares.s
 	@echo ... code/main.obj
 	@echo ... code/main.i
 	@echo ... code/main.s
-	@echo ... edificio_linkedlist/edificio_linkedlist.obj
-	@echo ... edificio_linkedlist/edificio_linkedlist.i
-	@echo ... edificio_linkedlist/edificio_linkedlist.s
+	@echo ... edificio/edificio.obj
+	@echo ... edificio/edificio.i
+	@echo ... edificio/edificio.s
 .PHONY : help
 
 

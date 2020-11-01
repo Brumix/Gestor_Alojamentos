@@ -2,7 +2,7 @@
 // Created by Bruno Miguel on 01/11/2020.
 //
 
-#include "edificio_linkedlist.h"
+#include "edificio.h"
 
 
 void add_edificio(EDIFICIOS **head, char *nome,LOCALIZACAO *localizacao) {
