@@ -169,59 +169,59 @@ code/andares/andares.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.s
 .PHONY : code/andares/andares.c.s
 
-code/main.obj: code/main.c.obj
+code/edificio/edificio.obj: code/edificio/edificio.c.obj
 
-.PHONY : code/main.obj
-
-# target to build an object file
-code/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj
-.PHONY : code/main.c.obj
-
-code/main.i: code/main.c.i
-
-.PHONY : code/main.i
-
-# target to preprocess a source file
-code/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.i
-.PHONY : code/main.c.i
-
-code/main.s: code/main.c.s
-
-.PHONY : code/main.s
-
-# target to generate assembly for a file
-code/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s
-.PHONY : code/main.c.s
-
-edificio/edificio.obj: edificio/edificio.c.obj
-
-.PHONY : edificio/edificio.obj
+.PHONY : code/edificio/edificio.obj
 
 # target to build an object file
-edificio/edificio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj
-.PHONY : edificio/edificio.c.obj
+code/edificio/edificio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj
+.PHONY : code/edificio/edificio.c.obj
 
-edificio/edificio.i: edificio/edificio.c.i
+code/edificio/edificio.i: code/edificio/edificio.c.i
 
-.PHONY : edificio/edificio.i
+.PHONY : code/edificio/edificio.i
 
 # target to preprocess a source file
-edificio/edificio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.i
-.PHONY : edificio/edificio.c.i
+code/edificio/edificio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.i
+.PHONY : code/edificio/edificio.c.i
 
-edificio/edificio.s: edificio/edificio.c.s
+code/edificio/edificio.s: code/edificio/edificio.c.s
 
-.PHONY : edificio/edificio.s
+.PHONY : code/edificio/edificio.s
 
 # target to generate assembly for a file
-edificio/edificio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.s
-.PHONY : edificio/edificio.c.s
+code/edificio/edificio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.s
+.PHONY : code/edificio/edificio.c.s
+
+code/main/main.obj: code/main/main.c.obj
+
+.PHONY : code/main/main.obj
+
+# target to build an object file
+code/main/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj
+.PHONY : code/main/main.c.obj
+
+code/main/main.i: code/main/main.c.i
+
+.PHONY : code/main/main.i
+
+# target to preprocess a source file
+code/main/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.i
+.PHONY : code/main/main.c.i
+
+code/main/main.s: code/main/main.c.s
+
+.PHONY : code/main/main.s
+
+# target to generate assembly for a file
+code/main/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.s
+.PHONY : code/main/main.c.s
 
 # Help Target
 help:
@@ -235,12 +235,12 @@ help:
 	@echo ... code/andares/andares.obj
 	@echo ... code/andares/andares.i
 	@echo ... code/andares/andares.s
-	@echo ... code/main.obj
-	@echo ... code/main.i
-	@echo ... code/main.s
-	@echo ... edificio/edificio.obj
-	@echo ... edificio/edificio.i
-	@echo ... edificio/edificio.s
+	@echo ... code/edificio/edificio.obj
+	@echo ... code/edificio/edificio.i
+	@echo ... code/edificio/edificio.s
+	@echo ... code/main/main.obj
+	@echo ... code/main/main.i
+	@echo ... code/main/main.s
 .PHONY : help
 
 

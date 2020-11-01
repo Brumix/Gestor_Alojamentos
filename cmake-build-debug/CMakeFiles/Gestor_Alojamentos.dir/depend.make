@@ -3,16 +3,16 @@
 
 CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/andares/andares.c
 CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/andares/andares.h
-CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/estruturas.h
-CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/main/estruturas.h
 
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/andares/andares.h
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/estruturas.h
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/main.c
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: ../code/andares/andares.h
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: ../code/edificio/edificio.c
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: ../code/edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: ../code/main/estruturas.h
 
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../code/andares/andares.h
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../code/estruturas.h
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../edificio/edificio.c
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/andares/andares.h
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/edificio/edificio.h
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/main/estruturas.h
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/main/main.c
 

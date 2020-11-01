@@ -76,31 +76,31 @@ include CMakeFiles/Gestor_Alojamentos.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Gestor_Alojamentos.dir/flags.make
 
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\code\main.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main.c"
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/main/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\code\main\main.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\main.c"
 
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/code/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main.c" > CMakeFiles\Gestor_Alojamentos.dir\code\main.c.i
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\main.c" > CMakeFiles\Gestor_Alojamentos.dir\code\main\main.c.i
 
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\main.c.s
+CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\main.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\main\main.c.s
 
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../edificio/edificio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\edificio\edificio.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\edificio\edificio.c"
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj: ../code/edificio/edificio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\code\edificio\edificio.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.c"
 
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\edificio\edificio.c" > CMakeFiles\Gestor_Alojamentos.dir\edificio\edificio.c.i
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.c" > CMakeFiles\Gestor_Alojamentos.dir\code\edificio\edificio.c.i
 
-CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\edificio\edificio.c" -o CMakeFiles\Gestor_Alojamentos.dir\edificio\edificio.c.s
+CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\edificio\edificio.c.s
 
 CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
 CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj: ../code/andares/andares.c
@@ -117,15 +117,15 @@ CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.s: cmake_force
 
 # Object files for target Gestor_Alojamentos
 Gestor_Alojamentos_OBJECTS = \
-"CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj" \
-"CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj" \
+"CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj" \
+"CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj" \
 "CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj"
 
 # External object files for target Gestor_Alojamentos
 Gestor_Alojamentos_EXTERNAL_OBJECTS =
 
-Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj
-Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj
+Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj
+Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/build.make
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/linklibs.rsp

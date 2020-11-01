@@ -5,8 +5,8 @@
 #ifndef GESTOR_ALOJAMENTOS_ANDARES_H
 #define GESTOR_ALOJAMENTOS_ANDARES_H
 
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\estruturas.h"
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\edificio\edificio.h"
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\estruturas.h"
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"
 
 ANDARES addandar(EDIFICIOS *head, int val, int pos);
 

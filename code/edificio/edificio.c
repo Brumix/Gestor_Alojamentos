@@ -21,7 +21,7 @@ void print_edificios(EDIFICIOS **head) {
     curent = *head;
     while (curent != NULL) {
         printf("%s\n", curent->nome);
-        printf("\t loc:%s  %s  %d\n", curent->localizacao->cidade, curent->localizacao->rua,
+        printf("\tLOCALIZACAO:%s  %s  %d\n", curent->localizacao->cidade, curent->localizacao->rua,
                curent->localizacao->num_porta);
         curent = curent->next;
     }

@@ -6,7 +6,7 @@
 #define GESTOR_ALOJAMENTOS_EDIFICIO_H
 
 
-#include "../code/estruturas.h"
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\estruturas.h"
 
 void add_edificio(EDIFICIOS **head, char *nome,LOCALIZACAO *localizacao);
 

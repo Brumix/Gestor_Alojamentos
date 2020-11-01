@@ -13,7 +13,7 @@ ANDARES addandar(EDIFICIOS *head,int val,int pos){
 }
 
 void printandar(EDIFICIOS *head){
-printf("Andares:");
+printf("\tANDARES:");
     for (int i = 0; i < head->num_andares; i++) {
         printf("%d ",head->andar[i].num_estudios);
 

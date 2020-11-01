@@ -103,7 +103,7 @@ typedef struct historial {
 #include <stdlib.h>
 
 
-#include "../edificio/edificio.h"
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\andares\andares.h"
 
 
