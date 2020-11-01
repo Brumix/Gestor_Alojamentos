@@ -74,16 +74,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio_linkedlist/edificio_linkedlist.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio_linkedlist/edificio_linkedlist.h">
-			<Option target="Gestor_Alojamentos"/>
-		</Unit>
-		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/estruturas.h">
-			<Option target="Gestor_Alojamentos"/>
-		</Unit>
-		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/main.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/CMakeLists.txt">

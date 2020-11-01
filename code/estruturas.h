@@ -82,7 +82,7 @@ typedef struct edificios {
     char *nome;
     int num_andares;
     ANDARES *andar;
-    LOCALIZACAO localizacao;
+    LOCALIZACAO *localizacao;
     struct edificios *next;
 } EDIFICIOS;
 
@@ -99,7 +99,7 @@ typedef struct historial {
  * INCLUDES
  */
 
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\edificio_linkedlist\edificio_linkedlist.h"
+#include "../edificio_linkedlist/edificio_linkedlist.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

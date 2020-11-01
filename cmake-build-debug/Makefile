@@ -142,6 +142,33 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
+code/main.obj: code/main.c.obj
+
+.PHONY : code/main.obj
+
+# target to build an object file
+code/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj
+.PHONY : code/main.c.obj
+
+code/main.i: code/main.c.i
+
+.PHONY : code/main.i
+
+# target to preprocess a source file
+code/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.i
+.PHONY : code/main.c.i
+
+code/main.s: code/main.c.s
+
+.PHONY : code/main.s
+
+# target to generate assembly for a file
+code/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s
+.PHONY : code/main.c.s
+
 edificio_linkedlist/edificio_linkedlist.obj: edificio_linkedlist/edificio_linkedlist.c.obj
 
 .PHONY : edificio_linkedlist/edificio_linkedlist.obj
@@ -169,33 +196,6 @@ edificio_linkedlist/edificio_linkedlist.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.s
 .PHONY : edificio_linkedlist/edificio_linkedlist.c.s
 
-main.obj: main.c.obj
-
-.PHONY : main.obj
-
-# target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.obj
-.PHONY : main.c.obj
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.s
-.PHONY : main.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -205,12 +205,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
+	@echo ... code/main.obj
+	@echo ... code/main.i
+	@echo ... code/main.s
 	@echo ... edificio_linkedlist/edificio_linkedlist.obj
 	@echo ... edificio_linkedlist/edificio_linkedlist.i
 	@echo ... edificio_linkedlist/edificio_linkedlist.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 .PHONY : help
 
 

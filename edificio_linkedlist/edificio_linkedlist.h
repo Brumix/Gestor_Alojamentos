@@ -6,13 +6,15 @@
 #define GESTOR_ALOJAMENTOS_EDIFICIO_LINKEDLIST_H
 
 
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\estruturas.h"
+#include "../code/estruturas.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-void add_edificio(EDIFICIOS *head, char *nome);
+void add_edificio(EDIFICIOS **head, char *nome,LOCALIZACAO *localizacao);
 
-void print_edificios(EDIFICIOS *head);
+void print_edificios(EDIFICIOS **head);
+
+LOCALIZACAO *addlocalizacao(char* cidade,char * rua,int porta);
 
 
 #endif //GESTOR_ALOJAMENTOS_EDIFICIO_LINKEDLIST_H
