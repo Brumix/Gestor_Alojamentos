@@ -169,32 +169,32 @@ code/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main.c.s
 .PHONY : code/main.c.s
 
-edificio_linkedlist/edificio_linkedlist.obj: edificio_linkedlist/edificio_linkedlist.c.obj
+edificio/edificio.obj: edificio/edificio.c.obj
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.obj
+.PHONY : edificio/edificio.obj
 
 # target to build an object file
-edificio_linkedlist/edificio_linkedlist.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.obj
+edificio/edificio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj
+.PHONY : edificio/edificio.c.obj
 
-edificio_linkedlist/edificio_linkedlist.i: edificio_linkedlist/edificio_linkedlist.c.i
+edificio/edificio.i: edificio/edificio.c.i
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.i
+.PHONY : edificio/edificio.i
 
 # target to preprocess a source file
-edificio_linkedlist/edificio_linkedlist.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.i
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.i
+edificio/edificio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.i
+.PHONY : edificio/edificio.c.i
 
-edificio_linkedlist/edificio_linkedlist.s: edificio_linkedlist/edificio_linkedlist.c.s
+edificio/edificio.s: edificio/edificio.c.s
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.s
+.PHONY : edificio/edificio.s
 
 # target to generate assembly for a file
-edificio_linkedlist/edificio_linkedlist.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.s
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.s
+edificio/edificio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.s
+.PHONY : edificio/edificio.c.s
 
 # Help Target
 help:
@@ -208,9 +208,9 @@ help:
 	@echo ... code/main.obj
 	@echo ... code/main.i
 	@echo ... code/main.s
-	@echo ... edificio_linkedlist/edificio_linkedlist.obj
-	@echo ... edificio_linkedlist/edificio_linkedlist.i
-	@echo ... edificio_linkedlist/edificio_linkedlist.s
+	@echo ... edificio/edificio.obj
+	@echo ... edificio/edificio.i
+	@echo ... edificio/edificio.s
 .PHONY : help
 
 

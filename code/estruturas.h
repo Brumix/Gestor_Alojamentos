@@ -99,7 +99,7 @@ typedef struct historial {
  * INCLUDES
  */
 
-#include "../edificio_linkedlist/edificio_linkedlist.h"
+#include "../edificio/edificio.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

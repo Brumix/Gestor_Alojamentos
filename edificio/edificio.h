@@ -2,8 +2,8 @@
 // Created by Bruno Miguel on 01/11/2020.
 //
 
-#ifndef GESTOR_ALOJAMENTOS_EDIFICIO_LINKEDLIST_H
-#define GESTOR_ALOJAMENTOS_EDIFICIO_LINKEDLIST_H
+#ifndef GESTOR_ALOJAMENTOS_EDIFICIO_H
+#define GESTOR_ALOJAMENTOS_EDIFICIO_H
 
 
 #include "../code/estruturas.h"
@@ -17,4 +17,4 @@ void print_edificios(EDIFICIOS **head);
 LOCALIZACAO *addlocalizacao(char* cidade,char * rua,int porta);
 
 
-#endif //GESTOR_ALOJAMENTOS_EDIFICIO_LINKEDLIST_H
+#endif //GESTOR_ALOJAMENTOS_EDIFICIO_H

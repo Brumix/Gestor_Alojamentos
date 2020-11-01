@@ -3,9 +3,9 @@
 
 CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/estruturas.h
 CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../code/main.c
-CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../edificio_linkedlist/edificio_linkedlist.h
+CMakeFiles/Gestor_Alojamentos.dir/code/main.c.obj: ../edificio/edificio.h
 
-CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj: ../code/estruturas.h
-CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj: ../edificio_linkedlist/edificio_linkedlist.c
-CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj: ../edificio_linkedlist/edificio_linkedlist.h
+CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../code/estruturas.h
+CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../edificio/edificio.c
+CMakeFiles/Gestor_Alojamentos.dir/edificio/edificio.c.obj: ../edificio/edificio.h
 
