@@ -73,7 +73,7 @@ typedef struct estudios {
 } ESTUDIOS;
 
 typedef struct andares {
-    int capacidade;
+    char* id;
     int num_estudios;
     ESTUDIOS estudio;
 } ANDARES;
@@ -98,8 +98,13 @@ typedef struct historial {
 /**
  * INCLUDES
  */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 
 #include "../edificio/edificio.h"
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\andares\andares.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include "estruturas.h"
 
 
@@ -8,9 +8,10 @@ int main() {
     EDIFICIOS *edificioHead = NULL;
     LOCALIZACAO *loc1 = addlocalizacao("Porto","Avenida dos Aliados",112);
     add_edificio(&edificioHead, "Hotel 1",loc1);
-    LOCALIZACAO *loc2=addlocalizacao("Porto","Avenida dos Aliados",116);
-    add_edificio(&edificioHead, "Hotel 2",loc2);
-
+    addandar(edificioHead,1,0);
+    addandar(edificioHead,2,1);
+    addandar(edificioHead,3,2);
     print_edificios(&edificioHead);
+    printandar(edificioHead);
     return 0;
 }

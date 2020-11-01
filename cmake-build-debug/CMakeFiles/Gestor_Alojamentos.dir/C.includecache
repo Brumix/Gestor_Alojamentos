@@ -6,25 +6,29 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h
-../edificio/edificio.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio/edificio.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.c
+andares.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main.c
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h
+-
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio/edificio.h
+-
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h
 stdio.h
 -
-estruturas.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h
-
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio/edificio.c
-edificio.h
+string.h
+-
+stdlib.h
+-
+../edificio/edificio.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio/edificio.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
+-
 
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/edificio/edificio.h
 ../code/estruturas.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estruturas.h
-stdlib.h
--
-stdio.h
--
 

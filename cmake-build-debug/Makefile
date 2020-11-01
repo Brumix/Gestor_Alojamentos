@@ -142,6 +142,33 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
+code/andares/andares.obj: code/andares/andares.c.obj
+
+.PHONY : code/andares/andares.obj
+
+# target to build an object file
+code/andares/andares.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj
+.PHONY : code/andares/andares.c.obj
+
+code/andares/andares.i: code/andares/andares.c.i
+
+.PHONY : code/andares/andares.i
+
+# target to preprocess a source file
+code/andares/andares.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.i
+.PHONY : code/andares/andares.c.i
+
+code/andares/andares.s: code/andares/andares.c.s
+
+.PHONY : code/andares/andares.s
+
+# target to generate assembly for a file
+code/andares/andares.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.s
+.PHONY : code/andares/andares.c.s
+
 code/main.obj: code/main.c.obj
 
 .PHONY : code/main.obj
@@ -205,6 +232,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
+	@echo ... code/andares/andares.obj
+	@echo ... code/andares/andares.i
+	@echo ... code/andares/andares.s
 	@echo ... code/main.obj
 	@echo ... code/main.i
 	@echo ... code/main.s

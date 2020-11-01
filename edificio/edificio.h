@@ -7,8 +7,6 @@
 
 
 #include "../code/estruturas.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void add_edificio(EDIFICIOS **head, char *nome,LOCALIZACAO *localizacao);
 
