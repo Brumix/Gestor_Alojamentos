@@ -8,7 +8,7 @@
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\estruturas.h"
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"
 
-ANDARES addandar(EDIFICIOS *head, int val, int pos);
+void addandar(EDIFICIOS *head, int val, int pos);
 
 void printandar(EDIFICIOS *head);
 

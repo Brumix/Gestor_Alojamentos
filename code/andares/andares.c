@@ -4,11 +4,11 @@
 
 #include "andares.h"
 
-ANDARES addandar(EDIFICIOS *head,int val,int pos){
+void addandar(EDIFICIOS *head, int val, int pos) {
 
-    struct andares temp=*(ANDARES *) malloc(sizeof(ANDARES));
-    temp.num_estudios=val;
-    head->andar[pos]=temp;
+    struct andares temp = *(ANDARES *) malloc(sizeof(ANDARES));
+    temp.num_estudios = val;
+    head->andar[pos] = temp;
     head->num_andares++;
 }
 
