@@ -101,6 +101,7 @@ typedef struct historial {
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h> // biblioteca de erros
 
 
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"

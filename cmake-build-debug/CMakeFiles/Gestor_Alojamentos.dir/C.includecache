@@ -13,8 +13,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 -
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificio/edificio.h
--
 
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificio/edificio.c
 edificio.h
@@ -30,6 +28,8 @@ stdio.h
 string.h
 -
 stdlib.h
+-
+errno.h
 -
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificio/edificio.h
 -
