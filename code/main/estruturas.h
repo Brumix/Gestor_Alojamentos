@@ -9,7 +9,7 @@
  * CONSTANTES
  */
 
-#define ANDARESINICIAL 10
+#define INICIAL 5
 
 
 /**
@@ -34,17 +34,17 @@ enum tipo_evento {
 
 
 typedef struct data {
-    int min;
-    int hora;
-    int dia;
-    int mes;
-    int ano;
+    unsigned short int min;
+    unsigned short int hora;
+    unsigned short int dia;
+    unsigned short int mes;
+    unsigned short int ano;
 } DATA;
 
 typedef struct pessoa {
-    int id;
+    unsigned int id;
     char *nome;
-    int cc;
+    unsigned int cc;
     char *tipo_pessoa;
     DATA data_nasciemnto;
 } PESSOA;
@@ -52,7 +52,7 @@ typedef struct pessoa {
 typedef struct localizacao {
     char *cidade;
     char *rua;
-    int num_porta;
+    unsigned int num_porta;
 } LOCALIZACAO;
 
 typedef struct eventos {
@@ -67,20 +67,19 @@ typedef struct dias {
 } DIAS;
 
 typedef struct estudios {
-    int capacidade;
-    int num_porta;
+    unsigned short int capacidade;
+    unsigned short int num_porta;
     DIAS dia;
 } ESTUDIOS;
 
 typedef struct andares {
-    char* id;
-    int num_estudios;
+    unsigned int num_estudios;
     ESTUDIOS estudio;
 } ANDARES;
 
 typedef struct edificios {
     char *nome;
-    int num_andares;
+    unsigned int num_andares;
     ANDARES *andar;
     LOCALIZACAO *localizacao;
     struct edificios *next;
@@ -101,7 +100,8 @@ typedef struct historial {
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <errno.h> // biblioteca de erros
+#include <errno.h>
+#include <unistd.h>
 
 
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"

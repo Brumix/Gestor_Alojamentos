@@ -8,11 +8,13 @@
 
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\estruturas.h"
 
-void add_edificio(EDIFICIOS **head, char *nome,LOCALIZACAO *localizacao);
+void add_edificio(EDIFICIOS **head, char *nome, LOCALIZACAO *localizacao);
 
-void print_edificios(EDIFICIOS **head);
+void print_edificios(EDIFICIOS *head);
 
-LOCALIZACAO *addlocalizacao(char* cidade,char * rua,int porta);
+LOCALIZACAO *add_localizacao(char *cidade, char *rua, int porta);
+
+short int find_hotel(EDIFICIOS *head,char * nome);
 
 
 #endif //GESTOR_ALOJAMENTOS_EDIFICIO_H

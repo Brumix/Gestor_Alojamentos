@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.c
-andares.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
-
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 -
@@ -31,12 +27,10 @@ stdlib.h
 -
 errno.h
 -
+unistd.h
+-
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificio/edificio.h
 -
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.h
 -
-
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c
-estruturas.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 
