@@ -6,12 +6,14 @@
 
 unsigned int Total_andares = INICIAL;
 
-void add_andar(EDIFICIOS *head, unsigned int val) {
+void add_andar(EDIFICIOS *head,unsigned int andar) {
     resize_andares(head);
-    struct andares temp = *(ANDARES *) malloc(sizeof(ANDARES));
-    temp.num_estudios = val;
-    head->andar[head->num_andares] = temp;
+    ANDARES *temp = (ANDARES *) malloc(sizeof(ANDARES));
+    temp->andar=andar;
+    temp->num_estudios =0;
+    head->andar[head->num_andares] = *temp;
     head->num_andares++;
+    head->andar->estudio = (ESTUDIOS *) malloc(INICIAL * sizeof(ESTUDIOS));
 }
 
 void add_andar_hotel(char *nome, unsigned int val, EDIFICIOS *head) {
@@ -23,8 +25,8 @@ void add_andar_hotel(char *nome, unsigned int val, EDIFICIOS *head) {
             add_andar(current, val);
             break;
         }
-        if(current->next== NULL)
-            printf("[AVISO]:EDIFICIO NAO ENCONTRADO: %s\n",nome);
+        if (current->next == NULL)
+            printf("[AVISO]:EDIFICIO NAO ENCONTRADO: %s\n", nome);
         current = current->next;
     }
 
@@ -33,7 +35,8 @@ void add_andar_hotel(char *nome, unsigned int val, EDIFICIOS *head) {
 void print_andar(EDIFICIOS *head) {
     printf("\tANDARES:");
     for (int i = 0; i < head->num_andares; i++) {
-        printf("%d ", head->andar[i].num_estudios);
+        printf("\n\t%d ", head->andar[i].andar);
+        print_estudios(&head->andar[i]);
     }
     printf("\n");
 }

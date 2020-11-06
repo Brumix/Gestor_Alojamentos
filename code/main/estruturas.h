@@ -22,15 +22,17 @@ enum tipo_pessoa {
 };
 
 enum tipo_evento {
-    CHECK_IN, CHECK_OUT, LIMPEZA, MANUTENCAO
+    CHECK_IN = 2, CHECK_OUT, LIMPEZA, MANUTENCAO
+};
+
+enum tipo_estudio {
+    T1, T2, QUARTO, SUITE, SUITEPRESIDENCIAL
 };
 
 
 /**
  * ESTRUTURAS
  */
-
-//todo politica de preços ????
 
 
 typedef struct data {
@@ -40,6 +42,11 @@ typedef struct data {
     unsigned short int mes;
     unsigned short int ano;
 } DATA;
+
+typedef struct precos{
+    int tipo_estudio;
+    int valor;
+}PRECOS;
 
 typedef struct pessoa {
     unsigned int id;
@@ -57,7 +64,7 @@ typedef struct localizacao {
 
 typedef struct eventos {
     PESSOA pessoa;
-    char *tipo_evento;
+    int tipo_evento;
     struct eventos *pnext;
 } EVENTOS;
 
@@ -67,14 +74,17 @@ typedef struct dias {
 } DIAS;
 
 typedef struct estudios {
+    int tipo_estudio;
     unsigned short int capacidade;
     unsigned short int num_porta;
+    PRECOS preco;
     DIAS dia;
 } ESTUDIOS;
 
 typedef struct andares {
+    unsigned int andar;
     unsigned int num_estudios;
-    ESTUDIOS estudio;
+    ESTUDIOS *estudio;
 } ANDARES;
 
 typedef struct edificios {
@@ -90,8 +100,10 @@ typedef struct historial {
     PESSOA pessoa;
     DATA data;
     EVENTOS evento;
-    char *tipo_evento;
+    int tipo_evento;
 } HISTORIAL;
+
+
 
 
 /**
@@ -106,6 +118,6 @@ typedef struct historial {
 
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\andares\andares.h"
-
+#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\estudios\estudios.h"
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

@@ -196,6 +196,33 @@ code/edificio/edificio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.s
 .PHONY : code/edificio/edificio.c.s
 
+code/estudios/estudios.obj: code/estudios/estudios.c.obj
+
+.PHONY : code/estudios/estudios.obj
+
+# target to build an object file
+code/estudios/estudios.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/estudios/estudios.c.obj
+.PHONY : code/estudios/estudios.c.obj
+
+code/estudios/estudios.i: code/estudios/estudios.c.i
+
+.PHONY : code/estudios/estudios.i
+
+# target to preprocess a source file
+code/estudios/estudios.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/estudios/estudios.c.i
+.PHONY : code/estudios/estudios.c.i
+
+code/estudios/estudios.s: code/estudios/estudios.c.s
+
+.PHONY : code/estudios/estudios.s
+
+# target to generate assembly for a file
+code/estudios/estudios.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/estudios/estudios.c.s
+.PHONY : code/estudios/estudios.c.s
+
 code/main/main.obj: code/main/main.c.obj
 
 .PHONY : code/main/main.obj
@@ -238,6 +265,9 @@ help:
 	@echo ... code/edificio/edificio.obj
 	@echo ... code/edificio/edificio.i
 	@echo ... code/edificio/edificio.s
+	@echo ... code/estudios/estudios.obj
+	@echo ... code/estudios/estudios.i
+	@echo ... code/estudios/estudios.s
 	@echo ... code/main/main.obj
 	@echo ... code/main/main.i
 	@echo ... code/main/main.s

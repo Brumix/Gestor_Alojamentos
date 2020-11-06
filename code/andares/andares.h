@@ -8,7 +8,7 @@
 #include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\main\estruturas.h"
 
 
-void add_andar(EDIFICIOS *head, unsigned int val);
+void add_andar(EDIFICIOS *head, unsigned int andar);
 
 void print_andar(EDIFICIOS *head);
 
