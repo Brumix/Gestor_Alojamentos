@@ -142,59 +142,86 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
-edificio_linkedlist/edificio_linkedlist.obj: edificio_linkedlist/edificio_linkedlist.c.obj
+code/andares/andares.obj: code/andares/andares.c.obj
 
-.PHONY : edificio_linkedlist/edificio_linkedlist.obj
-
-# target to build an object file
-edificio_linkedlist/edificio_linkedlist.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.obj
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.obj
-
-edificio_linkedlist/edificio_linkedlist.i: edificio_linkedlist/edificio_linkedlist.c.i
-
-.PHONY : edificio_linkedlist/edificio_linkedlist.i
-
-# target to preprocess a source file
-edificio_linkedlist/edificio_linkedlist.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.i
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.i
-
-edificio_linkedlist/edificio_linkedlist.s: edificio_linkedlist/edificio_linkedlist.c.s
-
-.PHONY : edificio_linkedlist/edificio_linkedlist.s
-
-# target to generate assembly for a file
-edificio_linkedlist/edificio_linkedlist.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/edificio_linkedlist/edificio_linkedlist.c.s
-.PHONY : edificio_linkedlist/edificio_linkedlist.c.s
-
-main.obj: main.c.obj
-
-.PHONY : main.obj
+.PHONY : code/andares/andares.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.obj
-.PHONY : main.c.obj
+code/andares/andares.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj
+.PHONY : code/andares/andares.c.obj
 
-main.i: main.c.i
+code/andares/andares.i: code/andares/andares.c.i
 
-.PHONY : main.i
+.PHONY : code/andares/andares.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.i
-.PHONY : main.c.i
+code/andares/andares.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.i
+.PHONY : code/andares/andares.c.i
 
-main.s: main.c.s
+code/andares/andares.s: code/andares/andares.c.s
 
-.PHONY : main.s
+.PHONY : code/andares/andares.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/main.c.s
-.PHONY : main.c.s
+code/andares/andares.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.s
+.PHONY : code/andares/andares.c.s
+
+code/edificio/edificio.obj: code/edificio/edificio.c.obj
+
+.PHONY : code/edificio/edificio.obj
+
+# target to build an object file
+code/edificio/edificio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj
+.PHONY : code/edificio/edificio.c.obj
+
+code/edificio/edificio.i: code/edificio/edificio.c.i
+
+.PHONY : code/edificio/edificio.i
+
+# target to preprocess a source file
+code/edificio/edificio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.i
+.PHONY : code/edificio/edificio.c.i
+
+code/edificio/edificio.s: code/edificio/edificio.c.s
+
+.PHONY : code/edificio/edificio.s
+
+# target to generate assembly for a file
+code/edificio/edificio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.s
+.PHONY : code/edificio/edificio.c.s
+
+code/main/main.obj: code/main/main.c.obj
+
+.PHONY : code/main/main.obj
+
+# target to build an object file
+code/main/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj
+.PHONY : code/main/main.c.obj
+
+code/main/main.i: code/main/main.c.i
+
+.PHONY : code/main/main.i
+
+# target to preprocess a source file
+code/main/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.i
+.PHONY : code/main/main.c.i
+
+code/main/main.s: code/main/main.c.s
+
+.PHONY : code/main/main.s
+
+# target to generate assembly for a file
+code/main/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.s
+.PHONY : code/main/main.c.s
 
 # Help Target
 help:
@@ -205,12 +232,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
-	@echo ... edificio_linkedlist/edificio_linkedlist.obj
-	@echo ... edificio_linkedlist/edificio_linkedlist.i
-	@echo ... edificio_linkedlist/edificio_linkedlist.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... code/andares/andares.obj
+	@echo ... code/andares/andares.i
+	@echo ... code/andares/andares.s
+	@echo ... code/edificio/edificio.obj
+	@echo ... code/edificio/edificio.i
+	@echo ... code/edificio/edificio.s
+	@echo ... code/main/main.obj
+	@echo ... code/main/main.i
+	@echo ... code/main/main.s
 .PHONY : help
 
 
