@@ -11,7 +11,7 @@ void add_andar(EDIFICIOS *head,unsigned int andar) {
     ANDARES *temp = (ANDARES *) malloc(sizeof(ANDARES));
     temp->andar=andar;
     temp->num_estudios =0;
-    head->andar[head->num_andares] = *temp;
+    head->andar[head->num_andares]= *temp;
     head->num_andares++;
     head->andar->estudio = (ESTUDIOS *) malloc(INICIAL * sizeof(ESTUDIOS));
 }
