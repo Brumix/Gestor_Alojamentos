@@ -9,7 +9,7 @@ unsigned int Total_estudios = INICIAL;
 
 void add_estudio(ANDARES *andar,int capacidade){
     resize_estudios(andar);
-     ESTUDIOS *temp= ( ESTUDIOS *) malloc(sizeof(ANDARES));
+     ESTUDIOS *temp= ( ESTUDIOS *) malloc(sizeof(ESTUDIOS));
      temp->capacidade=capacidade;
      andar->estudio[andar->num_estudios]=*temp;
      andar->num_estudios++;
