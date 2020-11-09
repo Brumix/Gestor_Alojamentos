@@ -17,17 +17,17 @@
  */
 
 
-enum tipo_pessoa {
+typedef enum tipo_pessoa {
     HOSPEDE, EMPREGADO
-};
+}TIPO_PESSOA;
 
-enum tipo_evento {
-    CHECK_IN = 2, CHECK_OUT, LIMPEZA, MANUTENCAO
-};
+typedef enum tipo_evento {
+    CHECK_IN, CHECK_OUT, LIMPEZA, MANUTENCAO
+}TIPO_EVENTO;
 
-enum tipo_estudio {
+typedef enum tipo_estudio {
     T1, T2, QUARTO, SUITE, SUITEPRESIDENCIAL
-};
+}TIPO_ESTUDIO;
 
 
 /**
@@ -44,7 +44,7 @@ typedef struct data {
 } DATA;
 
 typedef struct precos{
-    int tipo_estudio;
+    TIPO_ESTUDIO tipo_estudio;
     int valor;
 }PRECOS;
 
@@ -52,7 +52,7 @@ typedef struct pessoa {
     unsigned int id;
     char *nome;
     unsigned int cc;
-    char *tipo_pessoa;
+    TIPO_PESSOA tipo_pessoa;
     DATA data_nasciemnto;
 } PESSOA;
 
@@ -64,7 +64,7 @@ typedef struct localizacao {
 
 typedef struct eventos {
     PESSOA pessoa;
-    int tipo_evento;
+    TIPO_EVENTO tipo_evento;
     struct eventos *pnext;
 } EVENTOS;
 
@@ -74,7 +74,7 @@ typedef struct dias {
 } DIAS;
 
 typedef struct estudios {
-    int tipo_estudio;
+   TIPO_ESTUDIO tipo_estudio;
     unsigned short int capacidade;
     unsigned short int num_porta;
     PRECOS preco;
@@ -100,7 +100,7 @@ typedef struct historial {
     PESSOA pessoa;
     DATA data;
     EVENTOS evento;
-    int tipo_evento;
+    TIPO_EVENTO tipo_evento;
 } HISTORIAL;
 
 

@@ -18,7 +18,7 @@ void add_estudio(ANDARES *andar,int capacidade){
 void print_estudios(ANDARES *andar){
     printf("\n\t\tEstudios:%d\n",andar->num_estudios);
     for (int i = 0; i < andar->num_estudios; i++) {
-        printf("%d",andar->estudio[i].capacidade);
+        printf("%d ",andar->estudio[i].capacidade);
     }
     printf("\n");
 }
