@@ -19,15 +19,22 @@
 
 typedef enum tipo_pessoa {
     HOSPEDE, EMPREGADO
-}TIPO_PESSOA;
+} TIPO_PESSOA;
 
-typedef enum tipo_evento {
-    CHECK_IN, CHECK_OUT, LIMPEZA, MANUTENCAO
-}TIPO_EVENTO;
+typedef enum master_evento {
+    OCUPADO, LIMPEZA, MANUTENCAO, FATURACAO, GREACAO_DE_RELATORIOS
+} MASTER_EVENTO;
+typedef enum branch_evento {
+    RESERVADO, LIVRE
+} BRANCH_EVENTO;
 
 typedef enum tipo_estudio {
-    T1, T2, QUARTO, SUITE, SUITEPRESIDENCIAL
-}TIPO_ESTUDIO;
+    T1, T2, T3D, SUITE, SUITEPRESIDENCIAL
+} TIPO_ESTUDIO;
+
+typedef enum plataforma {
+    AirBnc, AisBnD, AisBnE, AIRPlaces
+} PLATAFORMA;
 
 
 /**
@@ -43,64 +50,74 @@ typedef struct data {
     unsigned short int ano;
 } DATA;
 
-typedef struct precos{
-    TIPO_ESTUDIO tipo_estudio;
-    int valor;
-}PRECOS;
+typedef struct gps {
+    char latitude[10];
+    char longuitude[10];
+} GPS;
+
+typedef struct localizacao {
+    char morada[45];
+    GPS gps;
+} LOCALIZACAO;
 
 typedef struct pessoa {
     unsigned int id;
-    char *nome;
-    unsigned int cc;
+    char nome[45];
     TIPO_PESSOA tipo_pessoa;
-    DATA data_nasciemnto;
 } PESSOA;
 
-typedef struct localizacao {
-    char *cidade;
-    char *rua;
-    unsigned int num_porta;
-} LOCALIZACAO;
+typedef struct precos {
+    //ver regras
+} PRECOS;
 
-typedef struct eventos {
+
+typedef struct master_eventos {
     PESSOA pessoa;
-    TIPO_EVENTO tipo_evento;
-    struct eventos *pnext;
-} EVENTOS;
-
-typedef struct dias {
-    EVENTOS evento;
     DATA data;
-} DIAS;
+    int duracao;
+    PRECOS preco;
+    MASTER_EVENTO mevento;
+    struct eventos *pnext;
+} MEVENTOS;
+
+typedef struct branch_eventos {
+    PESSOA pessoa;
+    DATA data;
+    int duracao;
+    PRECOS preco;
+    BRANCH_EVENTO bevento;
+    struct eventos *pnext;
+} BEVENTOS;
+
+
+typedef struct master_calendar {
+    MEVENTOS *master_evento;
+    PLATAFORMA plataforma;
+} MASTER_CALENDAR;
+
+typedef struct branch_calendar {
+    BEVENTOS *branch_evento;
+    PLATAFORMA plataforma;
+} BRANCH_CALENDAR;
 
 typedef struct estudios {
-   TIPO_ESTUDIO tipo_estudio;
+    TIPO_ESTUDIO tipo_estudio;
     unsigned short int capacidade;
     unsigned short int num_porta;
-    PRECOS preco;
-    DIAS dia;
+    MASTER_CALENDAR master_calendar;
+    BRANCH_CALENDAR branch_calendar;
 } ESTUDIOS;
 
-typedef struct andares {
-    unsigned int andar;
-    unsigned int num_estudios;
-    ESTUDIOS *estudio;
-} ANDARES;
-
 typedef struct edificios {
-    char *nome;
-    unsigned int num_andares;
-    ANDARES *andar;
-    LOCALIZACAO *localizacao;
+    char nome[45];
+    LOCALIZACAO localizacao;
+    ESTUDIOS *estudios;
     struct edificios *next;
 } EDIFICIOS;
 
-// ver whiteboard
 typedef struct historial {
     PESSOA pessoa;
-    DATA data;
-    EVENTOS evento;
-    TIPO_EVENTO tipo_evento;
+    MEVENTOS eventos;
 } HISTORIAL;
 
 
@@ -114,10 +131,5 @@ typedef struct historial {
 #include <stdlib.h>
 #include <errno.h>
 #include <unistd.h>
-
-
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\edificio\edificio.h"
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\andares\andares.h"
-#include "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\estudios\estudios.h"
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

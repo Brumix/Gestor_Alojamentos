@@ -4,9 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/andares/andares.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/andares/andares.c.obj"
-  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificio/edificio.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/edificio/edificio.c.obj"
-  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/estudios/estudios.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/estudios/estudios.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
