@@ -16,7 +16,6 @@
  * ENUM
  */
 
-
 typedef enum tipo_pessoa {
     HOSPEDE, EMPREGADO
 } TIPO_PESSOA;
@@ -43,11 +42,11 @@ typedef enum plataforma {
 
 
 typedef struct data {
-    unsigned short int min;
-    unsigned short int hora;
-    unsigned short int dia;
-    unsigned short int mes;
-    unsigned short int ano;
+    unsigned short  min;
+    unsigned short  hora;
+    unsigned short  dia;
+    unsigned short  mes;
+    unsigned short  ano;
 } DATA;
 
 typedef struct gps {
@@ -61,7 +60,7 @@ typedef struct localizacao {
 } LOCALIZACAO;
 
 typedef struct pessoa {
-    unsigned int id;
+    unsigned  id;
     char nome[45];
     TIPO_PESSOA tipo_pessoa;
 } PESSOA;
@@ -72,40 +71,40 @@ typedef struct precos {
 
 
 typedef struct master_eventos {
+    PLATAFORMA plataforma;
     PESSOA pessoa;
-    DATA data;
-    int duracao;
+    unsigned  duracao;
     PRECOS preco;
     MASTER_EVENTO mevento;
-    struct eventos *pnext;
+    struct master_eventos *pnext;
 } MEVENTOS;
 
 typedef struct branch_eventos {
     PESSOA pessoa;
-    DATA data;
-    int duracao;
+    unsigned duracao;
     PRECOS preco;
     BRANCH_EVENTO bevento;
-    struct eventos *pnext;
+    struct branch_eventos *pnext;
 } BEVENTOS;
 
 
 typedef struct master_calendar {
+    DATA data;
     MEVENTOS *master_evento;
-    PLATAFORMA plataforma;
 } MASTER_CALENDAR;
 
 typedef struct branch_calendar {
-    BEVENTOS *branch_evento;
+    DATA data;
     PLATAFORMA plataforma;
+    BEVENTOS *branch_evento;
 } BRANCH_CALENDAR;
 
 typedef struct estudios {
     TIPO_ESTUDIO tipo_estudio;
-    unsigned short int capacidade;
-    unsigned short int num_porta;
-    MASTER_CALENDAR master_calendar;
-    BRANCH_CALENDAR branch_calendar;
+    unsigned short capacidade;
+    unsigned short num_porta;
+    MASTER_CALENDAR *master_calendar;
+    BRANCH_CALENDAR *branch_calendar;
 } ESTUDIOS;
 
 typedef struct edificios {
@@ -117,7 +116,7 @@ typedef struct edificios {
 
 typedef struct historial {
     PESSOA pessoa;
-    MEVENTOS eventos;
+    MEVENTOS *eventos;
 } HISTORIAL;
 
 
