@@ -52,6 +52,7 @@ typedef struct data {
 typedef struct gps {
     char latitude[10];
     char longuitude[10];
+    int price;
 } GPS;
 
 typedef struct localizacao {
@@ -69,7 +70,6 @@ typedef struct precos {
     //ver regras
 } PRECOS;
 
-
 typedef struct master_eventos {
     PLATAFORMA plataforma;
     PESSOA pessoa;
@@ -86,7 +86,6 @@ typedef struct branch_eventos {
     BRANCH_EVENTO bevento;
     struct branch_eventos *pnext;
 } BEVENTOS;
-
 
 typedef struct master_calendar {
     DATA data;
@@ -118,6 +117,8 @@ typedef struct historial {
     PESSOA pessoa;
     MEVENTOS *eventos;
 } HISTORIAL;
+
+
 
 
 
