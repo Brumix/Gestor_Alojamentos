@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Gestor_Alojamentos.dir/code/edificios/edificios.c.obj"
-  "CMakeFiles/Gestor_Alojamentos.dir/code/localizacao/localizacao.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/componentes/edificios/edificios.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/componentes/localizacao/localizacao.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   "Gestor_Alojamentos.exe"
   "Gestor_Alojamentos.exe.manifest"

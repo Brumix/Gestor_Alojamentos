@@ -4,5 +4,5 @@ project(Gestor_Alojamentos C)
 set(CMAKE_C_STANDARD 99)
 
 
-add_executable(Gestor_Alojamentos code/main/main.c code/main/estruturas.h code/edificios/edificios.c code/edificios/edificios.h code/localizacao/localizacao.c code/localizacao/localizacao.h)
+add_executable(Gestor_Alojamentos code/main/main.c code/main/estruturas.h code/componentes/edificios/edificios.c code/componentes/edificios/edificios.h code/componentes/localizacao/localizacao.c code/componentes/localizacao/localizacao.h)
 

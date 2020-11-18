@@ -6,18 +6,22 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificios/edificios.h
-../main/estruturas.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/edificios/edificios.c
+edificios.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/edificios/edificios.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/edificios/edificios.h
+../../main/estruturas.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 ../localizacao/localizacao.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/localizacao/localizacao.h
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.c
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/localizacao/localizacao.c
 localizacao.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/localizacao/localizacao.h
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.h
-../main/estruturas.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/localizacao/localizacao.h
+../../main/estruturas.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
@@ -31,8 +35,12 @@ errno.h
 -
 unistd.h
 -
-../localizacao/localizacao.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.h
-../edificios/edificios.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificios/edificios.h
+../componentes/localizacao/localizacao.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/localizacao/localizacao.h
+../componentes/edificios/edificios.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/componentes/edificios/edificios.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c
+estruturas.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h
 

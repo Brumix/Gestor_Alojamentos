@@ -5,8 +5,17 @@
 #ifndef GESTOR_ALOJAMENTOS_EDIFICIOS_H
 #define GESTOR_ALOJAMENTOS_EDIFICIOS_H
 
-#include "../main/estruturas.h"
+/**************************************
+************ INCLUDES *****************
+**************************************/
+
+#include "../../main/estruturas.h"
 #include "../localizacao/localizacao.h"
+
+
+/**************************************
+************ DECLARACOES *************
+**************************************/
 
 void add_edificio(EDIFICIOS **head, char *nome, LOCALIZACAO *localizacao);
 

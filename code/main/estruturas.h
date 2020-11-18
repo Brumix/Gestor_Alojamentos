@@ -5,16 +5,16 @@
 #ifndef GESTOR_ALOJAMENTOS_ESTRUTURAS_H
 #define GESTOR_ALOJAMENTOS_ESTRUTURAS_H
 
-/**
- * CONSTANTES
- */
+/**************************************
+************ CONSTANTES ***************
+**************************************/
 
 #define INICIAL 5
 
 
-/**
- * ENUM
- */
+/**************************************
+*************** ENUM *****************
+**************************************/
 
 typedef enum tipo_pessoa {
     HOSPEDE, EMPREGADO
@@ -36,9 +36,9 @@ typedef enum plataforma {
 } PLATAFORMA;
 
 
-/**
- * ESTRUTURAS
- */
+/**************************************
+************ ESTRUTURAS **************
+**************************************/
 
 
 typedef struct data {
@@ -118,13 +118,11 @@ typedef struct historial {
 } HISTORIAL;
 
 
+/**************************************
+************ INCLUDES *****************
+**************************************/
 
 
-
-
-/**
- * INCLUDES
- */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -132,8 +130,8 @@ typedef struct historial {
 #include <unistd.h>
 
 
-#include "../localizacao/localizacao.h"
-#include "../edificios/edificios.h"
+#include"../componentes/localizacao/localizacao.h"
+#include"../componentes/edificios/edificios.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H

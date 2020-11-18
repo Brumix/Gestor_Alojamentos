@@ -5,8 +5,18 @@
 #ifndef GESTOR_ALOJAMENTOS_LOCALIZACAO_H
 #define GESTOR_ALOJAMENTOS_LOCALIZACAO_H
 
-#include "../main/estruturas.h"
 
+/**************************************
+************ INCLUDES *****************
+**************************************/
+
+
+#include "../../main/estruturas.h"
+
+
+/**************************************
+************ DECLARACOES *************
+**************************************/
 
 GPS *add_gps(char *lat, char *lon);
 
