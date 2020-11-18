@@ -74,6 +74,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificios/edificios.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/edificios/edificios.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/localizacao/localizacao.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/estruturas.h">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>

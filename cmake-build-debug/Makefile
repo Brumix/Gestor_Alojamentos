@@ -142,6 +142,60 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
+code/edificios/edificios.obj: code/edificios/edificios.c.obj
+
+.PHONY : code/edificios/edificios.obj
+
+# target to build an object file
+code/edificios/edificios.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificios/edificios.c.obj
+.PHONY : code/edificios/edificios.c.obj
+
+code/edificios/edificios.i: code/edificios/edificios.c.i
+
+.PHONY : code/edificios/edificios.i
+
+# target to preprocess a source file
+code/edificios/edificios.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificios/edificios.c.i
+.PHONY : code/edificios/edificios.c.i
+
+code/edificios/edificios.s: code/edificios/edificios.c.s
+
+.PHONY : code/edificios/edificios.s
+
+# target to generate assembly for a file
+code/edificios/edificios.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/edificios/edificios.c.s
+.PHONY : code/edificios/edificios.c.s
+
+code/localizacao/localizacao.obj: code/localizacao/localizacao.c.obj
+
+.PHONY : code/localizacao/localizacao.obj
+
+# target to build an object file
+code/localizacao/localizacao.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/localizacao/localizacao.c.obj
+.PHONY : code/localizacao/localizacao.c.obj
+
+code/localizacao/localizacao.i: code/localizacao/localizacao.c.i
+
+.PHONY : code/localizacao/localizacao.i
+
+# target to preprocess a source file
+code/localizacao/localizacao.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/localizacao/localizacao.c.i
+.PHONY : code/localizacao/localizacao.c.i
+
+code/localizacao/localizacao.s: code/localizacao/localizacao.c.s
+
+.PHONY : code/localizacao/localizacao.s
+
+# target to generate assembly for a file
+code/localizacao/localizacao.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/localizacao/localizacao.c.s
+.PHONY : code/localizacao/localizacao.c.s
+
 code/main/main.obj: code/main/main.c.obj
 
 .PHONY : code/main/main.obj
@@ -178,6 +232,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
+	@echo ... code/edificios/edificios.obj
+	@echo ... code/edificios/edificios.i
+	@echo ... code/edificios/edificios.s
+	@echo ... code/localizacao/localizacao.obj
+	@echo ... code/localizacao/localizacao.i
+	@echo ... code/localizacao/localizacao.s
 	@echo ... code/main/main.obj
 	@echo ... code/main/main.i
 	@echo ... code/main/main.s

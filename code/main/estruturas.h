@@ -50,20 +50,19 @@ typedef struct data {
 } DATA;
 
 typedef struct gps {
-    char latitude[10];
-    char longuitude[10];
-    int price;
+    char *latitude;
+    char *longuitude;
 } GPS;
 
 typedef struct localizacao {
-    char morada[45];
-    GPS gps;
+    char *morada;
+    GPS *gps;
 } LOCALIZACAO;
 
 typedef struct pessoa {
-    unsigned  id;
-    char nome[45];
-    TIPO_PESSOA tipo_pessoa;
+    unsigned id;
+    char *nome;
+    TIPO_PESSOA *tipo_pessoa;
 } PESSOA;
 
 typedef struct precos {
@@ -71,35 +70,35 @@ typedef struct precos {
 } PRECOS;
 
 typedef struct master_eventos {
-    PLATAFORMA plataforma;
-    PESSOA pessoa;
-    unsigned  duracao;
-    PRECOS preco;
-    MASTER_EVENTO mevento;
+    PLATAFORMA *plataforma;
+    PESSOA *pessoa;
+    unsigned duracao;
+    PRECOS *preco;
+    MASTER_EVENTO *mevento;
     struct master_eventos *pnext;
 } MEVENTOS;
 
 typedef struct branch_eventos {
-    PESSOA pessoa;
+    PESSOA *pessoa;
     unsigned duracao;
-    PRECOS preco;
-    BRANCH_EVENTO bevento;
+    PRECOS *preco;
+    BRANCH_EVENTO *bevento;
     struct branch_eventos *pnext;
 } BEVENTOS;
 
 typedef struct master_calendar {
-    DATA data;
+    DATA *data;
     MEVENTOS *master_evento;
 } MASTER_CALENDAR;
 
 typedef struct branch_calendar {
-    DATA data;
-    PLATAFORMA plataforma;
+    DATA *data;
+    PLATAFORMA *plataforma;
     BEVENTOS *branch_evento;
 } BRANCH_CALENDAR;
 
 typedef struct estudios {
-    TIPO_ESTUDIO tipo_estudio;
+    TIPO_ESTUDIO *tipo_estudio;
     unsigned short capacidade;
     unsigned short num_porta;
     MASTER_CALENDAR *master_calendar;
@@ -107,14 +106,14 @@ typedef struct estudios {
 } ESTUDIOS;
 
 typedef struct edificios {
-    char nome[45];
-    LOCALIZACAO localizacao;
+    char *nome;
+    LOCALIZACAO *localizacao;
     ESTUDIOS *estudios;
     struct edificios *next;
 } EDIFICIOS;
 
 typedef struct historial {
-    PESSOA pessoa;
+    PESSOA *pessoa;
     MEVENTOS *eventos;
 } HISTORIAL;
 
@@ -131,5 +130,10 @@ typedef struct historial {
 #include <stdlib.h>
 #include <errno.h>
 #include <unistd.h>
+
+
+#include "../localizacao/localizacao.h"
+#include "../edificios/edificios.h"
+
 
 #endif //GESTOR_ALOJAMENTOS_ESTRUTURAS_H
