@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "CodeBlocks - MinGW Makefiles" "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage
