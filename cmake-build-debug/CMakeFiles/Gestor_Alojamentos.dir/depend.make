@@ -11,6 +11,9 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj: ../co
 CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj: ../code/components/location/location.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj: ../code/main/structures.h
 
+CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj: ../code/components/studios/studios.c
+CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj: ../code/components/studios/studios.h
+
 CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/components/buildings/buildings.h
 CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/components/location/location.h
 CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj: ../code/main/main.c
