@@ -142,59 +142,86 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
-code/componentes/edificios/edificios.obj: code/componentes/edificios/edificios.c.obj
+code/components/buildings/buildings.obj: code/components/buildings/buildings.c.obj
 
-.PHONY : code/componentes/edificios/edificios.obj
-
-# target to build an object file
-code/componentes/edificios/edificios.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/edificios/edificios.c.obj
-.PHONY : code/componentes/edificios/edificios.c.obj
-
-code/componentes/edificios/edificios.i: code/componentes/edificios/edificios.c.i
-
-.PHONY : code/componentes/edificios/edificios.i
-
-# target to preprocess a source file
-code/componentes/edificios/edificios.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/edificios/edificios.c.i
-.PHONY : code/componentes/edificios/edificios.c.i
-
-code/componentes/edificios/edificios.s: code/componentes/edificios/edificios.c.s
-
-.PHONY : code/componentes/edificios/edificios.s
-
-# target to generate assembly for a file
-code/componentes/edificios/edificios.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/edificios/edificios.c.s
-.PHONY : code/componentes/edificios/edificios.c.s
-
-code/componentes/localizacao/localizacao.obj: code/componentes/localizacao/localizacao.c.obj
-
-.PHONY : code/componentes/localizacao/localizacao.obj
+.PHONY : code/components/buildings/buildings.obj
 
 # target to build an object file
-code/componentes/localizacao/localizacao.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/localizacao/localizacao.c.obj
-.PHONY : code/componentes/localizacao/localizacao.c.obj
+code/components/buildings/buildings.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj
+.PHONY : code/components/buildings/buildings.c.obj
 
-code/componentes/localizacao/localizacao.i: code/componentes/localizacao/localizacao.c.i
+code/components/buildings/buildings.i: code/components/buildings/buildings.c.i
 
-.PHONY : code/componentes/localizacao/localizacao.i
+.PHONY : code/components/buildings/buildings.i
 
 # target to preprocess a source file
-code/componentes/localizacao/localizacao.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/localizacao/localizacao.c.i
-.PHONY : code/componentes/localizacao/localizacao.c.i
+code/components/buildings/buildings.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.i
+.PHONY : code/components/buildings/buildings.c.i
 
-code/componentes/localizacao/localizacao.s: code/componentes/localizacao/localizacao.c.s
+code/components/buildings/buildings.s: code/components/buildings/buildings.c.s
 
-.PHONY : code/componentes/localizacao/localizacao.s
+.PHONY : code/components/buildings/buildings.s
 
 # target to generate assembly for a file
-code/componentes/localizacao/localizacao.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/componentes/localizacao/localizacao.c.s
-.PHONY : code/componentes/localizacao/localizacao.c.s
+code/components/buildings/buildings.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.s
+.PHONY : code/components/buildings/buildings.c.s
+
+code/components/location/location.obj: code/components/location/location.c.obj
+
+.PHONY : code/components/location/location.obj
+
+# target to build an object file
+code/components/location/location.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj
+.PHONY : code/components/location/location.c.obj
+
+code/components/location/location.i: code/components/location/location.c.i
+
+.PHONY : code/components/location/location.i
+
+# target to preprocess a source file
+code/components/location/location.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.i
+.PHONY : code/components/location/location.c.i
+
+code/components/location/location.s: code/components/location/location.c.s
+
+.PHONY : code/components/location/location.s
+
+# target to generate assembly for a file
+code/components/location/location.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.s
+.PHONY : code/components/location/location.c.s
+
+code/components/studios/studios.obj: code/components/studios/studios.c.obj
+
+.PHONY : code/components/studios/studios.obj
+
+# target to build an object file
+code/components/studios/studios.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj
+.PHONY : code/components/studios/studios.c.obj
+
+code/components/studios/studios.i: code/components/studios/studios.c.i
+
+.PHONY : code/components/studios/studios.i
+
+# target to preprocess a source file
+code/components/studios/studios.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.i
+.PHONY : code/components/studios/studios.c.i
+
+code/components/studios/studios.s: code/components/studios/studios.c.s
+
+.PHONY : code/components/studios/studios.s
+
+# target to generate assembly for a file
+code/components/studios/studios.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.s
+.PHONY : code/components/studios/studios.c.s
 
 code/main/main.obj: code/main/main.c.obj
 
@@ -232,12 +259,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
-	@echo ... code/componentes/edificios/edificios.obj
-	@echo ... code/componentes/edificios/edificios.i
-	@echo ... code/componentes/edificios/edificios.s
-	@echo ... code/componentes/localizacao/localizacao.obj
-	@echo ... code/componentes/localizacao/localizacao.i
-	@echo ... code/componentes/localizacao/localizacao.s
+	@echo ... code/components/buildings/buildings.obj
+	@echo ... code/components/buildings/buildings.i
+	@echo ... code/components/buildings/buildings.s
+	@echo ... code/components/location/location.obj
+	@echo ... code/components/location/location.i
+	@echo ... code/components/location/location.s
+	@echo ... code/components/studios/studios.obj
+	@echo ... code/components/studios/studios.i
+	@echo ... code/components/studios/studios.s
 	@echo ... code/main/main.obj
 	@echo ... code/main/main.i
 	@echo ... code/main/main.s

@@ -2,8 +2,8 @@
 // Created by Bruno Miguel on 18/11/2020.
 //
 
-#ifndef GESTOR_ALOJAMENTOS_LOCALIZACAO_H
-#define GESTOR_ALOJAMENTOS_LOCALIZACAO_H
+#ifndef GESTOR_ALOJAMENTOS_LOCATION_H
+#define GESTOR_ALOJAMENTOS_LOCATION_H
 
 
 /**************************************
@@ -11,7 +11,7 @@
 **************************************/
 
 
-#include "../../main/estruturas.h"
+#include "../../main/structures.h"
 
 
 /**************************************
@@ -20,8 +20,8 @@
 
 GPS *add_gps(char *lat, char *lon);
 
-LOCALIZACAO *add_localizacao(char *morada, char *lat, char *lon);
+LOCATION *add_location(char *address, char *lat, char *lon);
 
-void print_localizacao(LOCALIZACAO *loc);
+void print_location(LOCATION *loc);
 
-#endif //GESTOR_ALOJAMENTOS_LOCALIZACAO_H
+#endif //GESTOR_ALOJAMENTOS_LOCATION_H
