@@ -5,19 +5,13 @@
 #ifndef GESTOR_ALOJAMENTOS_BUILDINGS_H
 #define GESTOR_ALOJAMENTOS_BUILDINGS_H
 
-/**************************************
-************ INCLUDES *****************
-**************************************/
 
 #include "../../main/structures.h"
 #include "../location/location.h"
 
 
-/**************************************
-************ DECLARACOES *************
-**************************************/
 
-void add_building(BUILDINGS **head, char *name, LOCATION *location);
+void add_building(BUILDINGS **head, char *name, LOCATION location);
 
 void print_building_all(BUILDINGS *head);
 

@@ -24,6 +24,14 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c
+studios.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
+../../main/structures.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c
 structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
@@ -39,6 +47,8 @@ errno.h
 -
 unistd.h
 -
+../components/studios/studios.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
 ../components/location/location.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h
 ../components/buildings/buildings.h

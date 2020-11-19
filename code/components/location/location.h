@@ -6,22 +6,14 @@
 #define GESTOR_ALOJAMENTOS_LOCATION_H
 
 
-/**************************************
-************ INCLUDES *****************
-**************************************/
-
-
 #include "../../main/structures.h"
 
 
-/**************************************
-************ DECLARACOES *************
-**************************************/
 
-GPS *add_gps(char *lat, char *lon);
+GPS add_gps(char *lat, char *lon);
 
-LOCATION *add_location(char *address, char *lat, char *lon);
+LOCATION add_location(char *address, char *lat, char *lon);
 
-void print_location(LOCATION *loc);
+void print_location(LOCATION loc);
 
 #endif //GESTOR_ALOJAMENTOS_LOCATION_H

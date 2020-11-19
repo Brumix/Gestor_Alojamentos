@@ -5,7 +5,7 @@
 #include "buildings.h"
 
 
-void add_building(BUILDINGS **head, char *name, LOCATION *location) {
+void add_building(BUILDINGS **head, char *name, LOCATION location) {
     if (find_hotel(*head, name) == 1) {
         printf("[AVISO]:EDIFICIO EXISTENTE: %s\n", name);
         return;
@@ -18,17 +18,19 @@ void add_building(BUILDINGS **head, char *name, LOCATION *location) {
     temp->name = name;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
+    temp->num_studios=0;
     temp->next = *head;
     *head = temp;
 }
 
 void print_building_all(BUILDINGS *head) {
-    BUILDINGS *curent;
-    curent = head;
+    BUILDINGS *curent = head;
     printf("EDIFICIOS\n");
     while (curent != NULL) {
         printf("%s\n", curent->name);
+        printf("NUMERO DE ESTUDIOS: %i\n",curent->num_studios);
         print_location(curent->location);
+        print_studio_all(curent);
         curent = curent->next;
     }
 
@@ -46,6 +48,6 @@ short int find_hotel(BUILDINGS *head, char *name) {
             return 0;
         current = current->next;
     }
-
+    return 0;
 }
 
