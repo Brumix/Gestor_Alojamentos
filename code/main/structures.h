@@ -56,7 +56,7 @@ typedef struct gps {
 
 typedef struct location {
     char *address;
-    GPS *gps;
+    GPS gps;
 } LOCATION;
 
 typedef struct people {
@@ -98,7 +98,7 @@ typedef struct branch_calendar {
 } BRANCH_CALENDAR;
 
 typedef struct studios {
-    TYPE_STUDIO *typeStudio;
+    TYPE_STUDIO typeStudio;
     unsigned short capacity;
     unsigned short num_door;
     MASTER_CALENDAR *master_calendar;
@@ -107,7 +107,8 @@ typedef struct studios {
 
 typedef struct buildings {
     char *name;
-    LOCATION *location;
+    LOCATION location;
+    int num_studios;
     STUDIOS *studios;
     struct buildings *next;
 } BUILDINGS;
@@ -131,6 +132,7 @@ typedef struct history {
 #include <unistd.h>
 
 
+#include "../components/studios/studios.h"
 #include"../components/location/location.h"
 #include"../components/buildings/buildings.h"
 
