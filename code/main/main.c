@@ -16,8 +16,6 @@ int main(void) {
     add_studio(buildings, (TYPE_STUDIO) T3D, 12, 3);
     add_studio(buildings, (TYPE_STUDIO) SUITEPRESIDENCIAL, 12, 4);
 
-
-
     print_building_all(buildings);
 
     return 0;
