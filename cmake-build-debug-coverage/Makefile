@@ -142,6 +142,33 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
+code/components/branch_calendar/branch_calendar.obj: code/components/branch_calendar/branch_calendar.c.obj
+
+.PHONY : code/components/branch_calendar/branch_calendar.obj
+
+# target to build an object file
+code/components/branch_calendar/branch_calendar.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.obj
+.PHONY : code/components/branch_calendar/branch_calendar.c.obj
+
+code/components/branch_calendar/branch_calendar.i: code/components/branch_calendar/branch_calendar.c.i
+
+.PHONY : code/components/branch_calendar/branch_calendar.i
+
+# target to preprocess a source file
+code/components/branch_calendar/branch_calendar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.i
+.PHONY : code/components/branch_calendar/branch_calendar.c.i
+
+code/components/branch_calendar/branch_calendar.s: code/components/branch_calendar/branch_calendar.c.s
+
+.PHONY : code/components/branch_calendar/branch_calendar.s
+
+# target to generate assembly for a file
+code/components/branch_calendar/branch_calendar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.s
+.PHONY : code/components/branch_calendar/branch_calendar.c.s
+
 code/components/buildings/buildings.obj: code/components/buildings/buildings.c.obj
 
 .PHONY : code/components/buildings/buildings.obj
@@ -168,6 +195,60 @@ code/components/buildings/buildings.s: code/components/buildings/buildings.c.s
 code/components/buildings/buildings.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.s
 .PHONY : code/components/buildings/buildings.c.s
+
+code/components/date/date.obj: code/components/date/date.c.obj
+
+.PHONY : code/components/date/date.obj
+
+# target to build an object file
+code/components/date/date.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj
+.PHONY : code/components/date/date.c.obj
+
+code/components/date/date.i: code/components/date/date.c.i
+
+.PHONY : code/components/date/date.i
+
+# target to preprocess a source file
+code/components/date/date.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.i
+.PHONY : code/components/date/date.c.i
+
+code/components/date/date.s: code/components/date/date.c.s
+
+.PHONY : code/components/date/date.s
+
+# target to generate assembly for a file
+code/components/date/date.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.s
+.PHONY : code/components/date/date.c.s
+
+code/components/enum/enum.obj: code/components/enum/enum.c.obj
+
+.PHONY : code/components/enum/enum.obj
+
+# target to build an object file
+code/components/enum/enum.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj
+.PHONY : code/components/enum/enum.c.obj
+
+code/components/enum/enum.i: code/components/enum/enum.c.i
+
+.PHONY : code/components/enum/enum.i
+
+# target to preprocess a source file
+code/components/enum/enum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.i
+.PHONY : code/components/enum/enum.c.i
+
+code/components/enum/enum.s: code/components/enum/enum.c.s
+
+.PHONY : code/components/enum/enum.s
+
+# target to generate assembly for a file
+code/components/enum/enum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.s
+.PHONY : code/components/enum/enum.c.s
 
 code/components/location/location.obj: code/components/location/location.c.obj
 
@@ -259,9 +340,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
+	@echo ... code/components/branch_calendar/branch_calendar.obj
+	@echo ... code/components/branch_calendar/branch_calendar.i
+	@echo ... code/components/branch_calendar/branch_calendar.s
 	@echo ... code/components/buildings/buildings.obj
 	@echo ... code/components/buildings/buildings.i
 	@echo ... code/components/buildings/buildings.s
+	@echo ... code/components/date/date.obj
+	@echo ... code/components/date/date.i
+	@echo ... code/components/date/date.s
+	@echo ... code/components/enum/enum.obj
+	@echo ... code/components/enum/enum.i
+	@echo ... code/components/enum/enum.s
 	@echo ... code/components/location/location.obj
 	@echo ... code/components/location/location.i
 	@echo ... code/components/location/location.s

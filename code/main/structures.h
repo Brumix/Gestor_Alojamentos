@@ -62,7 +62,7 @@ typedef struct location {
 typedef struct people {
     unsigned id;
     char *nome;
-    TYPE_PEOPLE *typePeople;
+    TYPE_PEOPLE typePeople;
 } PEOPLE;
 
 typedef struct price {
@@ -70,30 +70,30 @@ typedef struct price {
 } PRICE;
 
 typedef struct master_events {
-    PLATFORM *platform;
-    PEOPLE *people;
+    PLATFORM platform;
+    PEOPLE people;
     unsigned duration;
-    PRICE *price;
+    PRICE price;
     MASTER_EVENT *mevent;
     struct master_events *pnext;
 } MEVENTS;
 
 typedef struct branch_events {
-    PEOPLE *people;
+    PEOPLE people;
     unsigned duration;
-    PRICE *price;
+    PRICE price;
     BRANCH_EVENT *bevent;
     struct branch_eventos *pnext;
 } BEVENTS;
 
 typedef struct master_calendar {
-    DATE *date;
+    DATE date;
     MEVENTS *master_event;
 } MASTER_CALENDAR;
 
 typedef struct branch_calendar {
-    DATE *date;
-    PLATFORM *platform;
+    DATE date;
+    PLATFORM platform;
     BEVENTS *branch_event;
 } BRANCH_CALENDAR;
 
@@ -101,6 +101,10 @@ typedef struct studios {
     TYPE_STUDIO typeStudio;
     unsigned short capacity;
     unsigned short num_door;
+    unsigned int sizeArrayBranch;
+    unsigned int sizeArrayMaster;
+    unsigned int number_branch;
+    unsigned int number_master;
     MASTER_CALENDAR *master_calendar;
     BRANCH_CALENDAR *branch_calendar;
 } STUDIOS;
@@ -108,7 +112,8 @@ typedef struct studios {
 typedef struct buildings {
     char *name;
     LOCATION location;
-    int num_studios;
+    unsigned int num_studios;
+   unsigned int sizeArray;
     STUDIOS *studios;
     struct buildings *next;
 } BUILDINGS;
@@ -132,6 +137,10 @@ typedef struct history {
 #include <unistd.h>
 
 
+
+#include "../components/enum/enum.h"
+#include "../components/date/date.h"
+#include "../components/branch_calendar/branch_calendar.h"
 #include "../components/studios/studios.h"
 #include"../components/location/location.h"
 #include"../components/buildings/buildings.h"

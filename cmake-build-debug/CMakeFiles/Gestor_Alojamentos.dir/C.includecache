@@ -6,15 +6,51 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.c
+branch_calendar.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+../../main/structures.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.c
+buildings.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
+
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 ../location/location.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h
 
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.c
+date.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
+../../main/structures.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.c
+enum.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
+../../main/structures.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.c
+location.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h
+
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c
+studios.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
 
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
 ../../main/structures.h
@@ -35,6 +71,12 @@ errno.h
 -
 unistd.h
 -
+../components/enum/enum.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
+../components/date/date.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
+../components/branch_calendar/branch_calendar.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
 ../components/studios/studios.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
 ../components/location/location.h
