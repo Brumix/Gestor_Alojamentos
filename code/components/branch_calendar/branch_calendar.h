@@ -10,7 +10,7 @@
 
 void add_branch_calendar(STUDIOS *studios, DATE date, PLATFORM platform);
 
-void print_branch_calendat(STUDIOS *studios);
+void print_branch_calendar(STUDIOS *studios);
 
 void resize_branch_calendar(STUDIOS *studios);
 

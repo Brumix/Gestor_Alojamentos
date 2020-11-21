@@ -6,7 +6,7 @@
 #define GESTOR_ALOJAMENTOS_STRUCTURES_H
 
 /**************************************
-************ CONSTANTES ***************
+************ CONSTANTS ***************
 **************************************/
 
 #define INICIAL 5
@@ -37,7 +37,7 @@ typedef enum platform {
 
 
 /**************************************
-************ ESTRUTURAS **************
+************ STRUCTURES **************
 **************************************/
 
 
@@ -137,13 +137,13 @@ typedef struct history {
 #include <unistd.h>
 
 
-
 #include "../components/enum/enum.h"
 #include "../components/date/date.h"
+#include"../components/location/location.h"
+#include "../components/branch_events/branch_events.h"
 #include "../components/master_calendar/master_calendar.h"
 #include "../components/branch_calendar/branch_calendar.h"
 #include "../components/studios/studios.h"
-#include"../components/location/location.h"
 #include"../components/buildings/buildings.h"
 
 

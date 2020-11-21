@@ -4,6 +4,18 @@
 CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.c
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
+CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.obj
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.c
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
@@ -13,6 +25,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calenda
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.c
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
@@ -23,6 +36,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.c
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
@@ -33,6 +47,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.c
@@ -43,6 +58,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
@@ -53,6 +69,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
@@ -63,6 +80,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calenda
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h
@@ -73,6 +91,7 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.h
  C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.h

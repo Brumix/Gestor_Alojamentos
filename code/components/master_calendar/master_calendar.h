@@ -7,4 +7,11 @@
 
 #include "../../main/structures.h"
 
+
+void add_master_calendar(STUDIOS *studios, DATE date);
+
+void print_master_calendar(STUDIOS *studios);
+
+void resize_master_calendar(STUDIOS *studios);
+
 #endif //GESTOR_ALOJAMENTOS_MASTER_CALENDAR_H

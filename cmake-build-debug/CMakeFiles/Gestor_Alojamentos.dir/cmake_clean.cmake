@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj"

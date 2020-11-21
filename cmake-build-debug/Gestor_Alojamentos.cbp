@@ -80,6 +80,12 @@
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>

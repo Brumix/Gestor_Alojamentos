@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.obj"
+  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/date/date.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj"

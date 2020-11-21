@@ -41,7 +41,7 @@ void print_studio_all(BUILDINGS *buildings) {
 void resizeStudios(BUILDINGS *head) {
     if (head->sizeArray <= head->num_studios * 0.8) {
         head->sizeArray *= 2;
-        head->studios = realloc(head->studios, head->sizeArray);
+        head->studios = realloc(head->studios, head->sizeArray * sizeof(STUDIOS));
         if (head->studios == NULL) {
             perror("[REALLOC STUDIOS]");
             exit(-1);

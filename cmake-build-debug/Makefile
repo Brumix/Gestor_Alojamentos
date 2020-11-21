@@ -169,6 +169,33 @@ code/components/branch_calendar/branch_calendar.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.s
 .PHONY : code/components/branch_calendar/branch_calendar.c.s
 
+code/components/branch_events/branch_events.obj: code/components/branch_events/branch_events.c.obj
+
+.PHONY : code/components/branch_events/branch_events.obj
+
+# target to build an object file
+code/components/branch_events/branch_events.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.obj
+.PHONY : code/components/branch_events/branch_events.c.obj
+
+code/components/branch_events/branch_events.i: code/components/branch_events/branch_events.c.i
+
+.PHONY : code/components/branch_events/branch_events.i
+
+# target to preprocess a source file
+code/components/branch_events/branch_events.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.i
+.PHONY : code/components/branch_events/branch_events.c.i
+
+code/components/branch_events/branch_events.s: code/components/branch_events/branch_events.c.s
+
+.PHONY : code/components/branch_events/branch_events.s
+
+# target to generate assembly for a file
+code/components/branch_events/branch_events.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.s
+.PHONY : code/components/branch_events/branch_events.c.s
+
 code/components/buildings/buildings.obj: code/components/buildings/buildings.c.obj
 
 .PHONY : code/components/buildings/buildings.obj
@@ -370,6 +397,9 @@ help:
 	@echo ... code/components/branch_calendar/branch_calendar.obj
 	@echo ... code/components/branch_calendar/branch_calendar.i
 	@echo ... code/components/branch_calendar/branch_calendar.s
+	@echo ... code/components/branch_events/branch_events.obj
+	@echo ... code/components/branch_events/branch_events.i
+	@echo ... code/components/branch_events/branch_events.s
 	@echo ... code/components/buildings/buildings.obj
 	@echo ... code/components/buildings/buildings.i
 	@echo ... code/components/buildings/buildings.s
