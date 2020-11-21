@@ -10,6 +10,8 @@
 
 char *strTypeStudio(TYPE_STUDIO ts);
 
-char* strPlatform(PLATFORM platform);
+char *strPlatform(PLATFORM platform);
+
+char *strTypePeople(TYPE_PEOPLE typePeople);
 
 #endif //GESTOR_ALOJAMENTOS_ENUM_H

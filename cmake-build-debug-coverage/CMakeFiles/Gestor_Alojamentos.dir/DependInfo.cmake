@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/enum/enum.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.obj"
+  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/people/people.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug-coverage/CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   )

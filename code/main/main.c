@@ -24,5 +24,8 @@ int main(void) {
 
     print_building_all(buildings);
 
+
+    PEOPLE people = add_people(12, "Bruno Pereira", HOSPEDE);
+    print_people(people);
     return 0;
 }

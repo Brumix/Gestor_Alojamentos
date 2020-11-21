@@ -22,10 +22,10 @@ typedef enum type_people {
 
 typedef enum master_event {
     OCUPADO, LIMPEZA, MANUTENCAO, FATURACAO, GREACAO_DE_RELATORIOS
-} MASTER_EVENT;
+} TYPE_MASTER_EVENT;
 typedef enum branch_event {
     RESERVADO, LIVRE
-} BRANCH_EVENT;
+} TYPE_BRANCH_EVENT;
 
 typedef enum type_studio {
     T1, T2, T3D, SUITE, SUITEPRESIDENCIAL
@@ -74,27 +74,27 @@ typedef struct master_events {
     PEOPLE people;
     unsigned duration;
     PRICE price;
-    MASTER_EVENT *mevent;
+    TYPE_MASTER_EVENT mevent;
     struct master_events *pnext;
-} MEVENTS;
+} MASTER_EVENTS;
 
 typedef struct branch_events {
     PEOPLE people;
     unsigned duration;
     PRICE price;
-    BRANCH_EVENT *bevent;
+    TYPE_MASTER_EVENT bevent;
     struct branch_eventos *pnext;
-} BEVENTS;
+} BRANCH_EVENTS;
 
 typedef struct master_calendar {
     DATE date;
-    MEVENTS *master_event;
+    MASTER_EVENTS *master_event;
 } MASTER_CALENDAR;
 
 typedef struct branch_calendar {
     DATE date;
     PLATFORM platform;
-    BEVENTS *branch_event;
+    BRANCH_EVENTS *branch_event;
 } BRANCH_CALENDAR;
 
 typedef struct studios {
@@ -121,7 +121,7 @@ typedef struct buildings {
 
 typedef struct history {
     PEOPLE *people;
-    MEVENTS *events;
+    MASTER_EVENTS *events;
 } HISTORY;
 
 
@@ -136,7 +136,7 @@ typedef struct history {
 #include <errno.h>
 #include <unistd.h>
 
-
+#include "../components/people/people.h"
 #include "../components/enum/enum.h"
 #include "../components/date/date.h"
 #include"../components/location/location.h"

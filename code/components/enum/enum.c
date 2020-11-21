@@ -22,7 +22,7 @@ char *strTypeStudio(TYPE_STUDIO ts) {
     }
 }
 
-char* strPlatform(PLATFORM platform){
+char *strPlatform(PLATFORM platform) {
     switch (platform) {
         case AIRPlaces:
             return "AIRPlaces";
@@ -32,6 +32,17 @@ char* strPlatform(PLATFORM platform){
             return "AisBnD";
         case AisBnE:
             return "AisBnE";
+        default:
+            return "Nao existente";
+    }
+}
+
+char *strTypePeople(TYPE_PEOPLE typePeople) {
+    switch (typePeople) {
+        case HOSPEDE:
+            return "HOSPEDE";
+        case EMPREGADO:
+            return "EMPREGADO";
         default:
             return "Nao existente";
     }
