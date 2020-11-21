@@ -19,6 +19,7 @@ int main(void) {
     add_branch_calendar(&buildings->studios[0], date1, (PLATFORM) AisBnE);
     print_branch_calendar(&buildings->studios[0]);
 
+
     add_master_calendar(&buildings->studios[0], date1);
     print_master_calendar(&buildings->studios[0]);
 
