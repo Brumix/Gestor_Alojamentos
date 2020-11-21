@@ -277,6 +277,33 @@ code/components/location/location.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.s
 .PHONY : code/components/location/location.c.s
 
+code/components/master_calendar/master_calendar.obj: code/components/master_calendar/master_calendar.c.obj
+
+.PHONY : code/components/master_calendar/master_calendar.obj
+
+# target to build an object file
+code/components/master_calendar/master_calendar.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.obj
+.PHONY : code/components/master_calendar/master_calendar.c.obj
+
+code/components/master_calendar/master_calendar.i: code/components/master_calendar/master_calendar.c.i
+
+.PHONY : code/components/master_calendar/master_calendar.i
+
+# target to preprocess a source file
+code/components/master_calendar/master_calendar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.i
+.PHONY : code/components/master_calendar/master_calendar.c.i
+
+code/components/master_calendar/master_calendar.s: code/components/master_calendar/master_calendar.c.s
+
+.PHONY : code/components/master_calendar/master_calendar.s
+
+# target to generate assembly for a file
+code/components/master_calendar/master_calendar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.s
+.PHONY : code/components/master_calendar/master_calendar.c.s
+
 code/components/studios/studios.obj: code/components/studios/studios.c.obj
 
 .PHONY : code/components/studios/studios.obj
@@ -355,6 +382,9 @@ help:
 	@echo ... code/components/location/location.obj
 	@echo ... code/components/location/location.i
 	@echo ... code/components/location/location.s
+	@echo ... code/components/master_calendar/master_calendar.obj
+	@echo ... code/components/master_calendar/master_calendar.i
+	@echo ... code/components/master_calendar/master_calendar.s
 	@echo ... code/components/studios/studios.obj
 	@echo ... code/components/studios/studios.i
 	@echo ... code/components/studios/studios.s

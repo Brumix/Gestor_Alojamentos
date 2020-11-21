@@ -101,12 +101,12 @@ typedef struct studios {
     TYPE_STUDIO typeStudio;
     unsigned short capacity;
     unsigned short num_door;
+    unsigned int number_branch;
     unsigned int sizeArrayBranch;
     unsigned int sizeArrayMaster;
-    unsigned int number_branch;
     unsigned int number_master;
-    MASTER_CALENDAR *master_calendar;
     BRANCH_CALENDAR *branch_calendar;
+    MASTER_CALENDAR *master_calendar;
 } STUDIOS;
 
 typedef struct buildings {
@@ -140,6 +140,7 @@ typedef struct history {
 
 #include "../components/enum/enum.h"
 #include "../components/date/date.h"
+#include "../components/master_calendar/master_calendar.h"
 #include "../components/branch_calendar/branch_calendar.h"
 #include "../components/studios/studios.h"
 #include"../components/location/location.h"

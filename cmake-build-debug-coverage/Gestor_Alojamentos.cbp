@@ -104,6 +104,12 @@
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.h">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
