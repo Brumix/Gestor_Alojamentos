@@ -73,7 +73,7 @@ typedef struct master_events {
     PLATFORM platform;
     PEOPLE people;
     unsigned duration;
-    PRICE price;
+    float price;
     TYPE_MASTER_EVENT mevent;
     struct master_events *pnext;
 } MASTER_EVENTS;
@@ -81,9 +81,9 @@ typedef struct master_events {
 typedef struct branch_events {
     PEOPLE people;
     unsigned duration;
-    PRICE price;
-    TYPE_MASTER_EVENT bevent;
-    struct branch_eventos *pnext;
+    float price;
+    TYPE_BRANCH_EVENT bevent;
+    struct branch_events *next;
 } BRANCH_EVENTS;
 
 typedef struct master_calendar {
@@ -113,7 +113,7 @@ typedef struct buildings {
     char *name;
     LOCATION location;
     unsigned int num_studios;
-   unsigned int sizeArray;
+    unsigned int sizeArray;
     STUDIOS *studios;
     struct buildings *next;
 } BUILDINGS;
@@ -135,6 +135,7 @@ typedef struct history {
 #include <stdlib.h>
 #include <errno.h>
 #include <unistd.h>
+
 
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"

@@ -17,15 +17,20 @@ int main(void) {
     DATE date1 = add_date(12, 23, 4, 12, 2002);
 
     add_branch_calendar(&buildings->studios[0], date1, (PLATFORM) AisBnE);
-    print_branch_calendar(&buildings->studios[0]);
+    // print_branch_calendar(&buildings->studios[0]);
 
     add_master_calendar(&buildings->studios[0], date1);
-    print_master_calendar(&buildings->studios[0]);
+    // print_master_calendar(&buildings->studios[0]);
 
-    print_building_all(buildings);
-
+    // print_building_all(buildings);
 
     PEOPLE people = add_people(12, "Bruno Pereira", HOSPEDE);
-    print_people(people);
+
+    BRANCH_EVENTS *branchEvents = buildings->studios[0].branch_calendar[0].branch_event;
+    add_branch_event(&branchEvents, people, 12, 10, RESERVADO);
+    add_branch_event(&branchEvents, people, 123, 230, LIVRE);
+    print_branch_events(branchEvents);
+
     return 0;
 }
+

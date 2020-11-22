@@ -47,3 +47,32 @@ char *strTypePeople(TYPE_PEOPLE typePeople) {
             return "Nao existente";
     }
 }
+
+char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent) {
+    switch (typeBranchEvent) {
+        case LIVRE:
+            return "LIVRE";
+        case RESERVADO:
+            return "RESERVADO";
+        default:
+            return "Nao existente";
+    }
+}
+
+char *strMasterEvent(TYPE_MASTER_EVENT typeMasterEvent) {
+    switch (typeMasterEvent) {
+        case OCUPADO:
+            return "OCUPADO";
+        case LIMPEZA:
+            return "LIMPEZA";
+        case MANUTENCAO:
+            return "MANUTENCAO";
+        case FATURACAO:
+            return "FATURACAO";
+        case GREACAO_DE_RELATORIOS:
+            return "GREACAO_DE_RELATORIOS";
+        default:
+            return "Nao existente";
+    }
+}
+

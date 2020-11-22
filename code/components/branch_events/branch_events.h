@@ -8,7 +8,9 @@
 #include "../../main/structures.h"
 
 
-void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned duration, PRICE price,
+void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned duration, float price,
                       TYPE_BRANCH_EVENT branchEvent);
+
+void print_branch_events(BRANCH_EVENTS *branchEvents);
 
 #endif //GESTOR_ALOJAMENTOS_BRANCH_EVENTS_H

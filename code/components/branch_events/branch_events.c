@@ -5,7 +5,7 @@
 #include "branch_events.h"
 
 
-void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned duration, PRICE price,
+void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned duration, float price,
                       TYPE_BRANCH_EVENT branchEvent) {
     BRANCH_EVENTS *temp = (BRANCH_EVENTS *) malloc(sizeof(BRANCH_EVENTS));
     if (temp == NULL) {
@@ -13,10 +13,21 @@ void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned dur
         exit(-1);
     }
     temp->people = people;
-    temp->price = price;
     temp->duration = duration;
-    temp->bevent = (TYPE_MASTER_EVENT) branchEvent;
-    temp->pnext = (struct branch_eventos *) *pBranchEvents;
+    temp->price = price;
+    temp->bevent = branchEvent;
+    temp->next = *pBranchEvents;
     *pBranchEvents = temp;
+}
 
+void print_branch_events(BRANCH_EVENTS *branchEvents) {
+    BRANCH_EVENTS *curent = branchEvents;
+    printf("BRANCH EVENTS\n");
+    while (curent != NULL) {
+        print_people(curent->people);
+        printf("DURACAO: %u\n", curent->duration);
+        printf("PRECO: %.2f\n", curent->price);
+        printf("TIPO DO EVENTO: %s\n", strTypeBranchEvent(curent->bevent));
+        curent = curent->next;
+    }
 }
