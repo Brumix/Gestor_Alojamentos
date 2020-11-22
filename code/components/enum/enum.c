@@ -22,7 +22,7 @@ char *strTypeStudio(TYPE_STUDIO ts) {
     }
 }
 
-char* strPlatform(PLATFORM platform){
+char *strPlatform(PLATFORM platform) {
     switch (platform) {
         case AIRPlaces:
             return "AIRPlaces";
@@ -36,3 +36,43 @@ char* strPlatform(PLATFORM platform){
             return "Nao existente";
     }
 }
+
+char *strTypePeople(TYPE_PEOPLE typePeople) {
+    switch (typePeople) {
+        case HOSPEDE:
+            return "HOSPEDE";
+        case EMPREGADO:
+            return "EMPREGADO";
+        default:
+            return "Nao existente";
+    }
+}
+
+char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent) {
+    switch (typeBranchEvent) {
+        case LIVRE:
+            return "LIVRE";
+        case RESERVADO:
+            return "RESERVADO";
+        default:
+            return "Nao existente";
+    }
+}
+
+char *strMasterEvent(TYPE_MASTER_EVENT typeMasterEvent) {
+    switch (typeMasterEvent) {
+        case OCUPADO:
+            return "OCUPADO";
+        case LIMPEZA:
+            return "LIMPEZA";
+        case MANUTENCAO:
+            return "MANUTENCAO";
+        case FATURACAO:
+            return "FATURACAO";
+        case GREACAO_DE_RELATORIOS:
+            return "GREACAO_DE_RELATORIOS";
+        default:
+            return "Nao existente";
+    }
+}
+

@@ -331,6 +331,33 @@ code/components/master_calendar/master_calendar.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.s
 .PHONY : code/components/master_calendar/master_calendar.c.s
 
+code/components/people/people.obj: code/components/people/people.c.obj
+
+.PHONY : code/components/people/people.obj
+
+# target to build an object file
+code/components/people/people.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj
+.PHONY : code/components/people/people.c.obj
+
+code/components/people/people.i: code/components/people/people.c.i
+
+.PHONY : code/components/people/people.i
+
+# target to preprocess a source file
+code/components/people/people.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.i
+.PHONY : code/components/people/people.c.i
+
+code/components/people/people.s: code/components/people/people.c.s
+
+.PHONY : code/components/people/people.s
+
+# target to generate assembly for a file
+code/components/people/people.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.s
+.PHONY : code/components/people/people.c.s
+
 code/components/studios/studios.obj: code/components/studios/studios.c.obj
 
 .PHONY : code/components/studios/studios.obj
@@ -415,6 +442,9 @@ help:
 	@echo ... code/components/master_calendar/master_calendar.obj
 	@echo ... code/components/master_calendar/master_calendar.i
 	@echo ... code/components/master_calendar/master_calendar.s
+	@echo ... code/components/people/people.obj
+	@echo ... code/components/people/people.i
+	@echo ... code/components/people/people.s
 	@echo ... code/components/studios/studios.obj
 	@echo ... code/components/studios/studios.i
 	@echo ... code/components/studios/studios.s

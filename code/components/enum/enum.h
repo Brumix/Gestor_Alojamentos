@@ -10,6 +10,12 @@
 
 char *strTypeStudio(TYPE_STUDIO ts);
 
-char* strPlatform(PLATFORM platform);
+char *strPlatform(PLATFORM platform);
+
+char *strTypePeople(TYPE_PEOPLE typePeople);
+
+char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent);
+
+char *strMasterEvent(TYPE_MASTER_EVENT typeMasterEvent);
 
 #endif //GESTOR_ALOJAMENTOS_ENUM_H
