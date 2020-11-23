@@ -385,6 +385,33 @@ code/components/people/people.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.s
 .PHONY : code/components/people/people.c.s
 
+code/components/price/price.obj: code/components/price/price.c.obj
+
+.PHONY : code/components/price/price.obj
+
+# target to build an object file
+code/components/price/price.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj
+.PHONY : code/components/price/price.c.obj
+
+code/components/price/price.i: code/components/price/price.c.i
+
+.PHONY : code/components/price/price.i
+
+# target to preprocess a source file
+code/components/price/price.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.i
+.PHONY : code/components/price/price.c.i
+
+code/components/price/price.s: code/components/price/price.c.s
+
+.PHONY : code/components/price/price.s
+
+# target to generate assembly for a file
+code/components/price/price.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.s
+.PHONY : code/components/price/price.c.s
+
 code/components/studios/studios.obj: code/components/studios/studios.c.obj
 
 .PHONY : code/components/studios/studios.obj
@@ -475,6 +502,9 @@ help:
 	@echo ... code/components/people/people.obj
 	@echo ... code/components/people/people.i
 	@echo ... code/components/people/people.s
+	@echo ... code/components/price/price.obj
+	@echo ... code/components/price/price.i
+	@echo ... code/components/price/price.s
 	@echo ... code/components/studios/studios.obj
 	@echo ... code/components/studios/studios.i
 	@echo ... code/components/studios/studios.s

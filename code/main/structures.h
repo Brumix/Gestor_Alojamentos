@@ -66,7 +66,8 @@ typedef struct people {
 } PEOPLE;
 
 typedef struct price {
-    //ver regras
+    char *type;
+    float price;
 } PRICE;
 
 typedef struct master_events {
@@ -99,6 +100,7 @@ typedef struct branch_calendar {
 
 typedef struct studios {
     TYPE_STUDIO typeStudio;
+    char *extra;
     unsigned short capacity;
     unsigned short num_door;
     unsigned int number_branch;
@@ -135,8 +137,10 @@ typedef struct history {
 #include <stdlib.h>
 #include <errno.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 
+#include "../components/price/price.h"
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"
 #include "../components/date/date.h"

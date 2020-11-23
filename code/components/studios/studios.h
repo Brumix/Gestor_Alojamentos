@@ -9,7 +9,7 @@
 #include "../../main/structures.h"
 
 
-void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door);
+void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra);
 
 void print_studio_all(BUILDINGS *buildings);
 

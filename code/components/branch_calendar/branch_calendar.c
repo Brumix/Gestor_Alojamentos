@@ -10,7 +10,7 @@ void add_branch_calendar(STUDIOS *studios, DATE date, PLATFORM platform){
     BRANCH_CALENDAR *temp=(BRANCH_CALENDAR*)malloc(sizeof(BRANCH_CALENDAR));
     if(temp==NULL){
         perror("[ADD BRANCH CALENDAR]");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     temp->date=date;
     temp->platform=platform;
@@ -36,7 +36,7 @@ void resize_branch_calendar(STUDIOS *studios){
                                                                studios->sizeArrayBranch * sizeof(BRANCH_CALENDAR));
         if(studios->branch_calendar==NULL){
             perror("[REALLOC BRANCH CALENDAR]");
-            exit(-1);
+            exit(EXIT_FAILURE);
         }
     }
 }

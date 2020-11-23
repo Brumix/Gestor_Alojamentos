@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   "Gestor_Alojamentos.exe"

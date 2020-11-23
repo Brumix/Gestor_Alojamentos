@@ -6,17 +6,18 @@
 
 
 
-void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door) {
+void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
     resizeStudios(buildings);
     STUDIOS *temp = (STUDIOS *) malloc(sizeof(STUDIOS));
     if (temp == NULL) {
         perror("[ADD STUDIOS]");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
     temp->typeStudio = typeStudio;
     temp->num_door = door;
     temp->capacity = cap;
-    temp->sizeArrayBranch=INICIAL;
+    temp->extra = extra;
+    temp->sizeArrayBranch = INICIAL;
     temp->sizeArrayMaster=INICIAL;
     temp->number_branch=0;
     temp->number_master=0;
@@ -31,9 +32,10 @@ void print_studio_all(BUILDINGS *buildings) {
     printf("ESTUDIOS\n");
     for (int i = 0; i < current->num_studios; i++) {
         STUDIOS *studio = &current->studios[i];
-        printf("TIPO DE ESTUDIO %s\n", strTypeStudio(studio->typeStudio));
-        printf("PORTA %i\n", studio->num_door);
-        printf("CAPACIDADE %i \n", studio->capacity);
+        printf("TIPO DE ESTUDIO: %s\n", strTypeStudio(studio->typeStudio));
+        printf("PORTA: %i\n", studio->num_door);
+        printf("CAPACIDADE: %i \n", studio->capacity);
+        printf("EXTRA: %s \n", studio->extra);
     }
 
 }
@@ -44,7 +46,7 @@ void resizeStudios(BUILDINGS *head) {
         head->studios = realloc(head->studios, head->sizeArray * sizeof(STUDIOS));
         if (head->studios == NULL) {
             perror("[REALLOC STUDIOS]");
-            exit(-1);
+            exit(EXIT_FAILURE);
         }
     }
 

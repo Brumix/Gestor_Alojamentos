@@ -13,7 +13,7 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
     if (temp == NULL) {
         perror("[ADD EDIFICIO]");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
     temp->name = name;
     temp->location = location;
@@ -28,8 +28,8 @@ void print_building_all(BUILDINGS *head) {
     BUILDINGS *curent = head;
     printf("EDIFICIOS\n");
     while (curent != NULL) {
-        printf("%s\n", curent->name);
-        printf("NUMERO DE ESTUDIOS: %i\n",curent->num_studios);
+        printf("NOME: %s\n", curent->name);
+        printf("NUMERO DE ESTUDIOS: %i\n", curent->num_studios);
         print_location(curent->location);
         print_studio_all(curent);
         curent = curent->next;

@@ -128,6 +128,12 @@
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/people/people.h">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/price/price.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/price/price.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>

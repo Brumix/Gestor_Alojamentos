@@ -10,7 +10,7 @@ void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned dur
     BRANCH_EVENTS *temp = (BRANCH_EVENTS *) malloc(sizeof(BRANCH_EVENTS));
     if (temp == NULL) {
         perror("[ADD BRANCH EVENT]");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
     temp->people = people;
     temp->duration = duration;

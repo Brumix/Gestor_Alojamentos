@@ -10,7 +10,7 @@ void add_master_calendar(STUDIOS *studios, DATE date) {
     MASTER_CALENDAR *temp = (MASTER_CALENDAR *) malloc(sizeof(MASTER_CALENDAR));
     if (temp == NULL) {
         perror("[ADD MASTER CALENDAR]");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
     temp->date = date;
     temp->master_event = NULL;
@@ -34,7 +34,7 @@ void resize_master_calendar(STUDIOS *studios) {
                                                                studios->sizeArrayMaster * sizeof(MASTER_CALENDAR));
         if (studios->master_calendar == NULL) {
             perror("[REALLOC MASTER CALENDAR]");
-            exit(-1);
+            exit(EXIT_FAILURE);
         }
     }
 }

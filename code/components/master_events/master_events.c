@@ -10,7 +10,7 @@ void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE p
     MASTER_EVENTS *temp = (MASTER_EVENTS *) malloc(sizeof(MASTER_EVENTS));
     if (temp == NULL) {
         perror("[ADD MASTER EVENT]");
-        exit(-1);
+        exit(EXIT_FAILURE);
     }
     temp->platform = platform;
     temp->people = people;
