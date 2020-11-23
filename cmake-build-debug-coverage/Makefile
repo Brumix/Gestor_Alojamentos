@@ -331,6 +331,33 @@ code/components/master_calendar/master_calendar.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.s
 .PHONY : code/components/master_calendar/master_calendar.c.s
 
+code/components/master_events/master_events.obj: code/components/master_events/master_events.c.obj
+
+.PHONY : code/components/master_events/master_events.obj
+
+# target to build an object file
+code/components/master_events/master_events.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.obj
+.PHONY : code/components/master_events/master_events.c.obj
+
+code/components/master_events/master_events.i: code/components/master_events/master_events.c.i
+
+.PHONY : code/components/master_events/master_events.i
+
+# target to preprocess a source file
+code/components/master_events/master_events.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.i
+.PHONY : code/components/master_events/master_events.c.i
+
+code/components/master_events/master_events.s: code/components/master_events/master_events.c.s
+
+.PHONY : code/components/master_events/master_events.s
+
+# target to generate assembly for a file
+code/components/master_events/master_events.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.s
+.PHONY : code/components/master_events/master_events.c.s
+
 code/components/people/people.obj: code/components/people/people.c.obj
 
 .PHONY : code/components/people/people.obj
@@ -442,6 +469,9 @@ help:
 	@echo ... code/components/master_calendar/master_calendar.obj
 	@echo ... code/components/master_calendar/master_calendar.i
 	@echo ... code/components/master_calendar/master_calendar.s
+	@echo ... code/components/master_events/master_events.obj
+	@echo ... code/components/master_events/master_events.i
+	@echo ... code/components/master_events/master_events.s
 	@echo ... code/components/people/people.obj
 	@echo ... code/components/people/people.i
 	@echo ... code/components/people/people.s

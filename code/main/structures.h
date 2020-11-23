@@ -75,7 +75,7 @@ typedef struct master_events {
     unsigned duration;
     float price;
     TYPE_MASTER_EVENT mevent;
-    struct master_events *pnext;
+    struct master_events *next;
 } MASTER_EVENTS;
 
 typedef struct branch_events {
@@ -142,6 +142,7 @@ typedef struct history {
 #include "../components/date/date.h"
 #include"../components/location/location.h"
 #include "../components/branch_events/branch_events.h"
+#include "../components/master_events/master_events.h"
 #include "../components/master_calendar/master_calendar.h"
 #include "../components/branch_calendar/branch_calendar.h"
 #include "../components/studios/studios.h"

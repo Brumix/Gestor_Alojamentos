@@ -18,7 +18,7 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
     temp->name = name;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
-    temp->num_studios=0;
+    temp->num_studios = 0;
     temp->sizeArray=INICIAL;
     temp->next = *head;
     *head = temp;

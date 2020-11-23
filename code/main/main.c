@@ -11,19 +11,20 @@ int main(void) {
     add_building(&buildings, "Edificio1", loc1);
     add_building(&buildings, "Edificio2", loc2);
 
+
     add_studio(buildings, (TYPE_STUDIO) T2, 12, 1);
     add_studio(buildings, (TYPE_STUDIO) SUITEPRESIDENCIAL, 12, 4);
 
     DATE date1 = add_date(12, 23, 4, 12, 2002);
 
-    add_branch_calendar(&buildings->studios[0], date1, (PLATFORM) AisBnE);
+    add_branch_calendar(&buildings->studios[0], date1, AisBnE);
     // print_branch_calendar(&buildings->studios[0]);
 
 
     add_master_calendar(&buildings->studios[0], date1);
     // print_master_calendar(&buildings->studios[0]);
 
-    // print_building_all(buildings);
+    print_building_all(buildings);
 
     PEOPLE people = add_people(12, "Bruno Pereira", HOSPEDE);
 
@@ -32,6 +33,10 @@ int main(void) {
     add_branch_event(&branchEvents, people, 123, 230, LIVRE);
     print_branch_events(branchEvents);
 
+    MASTER_EVENTS *masterEvents = buildings->studios[0].master_calendar[0].master_event;
+    add_master_event(&masterEvents, AisBnE, people, 45, 23.56, LIMPEZA);
+    add_master_event(&masterEvents, AIRPlaces, people, 73, 786.95, MANUTENCAO);
+    print_master_events(masterEvents);
     return 0;
 }
 
