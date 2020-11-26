@@ -12,6 +12,8 @@
 
 void add_building(BUILDINGS **head, char *name, LOCATION location);
 
+void remove_building(BUILDINGS **head, char *name);
+
 BUILDINGS *create_building(char *name, LOCATION location);
 
 void print_building_all(BUILDINGS *head);

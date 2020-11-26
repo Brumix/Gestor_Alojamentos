@@ -14,6 +14,10 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap
             buildings->num_studios++;
             return;
         }
+        if (buildings->studios[i].num_door == door) {
+            printf("[ESTUDIO EXISTENTE]\n");
+            return;
+        }
         if (buildings->studios[i].num_door > door) {
             shift_right_array(buildings->studios, i, temp, buildings->num_studios);
             buildings->num_studios++;

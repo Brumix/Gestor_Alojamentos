@@ -29,7 +29,8 @@ void print_array(int *a) {
 
 
 int main(void) {
-    clock_t begin = clock();
+    clock_t time[2];
+    time[0] = clock();
 
     printf("GESTOR ALOJAMENTOS\n\n");
 
@@ -41,7 +42,9 @@ int main(void) {
     add_building(&buildings, "D", loc2);
     add_building(&buildings, "A", loc2);
     add_building(&buildings, "C", loc1);
-    // print_building_all(buildings);
+
+    remove_building(&buildings, "D");
+    print_building_all(buildings);
 
 
     add_studio(buildings, (TYPE_STUDIO) T2, 12, 3, "nada");
@@ -52,7 +55,7 @@ int main(void) {
     delete_studio(buildings, 1);
     delete_studio(buildings, 4);
 
-    print_studio_all(buildings);
+    // print_studio_all(buildings);
 
     DATE date1 = add_date(12, 23, 4, 12, 2002);
 
@@ -91,8 +94,8 @@ int main(void) {
     //  printf("%.2f\n", calculate_price(price, branchEvents->price, 2, "zona", "nada"));
 
 
-    clock_t end = clock();
-    printf("Time elpased is %.4f seconds", (double) (end - begin) / CLOCKS_PER_SEC);
+    time[1] = clock();
+    printf("Time elpased is %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
 

@@ -34,10 +34,27 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
             current->next = temp;
             return;
         }
-
         current = current->next;
     }
+}
 
+void remove_building(BUILDINGS **head, char *name) {
+    BUILDINGS *current = *head;
+    if (strcmp(current->name, name) == 0) {
+        *head = current->next;
+        return;
+    }
+    while (current != NULL) {
+        if (strcmp(current->next->name, name) == 0) {
+            current->next = current->next->next;
+            return;
+        }
+        if (current->next->next == NULL) {
+            printf("[EDIFICIO NAO ENCONTRADO]\n");
+            return;
+        }
+        current = current->next;
+    }
 
 }
 
