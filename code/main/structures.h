@@ -75,7 +75,8 @@ typedef struct master_events {
     PEOPLE people;
     unsigned duration;
     float price;
-    TYPE_MASTER_EVENT mevent;
+    DATE date;
+    TYPE_MASTER_EVENT typeMasterEvent;
     struct master_events *next;
 } MASTER_EVENTS;
 
@@ -87,10 +88,6 @@ typedef struct branch_events {
     struct branch_events *next;
 } BRANCH_EVENTS;
 
-typedef struct master_calendar {
-    DATE date;
-    MASTER_EVENTS *master_event;
-} MASTER_CALENDAR;
 
 typedef struct branch_calendar {
     DATE date;
@@ -105,10 +102,8 @@ typedef struct studios {
     unsigned short num_door;
     unsigned int number_branch;
     unsigned int sizeArrayBranch;
-    unsigned int sizeArrayMaster;
-    unsigned int number_master;
     BRANCH_CALENDAR *branch_calendar;
-    MASTER_CALENDAR *master_calendar;
+    MASTER_EVENTS *masterEvents;
 } STUDIOS;
 
 typedef struct buildings {
@@ -138,6 +133,8 @@ typedef struct history {
 #include <errno.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include <time.h>
+#include <assert.h>
 
 
 #include "../components/price/price.h"
@@ -147,7 +144,6 @@ typedef struct history {
 #include"../components/location/location.h"
 #include "../components/branch_events/branch_events.h"
 #include "../components/master_events/master_events.h"
-#include "../components/master_calendar/master_calendar.h"
 #include "../components/branch_calendar/branch_calendar.h"
 #include "../components/studios/studios.h"
 #include"../components/buildings/buildings.h"

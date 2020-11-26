@@ -32,10 +32,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.h
-../../main/structures.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
-
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_events/master_events.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
@@ -69,6 +65,10 @@ unistd.h
 -
 stdarg.h
 -
+time.h
+-
+assert.h
+-
 ../components/price/price.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/price/price.h
 ../components/people/people.h
@@ -83,8 +83,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
 ../components/master_events/master_events.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_events/master_events.h
-../components/master_calendar/master_calendar.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/master_calendar/master_calendar.h
 ../components/branch_calendar/branch_calendar.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
 ../components/studios/studios.h

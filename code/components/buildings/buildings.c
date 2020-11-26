@@ -4,24 +4,57 @@
 
 #include "buildings.h"
 
-
 void add_building(BUILDINGS **head, char *name, LOCATION location) {
-    if (find_hotel(*head, name) == 1) {
-        printf("[AVISO]:EDIFICIO EXISTENTE: %s\n", name);
+    BUILDINGS *current = *head;
+    BUILDINGS *temp = create_building(name, location);
+    if (current == NULL) {
+        *head = temp;
         return;
     }
+    if (strcmp(current->name, name) == 0) {
+        printf("[EDIFICIO EXISTENTE]\n");
+        return;
+    }
+    if (strcmp(current->name, name) == 1) {
+        temp->next = *head;
+        *head = temp;
+        return;
+    }
+    while (current != NULL) {
+        if (current->next == NULL) {
+            current->next = temp;
+            return;
+        }
+        if (strcmp(current->next->name, name) == 0) {
+            printf("[EDIFICIO EXISTENTE]\n");
+            return;
+        }
+        if (strcmp(current->next->name, name) == 1) {
+            temp->next = current->next;
+            current->next = temp;
+            return;
+        }
+
+        current = current->next;
+    }
+
+
+}
+
+BUILDINGS *create_building(char *name, LOCATION location) {
+
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
     if (temp == NULL) {
-        perror("[ADD EDIFICIO]");
+        perror("[CREATE EDIFICIO]");
         exit(EXIT_FAILURE);
     }
     temp->name = name;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
     temp->num_studios = 0;
-    temp->sizeArray=INICIAL;
-    temp->next = *head;
-    *head = temp;
+    temp->sizeArray = INICIAL;
+    temp->next = NULL;
+    return temp;
 }
 
 void print_building_all(BUILDINGS *head) {
@@ -31,7 +64,6 @@ void print_building_all(BUILDINGS *head) {
         printf("NOME: %s\n", curent->name);
         printf("NUMERO DE ESTUDIOS: %i\n", curent->num_studios);
         print_location(curent->location);
-        print_studio_all(curent);
         curent = curent->next;
     }
 

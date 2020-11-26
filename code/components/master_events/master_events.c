@@ -5,8 +5,15 @@
 #include "master_events.h"
 
 
-void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE people, unsigned duration, float price,
-                      TYPE_MASTER_EVENT masterEvent) {
+void add_master_event(MASTER_EVENTS **head, PLATFORM platform, PEOPLE people, unsigned duration, float price,
+                      TYPE_MASTER_EVENT masterEvent, DATE date) {
+    MASTER_EVENTS *temp = create_master_event(platform, people, duration, price, masterEvent, date);
+    temp->next = *head;
+    *head = temp;
+}
+
+MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE people, unsigned duration, float price,
+                                   TYPE_MASTER_EVENT masterEvent, DATE date) {
     MASTER_EVENTS *temp = (MASTER_EVENTS *) malloc(sizeof(MASTER_EVENTS));
     if (temp == NULL) {
         perror("[ADD MASTER EVENT]");
@@ -16,9 +23,9 @@ void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE p
     temp->people = people;
     temp->duration = duration;
     temp->price = price;
-    temp->mevent = masterEvent;
-    temp->next = *pMasterEvents;
-    *pMasterEvents = temp;
+    temp->typeMasterEvent = masterEvent;
+    temp->date = date;
+    return temp;
 }
 
 
@@ -28,9 +35,10 @@ void print_master_events(MASTER_EVENTS *masterEvents) {
     while (curent != NULL) {
         printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
         print_people(curent->people);
+        print_date(curent->date);
         printf("DURACAO: %u\n", curent->duration);
         printf("PRECO: %.2f\n", curent->price);
-        printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->mevent));
+        printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
         curent = curent->next;
     }
 }

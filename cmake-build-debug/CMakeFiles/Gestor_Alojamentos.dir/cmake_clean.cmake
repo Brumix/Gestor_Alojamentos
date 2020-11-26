@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj"
-  "CMakeFiles/Gestor_Alojamentos.dir/code/components/master_calendar/master_calendar.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj"

@@ -5,27 +5,46 @@
 #include "studios.h"
 
 
-
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
     resizeStudios(buildings);
-    STUDIOS *temp = (STUDIOS *) malloc(sizeof(STUDIOS));
-    if (temp == NULL) {
-        perror("[ADD STUDIOS]");
-        exit(EXIT_FAILURE);
+    STUDIOS temp = create_studio(typeStudio, cap, door, extra);
+    for (int i = 0; i < buildings->sizeArray; ++i) {
+        if (i == buildings->num_studios) {
+            buildings->studios[buildings->num_studios] = temp;
+            buildings->num_studios++;
+            return;
+        }
+        if (buildings->studios[i].num_door > door) {
+            shift_right_array(buildings->studios, i, temp, buildings->num_studios);
+            buildings->num_studios++;
+            return;
+        }
     }
-    temp->typeStudio = typeStudio;
-    temp->num_door = door;
-    temp->capacity = cap;
-    temp->extra = extra;
-    temp->sizeArrayBranch = INICIAL;
-    temp->sizeArrayMaster=INICIAL;
-    temp->number_branch=0;
-    temp->number_master=0;
-    temp->master_calendar = (MASTER_CALENDAR *) malloc(INICIAL * sizeof(MASTER_CALENDAR));
-    temp->branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
-    buildings->studios[buildings->num_studios] = *temp;
-    buildings->num_studios++;
 }
+
+void delete_studio(BUILDINGS *buildings, unsigned short door) {
+    for (int i = 0; i < buildings->num_studios; ++i) {
+        if (buildings->studios[i].num_door == door) {
+            shift_left_array(buildings->studios, i, buildings->num_studios);
+            buildings->num_studios--;
+            return;
+        }
+    }
+    printf("[ESTUDIO NÃO ENCONTRADO]\n");
+}
+
+STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
+    STUDIOS temp;
+    temp.typeStudio = typeStudio;
+    temp.num_door = door;
+    temp.capacity = cap;
+    temp.extra = extra;
+    temp.sizeArrayBranch = INICIAL;
+    temp.number_branch = 0;
+    temp.branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
+    return temp;
+}
+
 
 void print_studio_all(BUILDINGS *buildings) {
     BUILDINGS *current = buildings;
@@ -41,7 +60,7 @@ void print_studio_all(BUILDINGS *buildings) {
 }
 
 void resizeStudios(BUILDINGS *head) {
-    if (head->sizeArray <= head->num_studios * 0.8) {
+    if (head->sizeArray * 0.6 <= head->num_studios) {
         head->sizeArray *= 2;
         head->studios = realloc(head->studios, head->sizeArray * sizeof(STUDIOS));
         if (head->studios == NULL) {
@@ -53,3 +72,21 @@ void resizeStudios(BUILDINGS *head) {
 }
 
 
+void shift_right_array(STUDIOS *a, int index, STUDIOS val, unsigned size) {
+    if (index == size) {
+        a[index] = val;
+        return;
+    }
+    STUDIOS aux = a[index];
+    a[index] = val;
+    shift_right_array(a, index + 1, aux, size);
+}
+
+void shift_left_array(STUDIOS *a, int index, unsigned size) {
+    if (index == size - 1) {
+        a[index].num_door = 0;
+        return;
+    }
+    a[index] = a[index + 1];
+    shift_left_array(a, index + 1, size);
+}

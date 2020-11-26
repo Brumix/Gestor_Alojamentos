@@ -10,7 +10,10 @@
 
 
 void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE people, unsigned duration, float price,
-                      TYPE_MASTER_EVENT masterEvent);
+                      TYPE_MASTER_EVENT masterEvent, DATE date);
+
+MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE people, unsigned duration, float price,
+                                   TYPE_MASTER_EVENT masterEvent, DATE date);
 
 void print_master_events(MASTER_EVENTS *masterEvents);
 

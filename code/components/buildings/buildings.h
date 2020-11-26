@@ -10,8 +10,9 @@
 #include "../location/location.h"
 
 
-
 void add_building(BUILDINGS **head, char *name, LOCATION location);
+
+BUILDINGS *create_building(char *name, LOCATION location);
 
 void print_building_all(BUILDINGS *head);
 

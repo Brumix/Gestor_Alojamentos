@@ -11,9 +11,17 @@
 
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra);
 
+void delete_studio(BUILDINGS *buildings, unsigned short door);
+
+STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra);
+
 void print_studio_all(BUILDINGS *buildings);
 
 void resizeStudios(BUILDINGS *head);
+
+void shift_right_array(STUDIOS *a, int index, STUDIOS val, unsigned size);
+
+void shift_left_array(STUDIOS *a, int index, unsigned size);
 
 char *strTypeStudio(TYPE_STUDIO ts);
 

@@ -53,7 +53,10 @@ float calculate_price(PRICE *price, float baseprice, int argc, ...) {
     va_start(intArgumentPointer, argc);
     for (int i = 0; i < argc; i++) {
         increase = findprice(price, va_arg(intArgumentPointer, char*));
-        finalprice *= increase;
+        if (increase >= 1)
+            finalprice *= increase;
+        else
+            finalprice -= finalprice * increase;
     }
     va_end(intArgumentPointer);
     return finalprice;
