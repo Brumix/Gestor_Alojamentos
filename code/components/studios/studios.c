@@ -8,7 +8,7 @@
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
     resizeStudios(buildings);
     STUDIOS temp = create_studio(typeStudio, cap, door, extra);
-    for (int i = 0; i < buildings->sizeArray; ++i) {
+    for (int i = 0; i < buildings->sizeArray; i++) {
         if (i == buildings->num_studios) {
             buildings->studios[buildings->num_studios] = temp;
             buildings->num_studios++;
@@ -19,7 +19,7 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap
             return;
         }
         if (buildings->studios[i].num_door > door) {
-            shift_right_array(buildings->studios, i, temp, buildings->num_studios);
+            shift_right_studio(buildings->studios, i, temp, buildings->num_studios);
             buildings->num_studios++;
             return;
         }
@@ -27,14 +27,14 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap
 }
 
 void delete_studio(BUILDINGS *buildings, unsigned short door) {
-    for (int i = 0; i < buildings->num_studios; ++i) {
+    for (int i = 0; i < buildings->num_studios; i++) {
         if (buildings->studios[i].num_door == door) {
-            shift_left_array(buildings->studios, i, buildings->num_studios);
+            shift_left_studio(buildings->studios, i, buildings->num_studios);
             buildings->num_studios--;
             return;
         }
     }
-    printf("[ESTUDIO NÃO ENCONTRADO]\n");
+    printf("[ESTUDIO NAO ENCONTRADO]\n");
 }
 
 STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
@@ -46,12 +46,17 @@ STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short
     temp.sizeArrayBranch = INICIAL;
     temp.number_branch = 0;
     temp.branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
+    temp.masterEvents = NULL;
     return temp;
 }
 
 
 void print_studio_all(BUILDINGS *buildings) {
     BUILDINGS *current = buildings;
+    if (current == NULL) {
+        printf("[NAO EXISTE NENHUM ESTUDIO]\n");
+        return;
+    }
     printf("ESTUDIOS\n");
     for (int i = 0; i < current->num_studios; i++) {
         STUDIOS *studio = &current->studios[i];
@@ -76,21 +81,21 @@ void resizeStudios(BUILDINGS *head) {
 }
 
 
-void shift_right_array(STUDIOS *a, int index, STUDIOS val, unsigned size) {
+void shift_right_studio(STUDIOS *a, int index, STUDIOS val, unsigned size) {
     if (index == size) {
         a[index] = val;
         return;
     }
     STUDIOS aux = a[index];
     a[index] = val;
-    shift_right_array(a, index + 1, aux, size);
+    shift_right_studio(a, index + 1, aux, size);
 }
 
-void shift_left_array(STUDIOS *a, int index, unsigned size) {
+void shift_left_studio(STUDIOS *a, int index, unsigned size) {
     if (index == size - 1) {
         a[index].num_door = 0;
         return;
     }
     a[index] = a[index + 1];
-    shift_left_array(a, index + 1, size);
+    shift_left_studio(a, index + 1, size);
 }

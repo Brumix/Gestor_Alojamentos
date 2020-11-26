@@ -19,9 +19,9 @@ void print_studio_all(BUILDINGS *buildings);
 
 void resizeStudios(BUILDINGS *head);
 
-void shift_right_array(STUDIOS *a, int index, STUDIOS val, unsigned size);
+void shift_right_studio(STUDIOS *a, int index, STUDIOS val, unsigned size);
 
-void shift_left_array(STUDIOS *a, int index, unsigned size);
+void shift_left_studio(STUDIOS *a, int index, unsigned size);
 
 char *strTypeStudio(TYPE_STUDIO ts);
 

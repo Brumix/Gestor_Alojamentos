@@ -8,10 +8,12 @@
 #include "../../main/structures.h"
 
 
-void add_branch_event(BRANCH_EVENTS **pBranchEvents, PEOPLE people, unsigned duration, float price,
+void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned duration, float price,
                       TYPE_BRANCH_EVENT branchEvent);
 
-BRANCH_EVENTS *create_branch_event(PEOPLE people, unsigned duration, float price,
+void delete_branch_event(BRANCH_EVENTS **head, DATE date);
+
+BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, float price,
                                    TYPE_BRANCH_EVENT branchEvent);
 
 void print_branch_events(BRANCH_EVENTS *branchEvents);

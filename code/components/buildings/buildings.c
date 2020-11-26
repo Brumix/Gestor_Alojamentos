@@ -38,7 +38,7 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
     }
 }
 
-void remove_building(BUILDINGS **head, char *name) {
+void delete_building(BUILDINGS **head, char *name) {
     BUILDINGS *current = *head;
     if (strcmp(current->name, name) == 0) {
         *head = current->next;
@@ -55,7 +55,6 @@ void remove_building(BUILDINGS **head, char *name) {
         }
         current = current->next;
     }
-
 }
 
 BUILDINGS *create_building(char *name, LOCATION location) {
@@ -75,13 +74,17 @@ BUILDINGS *create_building(char *name, LOCATION location) {
 }
 
 void print_building_all(BUILDINGS *head) {
-    BUILDINGS *curent = head;
+    BUILDINGS *current = head;
+    if (current == NULL) {
+        printf("[NAO EXISTE NENHUM EDIFICIO]\n");
+        return;
+    }
     printf("EDIFICIOS\n");
-    while (curent != NULL) {
-        printf("NOME: %s\n", curent->name);
-        printf("NUMERO DE ESTUDIOS: %i\n", curent->num_studios);
-        print_location(curent->location);
-        curent = curent->next;
+    while (current != NULL) {
+        printf("NOME: %s\n", current->name);
+        printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
+        print_location(current->location);
+        current = current->next;
     }
 
 }

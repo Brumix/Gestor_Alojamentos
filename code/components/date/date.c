@@ -23,24 +23,24 @@ int compare_date(DATE date1, DATE date2) {
         date1.min == date2.min)
         return 0;
     if (date1.Year > date2.Year)
-        return -1;
+        return 1;
     if (date1.Year < date2.Year)
-        return 1;
+        return -1;
     if (date1.month > date2.month)
-        return -1;
+        return 1;
     if (date1.month < date2.month)
-        return 1;
+        return -1;
     if (date1.day > date2.day)
-        return -1;
+        return 1;
     if (date1.day < date2.day)
-        return 1;
+        return -1;
     if (date1.hour > date2.hour)
-        return -1;
+        return 1;
     if (date1.hour < date2.hour)
-        return 1;
-    if (date1.min > date2.min)
         return -1;
-    if (date1.min < date2.min)
+    if (date1.min > date2.min)
         return 1;
+    if (date1.min < date2.min)
+        return -1;
 
 }

@@ -84,13 +84,13 @@ typedef struct branch_events {
     PEOPLE people;
     unsigned duration;
     float price;
+    DATE date;
     TYPE_BRANCH_EVENT bevent;
     struct branch_events *next;
 } BRANCH_EVENTS;
 
 
 typedef struct branch_calendar {
-    DATE date;
     PLATFORM platform;
     BRANCH_EVENTS *branch_event;
 } BRANCH_CALENDAR;

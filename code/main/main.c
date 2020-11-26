@@ -20,13 +20,6 @@ void delete_array(int *a, int index, int size) {
     delete_array(a, index + 1, size);
 }
 
-void print_array(int *a) {
-    for (int i = 0; i < 10; ++i) {
-        printf("%i ", a[i]);
-    }
-    printf("\n");
-}
-
 
 int main(void) {
     clock_t time[2];
@@ -38,13 +31,15 @@ int main(void) {
     LOCATION loc1 = add_location("Rua dos hereois", "34569N", "49657E");
     LOCATION loc2 = add_location("Rua dos animais", "3675455S", "93884O");
 
-    add_building(&buildings, "B", loc1);
-    add_building(&buildings, "D", loc2);
+    add_building(&buildings, "D", loc1);
+    add_building(&buildings, "B", loc2);
     add_building(&buildings, "A", loc2);
     add_building(&buildings, "C", loc1);
 
-    remove_building(&buildings, "D");
-    print_building_all(buildings);
+    //delete_building(&buildings, "D");
+    // delete_building(&buildings, "A");
+
+    // print_building_all(buildings);
 
 
     add_studio(buildings, (TYPE_STUDIO) T2, 12, 3, "nada");
@@ -57,35 +52,51 @@ int main(void) {
 
     // print_studio_all(buildings);
 
-    DATE date1 = add_date(12, 23, 4, 12, 2002);
+    add_branch_calendar(&buildings->studios[0], AisBnE);
+    add_branch_calendar(&buildings->studios[0], AisBnD);
+    add_branch_calendar(&buildings->studios[0], AirBnc);
 
-    add_branch_calendar(&buildings->studios[0], date1, AisBnE);
+    delete_branchCalendar(&buildings->studios[0], AisBnE);
+
     // print_branch_calendar(&buildings->studios[0]);
 
 
     PEOPLE people = add_people(12, "Bruno Pereira", HOSPEDE);
+    DATE date1 = add_date(12, 23, 4, 12, 2002);
+    DATE date2 = add_date(12, 24, 4, 12, 2002);
+    DATE date3 = add_date(12, 24, 4, 6, 2002);
+
 
     BRANCH_EVENTS *branchEvents = buildings->studios[0].branch_calendar[0].branch_event;
-    add_branch_event(&branchEvents, people, 12, 10, RESERVADO);
-    add_branch_event(&branchEvents, people, 123, 230, LIVRE);
-    // print_branch_events(branchEvents);
+    add_branch_event(&branchEvents, people, date1, 12, 10, RESERVADO);
+    add_branch_event(&branchEvents, people, date3, 123, 230, LIVRE);
+    add_branch_event(&branchEvents, people, date1, 123, 230, RESERVADO);
+    add_branch_event(&branchEvents, people, date2, 123, 230, RESERVADO);
+
+    delete_branch_event(&branchEvents, date1);
+
+    //print_branch_events(branchEvents);
 
     MASTER_EVENTS *masterEvents = buildings->studios[0].masterEvents;
-    add_master_event(&masterEvents, AisBnE, people, 45, 23.56, LIMPEZA, date1);
-    add_master_event(&masterEvents, AIRPlaces, people, 73, 786.95, MANUTENCAO, date1);
-    // print_master_events(masterEvents);
+
+    add_master_event(&masterEvents, AisBnD, people, 73, 786.95, MANUTENCAO, date1);
+    add_master_event(&masterEvents, AIRPlaces, people, 45, 23.56, LIMPEZA, date3);
+    add_master_event(&masterEvents, AisBnD, people, 73, 786.95, MANUTENCAO, date1);
+    add_master_event(&masterEvents, AisBnD, people, 73, 786.95, MANUTENCAO, date2);
+
+    delete_master_event(&masterEvents, date3);
+
+    print_master_events(masterEvents);
 
 
-    PRICE *price = createPriceArray();
-    addprice(price, "zona", 1.20);
-    addprice(price, "natal", 1.50);
-    addprice(price, "pascoa", 1.50);
-    addprice(price, "ano novo", 1.70);
-    addprice(price, "familia", 0.10);
+    // PRICE *price = createPriceArray();
+    // addprice(price, "zona", 1.20);
+    // addprice(price, "natal", 1.50);
+    // addprice(price, "pascoa", 1.50);
+    // addprice(price, "ano novo", 1.70);
+    // addprice(price, "familia", 0.10);
 
     //printprice(price);
-
-    // printf("\n");
 
 
     //  printf("%.2f\n", calculate_price(price, masterEvents->price, 2, "zona", "natal"));
