@@ -62,6 +62,9 @@ int main(void) {
 
 
     PEOPLE people = add_people(12, "Bruno Pereira", HOSPEDE);
+    PEOPLE people1 = add_people(113, "Ana", EMPREGADO);
+
+
     DATE date1 = add_date(12, 23, 4, 12, 2002);
     DATE date2 = add_date(12, 24, 4, 12, 2002);
     DATE date3 = add_date(12, 24, 4, 6, 2002);
@@ -86,7 +89,7 @@ int main(void) {
 
     delete_master_event(&masterEvents, date3);
 
-    print_master_events(masterEvents);
+    // print_master_events(masterEvents);
 
 
     // PRICE *price = createPriceArray();
@@ -104,6 +107,14 @@ int main(void) {
     //  printf("%.2f\n", calculate_price(price, branchEvents->price, 3, "zona", "natal", "familia"));
     //  printf("%.2f\n", calculate_price(price, branchEvents->price, 2, "zona", "nada"));
 
+    HISTORY *history = create_hash_table();
+
+    add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
+    add_history(history, AisBnE, people, 67, 12.43, date2, LIMPEZA);
+    add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
+
+
+    print_history(history);
 
     time[1] = clock();
     printf("Time elpased is %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);

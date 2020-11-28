@@ -10,6 +10,7 @@
 **************************************/
 
 #define INICIAL 5
+#define HASHSIZE 20
 
 
 /**************************************
@@ -61,7 +62,7 @@ typedef struct location {
 
 typedef struct people {
     unsigned id;
-    char *nome;
+    char *name;
     TYPE_PEOPLE typePeople;
 } PEOPLE;
 
@@ -115,10 +116,14 @@ typedef struct buildings {
     struct buildings *next;
 } BUILDINGS;
 
+typedef struct hitory_events {
+    PEOPLE people;
+    MASTER_EVENTS *events;
+    struct history_events *next;
+} HYSTORY_EVENTS;
 
 typedef struct history {
-    PEOPLE *people;
-    MASTER_EVENTS *events;
+    HYSTORY_EVENTS *hystoryEvents;
 } HISTORY;
 
 
@@ -145,6 +150,7 @@ typedef struct history {
 #include "../components/branch_events/branch_events.h"
 #include "../components/master_events/master_events.h"
 #include "../components/branch_calendar/branch_calendar.h"
+#include "../components/history/history.h"
 #include "../components/studios/studios.h"
 #include"../components/buildings/buildings.h"
 

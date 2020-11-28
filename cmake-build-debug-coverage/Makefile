@@ -277,6 +277,33 @@ code/components/enum/enum.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.s
 .PHONY : code/components/enum/enum.c.s
 
+code/components/history/history.obj: code/components/history/history.c.obj
+
+.PHONY : code/components/history/history.obj
+
+# target to build an object file
+code/components/history/history.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/history/history.c.obj
+.PHONY : code/components/history/history.c.obj
+
+code/components/history/history.i: code/components/history/history.c.i
+
+.PHONY : code/components/history/history.i
+
+# target to preprocess a source file
+code/components/history/history.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/history/history.c.i
+.PHONY : code/components/history/history.c.i
+
+code/components/history/history.s: code/components/history/history.c.s
+
+.PHONY : code/components/history/history.s
+
+# target to generate assembly for a file
+code/components/history/history.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/history/history.c.s
+.PHONY : code/components/history/history.c.s
+
 code/components/location/location.obj: code/components/location/location.c.obj
 
 .PHONY : code/components/location/location.obj
@@ -463,6 +490,9 @@ help:
 	@echo ... code/components/enum/enum.obj
 	@echo ... code/components/enum/enum.i
 	@echo ... code/components/enum/enum.s
+	@echo ... code/components/history/history.obj
+	@echo ... code/components/history/history.i
+	@echo ... code/components/history/history.s
 	@echo ... code/components/location/location.obj
 	@echo ... code/components/location/location.i
 	@echo ... code/components/location/location.s

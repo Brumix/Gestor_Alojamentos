@@ -7,7 +7,7 @@
 
 PEOPLE add_people(unsigned id, char *nome, TYPE_PEOPLE typePeople) {
     PEOPLE people;
-    people.nome = nome;
+    people.name = nome;
     people.id = id;
     people.typePeople = typePeople;
 
@@ -17,6 +17,6 @@ PEOPLE add_people(unsigned id, char *nome, TYPE_PEOPLE typePeople) {
 void print_people(PEOPLE people) {
     printf("PESSOA\n");
     printf("ID: %u\n", people.id);
-    printf("NOME: %s\n", people.nome);
+    printf("NOME: %s\n", people.name);
     printf("TIPO DE PESSOA: %s\n", strTypePeople(people.typePeople));
 }

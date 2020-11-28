@@ -90,6 +90,7 @@ void print_master_events(MASTER_EVENTS *masterEvents) {
         printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
         curent = curent->next;
     }
+
 }
 
 
