@@ -35,12 +35,9 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
     unsigned index = hash(temp.hystoryEvents->people.name);
 
     if (history[index].hystoryEvents == NULL) {
-        history[index] = temp;
-        return;
+        history[index].hystoryEvents = temp.hystoryEvents;
     } else {
-        ordena_history(&history[index], &temp);
-
-        return;
+        ordena_history_events(&history[index].hystoryEvents, temp.hystoryEvents);
     }
 }
 
@@ -61,14 +58,38 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
     return temp;
 }
 
-void ordena_history(HISTORY *history, HISTORY *history1) {
+void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
-    if (strcmp(history->hystoryEvents->people.name, history1->hystoryEvents->people.name) == 0) {
-       ordena_master_event(&history->hystoryEvents->events, history1->hystoryEvents->events);
-    } else {
-        history->hystoryEvents->events->next = history1->hystoryEvents->events;
+    HYSTORY_EVENTS *current = *history;
+
+    if (strcmp(current->people.name, temp->people.name) == 0) {
+        ordena_master_event(&current->events, temp->events);
+        return;
+    }
+    if (strcmp(current->people.name, temp->people.name) == 1) {
+        temp->next = *history;
+        *history = temp;
+        return;
+    }
+    while (current != NULL) {
+        if (current->next == NULL) {
+            current->next = temp;
+            return;
+        }
+        if (strcmp(current->next->people.name, temp->people.name) == 0) {
+            ordena_master_event(&current->events, temp->events);
+
+            return;
+        }
+        if (strcmp(current->next->people.name, temp->people.name) == 1) {
+            temp->next = current->next;
+            current->next = temp;
+            return;
+        }
+        current = current->next;
     }
 }
+
 
 void print_history(HISTORY *history) {
     HISTORY *current = history;
@@ -76,7 +97,11 @@ void print_history(HISTORY *history) {
     for (int i = 0; i < HASHSIZE; ++i) {
         if (current[i].hystoryEvents == NULL)
             continue;
-        else
-            print_master_events(current[i].hystoryEvents->events);
+        else {
+            while (current[i].hystoryEvents != NULL) {
+                print_master_events(current[i].hystoryEvents->events);
+                current[i].hystoryEvents = current[i].hystoryEvents->next;
+            }
+        }
     }
 }

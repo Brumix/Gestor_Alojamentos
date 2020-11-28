@@ -18,7 +18,7 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
 HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, float price, DATE date,
                           TYPE_MASTER_EVENT typeMasterEvent);
 
-void ordena_history(HISTORY *history, HISTORY *history1);
+void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp);
 
 void print_history(HISTORY *history);
 

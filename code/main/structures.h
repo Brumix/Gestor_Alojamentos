@@ -119,7 +119,7 @@ typedef struct buildings {
 typedef struct hitory_events {
     PEOPLE people;
     MASTER_EVENTS *events;
-    struct history_events *next;
+    struct hitory_events *next;
 } HYSTORY_EVENTS;
 
 typedef struct history {

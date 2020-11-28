@@ -85,3 +85,5 @@ void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size) {
     a[index] = a[index + 1];
     shift_left_branchCalendar(a, index + 1, size);
 }
+
+
