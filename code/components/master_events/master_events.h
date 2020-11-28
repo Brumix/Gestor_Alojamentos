@@ -19,4 +19,6 @@ MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE people, unsigned du
 
 void print_master_events(MASTER_EVENTS *masterEvents);
 
+void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp);
+
 #endif //GESTOR_ALOJAMENTOS_MASTER_EVENTS_H

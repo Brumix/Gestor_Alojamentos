@@ -7,37 +7,9 @@
 
 void add_master_event(MASTER_EVENTS **head, PLATFORM platform, PEOPLE people, unsigned duration, float price,
                       TYPE_MASTER_EVENT masterEvent, DATE date) {
-    MASTER_EVENTS *current = *head;
+
     MASTER_EVENTS *temp = create_master_event(platform, people, duration, price, masterEvent, date);
-    if (current == NULL) {
-        *head = temp;
-        return;
-    }
-    if (compare_date(current->date, date) == 0) {
-        printf("[MASTER EVENT EXISTENTE]\n");
-        return;
-    }
-    if (compare_date(current->date, date) == 1) {
-        temp->next = *head;
-        *head = temp;
-        return;
-    }
-    while (current != NULL) {
-        if (current->next == NULL) {
-            current->next = temp;
-            return;
-        }
-        if (compare_date(current->next->date, date) == 0) {
-            printf("[MASTER EVENT EXISTENTE]\n");
-            return;
-        }
-        if (compare_date(current->next->date, date) == 1) {
-            temp->next = current->next;
-            current->next = temp;
-            return;
-        }
-        current = current->next;
-    }
+    ordena_master_event(head, temp);
 }
 
 void delete_master_event(MASTER_EVENTS **head, DATE date) {
@@ -93,4 +65,36 @@ void print_master_events(MASTER_EVENTS *masterEvents) {
 
 }
 
+void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp) {
+    MASTER_EVENTS *current = *head;
+    if (current == NULL) {
+        *head = temp;
+        return;
+    }
+    if (compare_date(current->date, temp->date) == 0) {
+        printf("[MASTER EVENT EXISTENTE]\n");
+        return;
+    }
+    if (compare_date(current->date, temp->date) == 1) {
+        temp->next = *head;
+        *head = temp;
+        return;
+    }
+    while (current != NULL) {
+        if (current->next == NULL) {
+            current->next = temp;
+            return;
+        }
+        if (compare_date(current->next->date, temp->date) == 0) {
+            printf("[MASTER EVENT EXISTENTE]\n");
+            return;
+        }
+        if (compare_date(current->next->date, temp->date) == 1) {
+            temp->next = current->next;
+            current->next = temp;
+            return;
+        }
+        current = current->next;
+    }
+}
 

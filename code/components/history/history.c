@@ -64,8 +64,7 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
 void ordena_history(HISTORY *history, HISTORY *history1) {
 
     if (strcmp(history->hystoryEvents->people.name, history1->hystoryEvents->people.name) == 0) {
-
-        history->hystoryEvents->events->next = history1->hystoryEvents->events;
+       ordena_master_event(&history->hystoryEvents->events, history1->hystoryEvents->events);
     } else {
         history->hystoryEvents->events->next = history1->hystoryEvents->events;
     }

@@ -87,9 +87,9 @@ int main(void) {
     add_master_event(&masterEvents, AisBnD, people, 73, 786.95, MANUTENCAO, date1);
     add_master_event(&masterEvents, AisBnD, people, 73, 786.95, MANUTENCAO, date2);
 
-    delete_master_event(&masterEvents, date3);
+    //delete_master_event(&masterEvents, date3);
 
-    // print_master_events(masterEvents);
+    //print_master_events(masterEvents);
 
 
     // PRICE *price = createPriceArray();
@@ -109,8 +109,8 @@ int main(void) {
 
     HISTORY *history = create_hash_table();
 
+    add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
-    add_history(history, AisBnE, people, 67, 12.43, date2, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
 
 
