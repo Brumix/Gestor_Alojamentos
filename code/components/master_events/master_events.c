@@ -76,15 +76,18 @@ void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp) {
         return;
     }
     if (compare_date(current->date, temp->date) == 1) {
+
         temp->next = *head;
         *head = temp;
         return;
     }
     while (current != NULL) {
+
         if (current->next == NULL) {
             current->next = temp;
             return;
         }
+
         if (compare_date(current->next->date, temp->date) == 0) {
             printf("[MASTER EVENT EXISTENTE]\n");
             return;
@@ -94,10 +97,7 @@ void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp) {
             current->next = temp;
             return;
         }
-        if (compare_date(current->next->date, temp->date) == -1) {
-            current->next = temp;
-            return;
-        }
+
         current = current->next;
     }
 }

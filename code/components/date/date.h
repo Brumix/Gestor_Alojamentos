@@ -9,7 +9,7 @@
 #include "../../main/structures.h"
 
 
-DATE add_date(unsigned short min, unsigned short hour, unsigned short day, unsigned short month, unsigned short year);
+DATE add_date(unsigned short hour, unsigned short min, unsigned short day, unsigned short month, unsigned short year);
 
 void print_date(DATE date);
 

@@ -4,7 +4,7 @@
 
 #include "date.h"
 
-DATE add_date(unsigned short min, unsigned short hour, unsigned short day, unsigned short month, unsigned short year) {
+DATE add_date(unsigned short hour, unsigned short min, unsigned short day, unsigned short month, unsigned short year) {
     DATE temp;
     temp.min = min;
     temp.hour = hour;
@@ -15,7 +15,7 @@ DATE add_date(unsigned short min, unsigned short hour, unsigned short day, unsig
 }
 
 void print_date(DATE date) {
-    printf("DATE= %u:%u %u/%u/%u\n", date.min, date.hour, date.day, date.month, date.Year);
+    printf("DATE= %u:%u %u/%u/%u\n", date.hour, date.min, date.day, date.month, date.Year);
 }
 
 int compare_date(DATE date1, DATE date2) {
