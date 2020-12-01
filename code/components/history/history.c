@@ -62,7 +62,7 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
 void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
     HYSTORY_EVENTS *current = *history;
-
+    printf("entrei\n");
     printf("AAAAAAAAAAAAAAA--%s,%s\n", current->people.name, temp->people.name);
     if (strcmp(current->people.name, temp->people.name) == 0) {
         ordena_master_event(&current->events, temp->events);

@@ -120,12 +120,10 @@ int main(void) {
 
     // add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
-    print_history(history);
     add_history(history, AisBnE, people1, 67, 12.43, date1, LIMPEZA);
+    add_history(history, AisBnE, people, 12, 12.43, date2, LIMPEZA);
     print_history(history);
     exit(19);
-    add_history(history, AisBnE, people, 12, 12.43, date2, LIMPEZA);
-    // print_history(history);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
 
     print_history(history);
