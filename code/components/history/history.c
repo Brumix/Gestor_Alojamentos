@@ -13,7 +13,6 @@ HISTORY *create_hash_table() {
     }
     for (int i = 0; i < HASHSIZE; i++) {
         history[i].hystoryEvents = NULL;
-
     }
     return history;
 }
@@ -35,6 +34,7 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
     unsigned index = hash(temp.hystoryEvents->people.name);
 
     if (history[index].hystoryEvents == NULL) {
+
         history[index].hystoryEvents = temp.hystoryEvents;
     } else {
         ordena_history_events(&history[index].hystoryEvents, temp.hystoryEvents);
@@ -54,6 +54,7 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
     temp.hystoryEvents->events->date = date;
     temp.hystoryEvents->events->duration = duration;
     temp.hystoryEvents->events->price = price;
+    temp.hystoryEvents->events->next = NULL;
     temp.hystoryEvents->next = NULL;
     return temp;
 }
@@ -62,11 +63,13 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
     HYSTORY_EVENTS *current = *history;
 
+    printf("AAAAAAAAAAAAAAA--%s,%s\n", current->people.name, temp->people.name);
     if (strcmp(current->people.name, temp->people.name) == 0) {
         ordena_master_event(&current->events, temp->events);
         return;
     }
     if (strcmp(current->people.name, temp->people.name) == 1) {
+
         temp->next = *history;
         *history = temp;
         return;
@@ -77,6 +80,7 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
             return;
         }
         if (strcmp(current->next->people.name, temp->people.name) == 0) {
+
             ordena_master_event(&current->events, temp->events);
 
             return;
@@ -93,12 +97,13 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
 void print_history(HISTORY *history) {
     HISTORY *current = history;
-    printf("HISTORY\n");
+    printf(">>>>>>>>>>>>>>>>>>>>>>>>HISTORY\n");
     for (int i = 0; i < HASHSIZE; ++i) {
-        if (current[i].hystoryEvents == NULL)
+        if (current[i].hystoryEvents == NULL) {
             continue;
-        else {
+        } else {
             while (current[i].hystoryEvents != NULL) {
+                printf("%i\n", i);
                 print_master_events(current[i].hystoryEvents->events);
                 current[i].hystoryEvents = current[i].hystoryEvents->next;
             }

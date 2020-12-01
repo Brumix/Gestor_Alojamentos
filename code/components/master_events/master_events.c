@@ -54,12 +54,12 @@ void print_master_events(MASTER_EVENTS *masterEvents) {
     MASTER_EVENTS *curent = masterEvents;
     printf("MASTER EVENTS\n");
     while (curent != NULL) {
-        printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
+        //printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
         print_people(curent->people);
         print_date(curent->date);
-        printf("DURACAO: %u\n", curent->duration);
-        printf("PRECO: %.2f\n", curent->price);
-        printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
+        // printf("DURACAO: %u\n", curent->duration);
+        //printf("PRECO: %.2f\n", curent->price);
+        //printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
         curent = curent->next;
     }
 
@@ -91,6 +91,10 @@ void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp) {
         }
         if (compare_date(current->next->date, temp->date) == 1) {
             temp->next = current->next;
+            current->next = temp;
+            return;
+        }
+        if (compare_date(current->next->date, temp->date) == -1) {
             current->next = temp;
             return;
         }
