@@ -22,7 +22,7 @@ unsigned short hash(char *name) {
     unsigned int value = 0;
     for (int i = 0; i < length; ++i) {
         value += name[i];
-        value = (value * name[i]) % HASHSIZE;
+        value = (value * name[i] * 2) % HASHSIZE;
     }
     return value;
 }

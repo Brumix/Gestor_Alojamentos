@@ -92,15 +92,14 @@ int main(void) {
 
 
     HISTORY *history = create_hash_table();
-
     add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
     print_history(history);
-
     printf("[PERGUINTAR AO STOR BUGG DO PRINTF_HISTORY]\n");
+
     time[1] = clock();
     printf("Time elpased is %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
