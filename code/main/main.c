@@ -30,7 +30,7 @@ int main(void) {
     //delete_building(&buildings, "D");
     // delete_building(&buildings, "A");
 
-    print_building_all(buildings);
+    //print_building_all(buildings);
 
 
     add_studio(buildings, (TYPE_STUDIO) T2, 12, 3, "nada");
@@ -111,7 +111,7 @@ int main(void) {
 
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
-    //print_history(history);
+    print_history(history);
     printf("\n\n");
 
     format_time();
