@@ -31,11 +31,17 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
     unsigned index = hash(temp.hystoryEvents->people.name);
 
     if (current[index].hystoryEvents == NULL) {
-
         current[index].hystoryEvents = temp.hystoryEvents;
     } else {
         ordena_history_events(&current[index].hystoryEvents, temp.hystoryEvents);
     }
+}
+
+void delete_history_event(HISTORY *history,char *name,DATE date){
+HISTORY*current=history;
+unsigned index=hash(name);
+EXISTENTE(current[index].hystoryEvents==NULL,"[PESSOA NAO ENCONTRADA]");
+remove_history_events(&current[index].hystoryEvents,name,date);
 }
 
 
@@ -91,7 +97,38 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
     }
 }
 
-void print_history(HISTORY *history) {
+
+void remove_history_events(HYSTORY_EVENTS **history, char *name,DATE date) {
+    HYSTORY_EVENTS *current = *history;
+    if (strcmp(current->people.name, name) == 0) {
+        if(current->events->next==NULL)
+        *history = current->next;
+        else
+            delete_master_event(&current->events,date);
+        return;
+    }
+    while (current != NULL) {
+        if (strcmp(current->next->people.name, name) == 0) {
+            if (current->next==NULL)
+            current->next = current->next->next;
+            else
+                delete_master_event(&current->next->events,date);
+            return;
+        }
+        EXISTENTE(current->next->next == NULL, "[EDIFICIO NAO ENCONTRADO]");
+
+        current = current->next;
+    }
+}
+
+
+
+
+
+
+
+
+        void print_history(HISTORY *history) {
     HISTORY *current = history;
 
     for (int i = 0; i < HASHSIZE; ++i) {

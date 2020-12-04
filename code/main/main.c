@@ -92,9 +92,11 @@ int main(void) {
 
 
     HISTORY *history = create_hash_table();
+    delete_history_event(history,"joao",date1);
     add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date1, LIMPEZA);
+
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
     print_history(history);
