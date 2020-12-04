@@ -14,10 +14,7 @@ void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned d
         *head = temp;
         return;
     }
-    if (compare_date(current->date, date) == 0) {
-        printf("[BRANCH EVENT EXISTENTE]\n");
-        return;
-    }
+    EXISTENTE(compare_date(current->date, date) == 0, "[BRANCH EVENT EXISTENTE]");
     if (compare_date(current->date, date) == 1) {
         temp->next = *head;
         *head = temp;
@@ -28,10 +25,8 @@ void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned d
             current->next = temp;
             return;
         }
-        if (compare_date(current->next->date, date) == 0) {
-            printf("[BRANCH EVENT EXISTENTE]\n");
-            return;
-        }
+        EXISTENTE(compare_date(current->next->date, date) == 0, "[BRANCH EVENT EXISTENTE]");
+
         if (compare_date(current->next->date, date) == 1) {
             temp->next = current->next;
             current->next = temp;
@@ -54,10 +49,8 @@ void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
             current->next = current->next->next;
             return;
         }
-        if (current->next->next == NULL) {
-            printf("[BRANCH EVENT NAO ENCONTRADO]\n");
-            return;
-        }
+        EXISTENTE(current->next->next == NULL, "[BRANCH EVENT NAO ENCONTRADO]");
+
         current = current->next;
     }
 }
@@ -66,10 +59,8 @@ void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
 BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, float price,
                                    TYPE_BRANCH_EVENT branchEvent) {
     BRANCH_EVENTS *temp = (BRANCH_EVENTS *) malloc(sizeof(BRANCH_EVENTS));
-    if (temp == NULL) {
-        perror("[CREATE BRANCH EVENT]");
-        exit(EXIT_FAILURE);
-    }
+    ERRORMESSAGE(temp == NULL, "[CREATE BRANCH EVENT]");
+
     temp->people = people;
     temp->date = date;
     temp->duration = duration;
@@ -82,10 +73,8 @@ BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, 
 
 void print_branch_events(BRANCH_EVENTS *branchEvents) {
     BRANCH_EVENTS *current = branchEvents;
-    if (current == NULL) {
-        printf("[NAO EXISTE NENHUM BRANCH EVENT]\n");
-        return;
-    }
+    EXISTENTE(current == NULL, "[NAO EXISTE NENHUM BRANCH EVENT]");
+
     printf("BRANCH EVENTS\n");
     while (current != NULL) {
         print_people(current->people);

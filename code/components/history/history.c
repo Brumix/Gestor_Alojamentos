@@ -7,10 +7,7 @@
 
 HISTORY *create_hash_table() {
     HISTORY *history = malloc(HASHSIZE * sizeof(HISTORY));
-    if (history == NULL) {
-        perror("[CREATE HISTORY]");
-        exit(EXIT_FAILURE);
-    }
+    ERRORMESSAGE(history == NULL, "[CREATE HISTORY]");
     for (int i = 0; i < HASHSIZE; i++) {
         history[i].hystoryEvents = NULL;
     }
@@ -94,18 +91,20 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
     }
 }
 
-
 void print_history(HISTORY *history) {
     HISTORY *current = history;
 
     for (int i = 0; i < HASHSIZE; ++i) {
         if (current[i].hystoryEvents == NULL) {
+            printf("%i--\n", i);
             continue;
         } else {
+            printf("%i", i);
             while (current[i].hystoryEvents != NULL) {
                 print_master_events(current[i].hystoryEvents->events);
                 current[i].hystoryEvents = current[i].hystoryEvents->next;
             }
+            printf("\n");
         }
     }
 }

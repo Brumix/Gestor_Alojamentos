@@ -11,10 +11,8 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
         *head = temp;
         return;
     }
-    if (strcmp(current->name, name) == 0) {
-        printf("[EDIFICIO EXISTENTE]\n");
-        return;
-    }
+    EXISTENTE(strcmp(current->name, name) == 0, "[EDIFICIO EXISTENTE]");
+
     if (strcmp(current->name, name) == 1) {
         temp->next = *head;
         *head = temp;
@@ -25,10 +23,8 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
             current->next = temp;
             return;
         }
-        if (strcmp(current->next->name, name) == 0) {
-            printf("[EDIFICIO EXISTENTE]\n");
-            return;
-        }
+        EXISTENTE(strcmp(current->next->name, name) == 0, "[EDIFICIO EXISTENTE]");
+
         if (strcmp(current->next->name, name) == 1) {
             temp->next = current->next;
             current->next = temp;
@@ -49,10 +45,8 @@ void delete_building(BUILDINGS **head, char *name) {
             current->next = current->next->next;
             return;
         }
-        if (current->next->next == NULL) {
-            printf("[EDIFICIO NAO ENCONTRADO]\n");
-            return;
-        }
+        EXISTENTE(current->next->next == NULL, "[EDIFICIO NAO ENCONTRADO]");
+
         current = current->next;
     }
 }
@@ -60,10 +54,8 @@ void delete_building(BUILDINGS **head, char *name) {
 BUILDINGS *create_building(char *name, LOCATION location) {
 
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
-    if (temp == NULL) {
-        perror("[CREATE EDIFICIO]");
-        exit(EXIT_FAILURE);
-    }
+    ERRORMESSAGE(temp == NULL, "[CREATE EDIFICIO]");
+
     temp->name = name;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
@@ -75,10 +67,8 @@ BUILDINGS *create_building(char *name, LOCATION location) {
 
 void print_building_all(BUILDINGS *head) {
     BUILDINGS *current = head;
-    if (current == NULL) {
-        printf("[NAO EXISTE NENHUM EDIFICIO]\n");
-        return;
-    }
+    EXISTENTE(current == NULL, "[NAO EXISTE NENHUM EDIFICIO]");
+
     printf("EDIFICIOS\n");
     while (current != NULL) {
         printf("NOME: %s\n", current->name);

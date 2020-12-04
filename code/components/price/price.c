@@ -17,10 +17,8 @@ void resizeArray(PRICE *price) {
     if (SIZEARRAY <= POSICIONPRICE * 0.8) {
         SIZEARRAY *= 2;
         price = (PRICE *) realloc(price, SIZEARRAY * sizeof(PRICE));
-        if (price == NULL) {
-            perror("[RESIZE PRICE]");
-            exit(EXIT_FAILURE);
-        }
+        ERRORMESSAGE(price == NULL, "[RESIZE PRICE]");
+
     }
 }
 

@@ -12,6 +12,9 @@
 #define INICIAL 5
 #define HASHSIZE 20
 
+#define ERRORMESSAGE(ARGV, MSG)({if(ARGV){perror(MSG"\n");exit(EXIT_FAILURE);}})
+#define EXISTENTE(ARGV, MSG)({if(ARGV){printf(MSG"\n");return;}})
+
 
 /**************************************
 *************** ENUM *****************

@@ -14,10 +14,8 @@ void add_branch_calendar(STUDIOS *studios, PLATFORM platform) {
             studios->number_branch++;
             return;
         }
-        if (studios->branch_calendar[i].platform == platform) {
-            printf("[BRANCH CALENDAR EXISTENTE]\n");
-            return;
-        }
+        EXISTENTE(studios->branch_calendar[i].platform == platform, "[BRANCH CALENDAR EXISTENTE]");
+
         if (studios->branch_calendar[i].platform > platform) {
             shift_right_branchCalendar(studios->branch_calendar, i, temp, studios->number_branch);
             studios->number_branch++;
@@ -60,10 +58,7 @@ void resize_branch_calendar(STUDIOS *studios){
         studios->sizeArrayBranch *= 2;
         studios->branch_calendar = (BRANCH_CALENDAR *) realloc(studios->branch_calendar,
                                                                studios->sizeArrayBranch * sizeof(BRANCH_CALENDAR));
-        if (studios->branch_calendar == NULL) {
-            perror("[REALLOC BRANCH CALENDAR]");
-            exit(EXIT_FAILURE);
-        }
+        ERRORMESSAGE(studios->branch_calendar == NULL, "[REALLOC BRANCH CALENDAR]");
     }
 }
 
