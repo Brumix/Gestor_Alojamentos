@@ -1,6 +1,16 @@
 #include "structures.h"
 
 
+void format_time() {
+    time_t rawtime;
+    struct tm *timeinfo;
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    printf("[%d %d %d %d:%d:%d]", timeinfo->tm_mday, timeinfo->tm_mon + 1, timeinfo->tm_year + 1900, timeinfo->tm_hour,
+           timeinfo->tm_min, timeinfo->tm_sec);
+}
 
 int main(void) {
     clock_t time[2];
@@ -20,7 +30,7 @@ int main(void) {
     //delete_building(&buildings, "D");
     // delete_building(&buildings, "A");
 
-    // print_building_all(buildings);
+    print_building_all(buildings);
 
 
     add_studio(buildings, (TYPE_STUDIO) T2, 12, 3, "nada");
@@ -89,21 +99,26 @@ int main(void) {
     //  printf("%.2f\n", calculate_price(price, branchEvents->price, 2, "zona", "nada"));
 
 
-
-
     HISTORY *history = create_hash_table();
-    delete_history_event(history,"joao",date1);
+
+    delete_history_event(history, "joao", date1);
     add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date1, LIMPEZA);
 
+    //print_history(history);
+    //todo PERGUINTAR AO STOR BUGG DO PRINTF_HISTORY
+
     add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
     add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
-    print_history(history);
-    printf("[PERGUINTAR AO STOR BUGG DO PRINTF_HISTORY]\n");
+    //print_history(history);
+    printf("\n\n");
 
+    format_time();
+
+    printf("\n\n");
     time[1] = clock();
-    printf("Time elpased is %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);
+    printf("O progama demorou %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
 
