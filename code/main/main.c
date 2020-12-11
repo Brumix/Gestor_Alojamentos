@@ -1,16 +1,6 @@
+
 #include "structures.h"
 
-
-void format_time() {
-    time_t rawtime;
-    struct tm *timeinfo;
-
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-
-    printf("[%d %d %d %d:%d:%d]", timeinfo->tm_mday, timeinfo->tm_mon + 1, timeinfo->tm_year + 1900, timeinfo->tm_hour,
-           timeinfo->tm_min, timeinfo->tm_sec);
-}
 
 int main(void) {
     clock_t time[2];
@@ -38,16 +28,22 @@ int main(void) {
     add_studio(buildings, (TYPE_STUDIO) SUITEPRESIDENCIAL, 12, 4, "terraco");
     add_studio(buildings, (TYPE_STUDIO) SUITEPRESIDENCIAL, 12, 2, "terraco");
 
+    find_studio(buildings, 0, buildings->num_studios, -12);
     delete_studio(buildings, 1);
     delete_studio(buildings, 4);
+
 
     // print_studio_all(buildings);
 
     add_branch_calendar(&buildings->studios[0], AisBnE);
     add_branch_calendar(&buildings->studios[0], AisBnD);
     add_branch_calendar(&buildings->studios[0], AirBnc);
+    add_branch_calendar(&buildings->studios[0], AIRPlaces);
 
-    delete_branchCalendar(&buildings->studios[0], AisBnE);
+    find_branch_calendar(&buildings->studios[0], 0, buildings->studios[0].number_branch, AisBnD);
+
+
+    //delete_branchCalendar(&buildings->studios[0], AisBnE);
 
     // print_branch_calendar(&buildings->studios[0]);
 
@@ -82,44 +78,44 @@ int main(void) {
 
     //print_master_events(masterEvents);
 
-
-    // PRICE *price = createPriceArray();
-    // addprice(price, "zona", 1.20);
-    // addprice(price, "natal", 1.50);
-    // addprice(price, "pascoa", 1.50);
-    // addprice(price, "ano novo", 1.70);
-    // addprice(price, "familia", 0.10);
+    PRICE *price = createPriceArray();
+    addprice(price, "zona", 1.20);
+    addprice(price, "natal", 1.50);
+    addprice(price, "pascoa", 1.50);
+    addprice(price, "ano novo", 1.70);
+    addprice(price, "familia", 0.10);
 
     //printprice(price);
+    printf("[DATE]:CALCULO AUTOMATICO COM A FUNCAO CALCULATE_PRICE\t\"ATOI PARA FLOAT\"\n");
+    DATE natal[2];
+    natal[0] = add_date(00, 00, 20, 12, now().Year);
+    natal[1] = add_date(00, 00, 27, 12, now().Year);
 
 
-    //  printf("%.2f\n", calculate_price(price, masterEvents->price, 2, "zona", "natal"));
-    //  printf("%.2f\n", calculate_price(price, masterEvents->price, 1, "natal"));
-    //  printf("%.2f\n", calculate_price(price, branchEvents->price, 3, "zona", "natal", "familia"));
-    //  printf("%.2f\n", calculate_price(price, branchEvents->price, 2, "zona", "nada"));
+    printf("%.2f\n", calculate_price(price, masterEvents->price, 3, "zona", "natal", "2.3"));
+    //printf("%.2f\n", calculate_price(price, masterEvents->price, 1, "natal"));
+    //printf("%.2f\n", calculate_price(price, branchEvents->price, 3, "zona", "natal", "familia"));
+    //printf("%.2f\n", calculate_price(price, branchEvents->price, 2, "zona", "nada"));
 
 
     HISTORY *history = create_hash_table();
 
-    delete_history_event(history, "joao", date1);
-    add_history(history, AisBnE, people, 67, 12.43, date3, LIMPEZA);
-    add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
-    add_history(history, AisBnE, people1, 67, 12.43, date1, LIMPEZA);
-
+    //delete_history_event(history, "joao", date1);
+    add_history(history, AisBnE, people, 1, 12.43, date3, LIMPEZA);
+    add_history(history, AisBnE, people, 2, 12.43, date1, LIMPEZA);
+    add_history(history, AisBnE, people1, 3, 12.43, date1, LIMPEZA);
+    add_history(history, AisBnE, people, 4, 12.43, date2, LIMPEZA);
+    add_history(history, AisBnE, people1, 5, 12.43, date2, LIMPEZA);
+    add_history(history, AisBnE, people1, 3, 12.43, date1, LIMPEZA);
     //print_history(history);
-    //todo PERGUINTAR AO STOR BUGG DO PRINTF_HISTORY
 
-    add_history(history, AisBnE, people, 12, 12.43, date1, LIMPEZA);
-    add_history(history, AisBnE, people1, 67, 12.43, date2, LIMPEZA);
-    print_history(history);
-    printf("\n\n");
 
-    format_time();
-
-    printf("\n\n");
     time[1] = clock();
     printf("O progama demorou %.4f seconds", (double) (time[1] - time[0]) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
+
+    //todo dar free da memoria no final do pograma
+    //todo prioridade das aplicacoes
 }
 
 

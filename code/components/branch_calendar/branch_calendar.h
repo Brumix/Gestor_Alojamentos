@@ -10,6 +10,8 @@
 
 void add_branch_calendar(STUDIOS *studios, PLATFORM platform);
 
+int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform);
+
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform);
 
 BRANCH_CALENDAR create_branch_calendar(PLATFORM platform);

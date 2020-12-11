@@ -22,8 +22,23 @@ void add_branch_calendar(STUDIOS *studios, PLATFORM platform) {
             return;
         }
     }
-    studios->branch_calendar[studios->number_branch] = temp;
-    studios->number_branch++;
+}
+
+
+int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform) {
+    if (low >= high || high <= low)
+        return -1;
+    int mid = low + (high - low) / 2;
+    if (studios->branch_calendar[mid].platform == platform)
+        return mid;
+    if (studios->branch_calendar[low].platform == platform)
+        return low;
+    if (studios->branch_calendar[high].platform == platform)
+        return high;
+    if (studios->branch_calendar[mid].platform > platform)
+        return find_branch_calendar(studios, low, mid - 1, platform);
+
+    return find_branch_calendar(studios, mid + 1, high, platform);
 }
 
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform) {
@@ -53,7 +68,7 @@ void print_branch_calendar(STUDIOS *studios) {
 
 }
 
-void resize_branch_calendar(STUDIOS *studios){
+void resize_branch_calendar(STUDIOS *studios) {
     if (studios->sizeArrayBranch * 0.6 <= studios->number_branch) {
         studios->sizeArrayBranch *= 2;
         studios->branch_calendar = (BRANCH_CALENDAR *) realloc(studios->branch_calendar,

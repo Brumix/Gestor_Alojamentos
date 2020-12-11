@@ -11,6 +11,8 @@
 
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra);
 
+int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door);
+
 void delete_studio(BUILDINGS *buildings, unsigned short door);
 
 STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra);

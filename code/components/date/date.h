@@ -15,4 +15,6 @@ void print_date(DATE date);
 
 int compare_date(DATE date1, DATE date2);
 
+DATE now();
+
 #endif //GESTOR_ALOJAMENTOS_DATE_H

@@ -48,15 +48,14 @@ MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE people, unsigned du
 
 void print_master_events(MASTER_EVENTS *masterEvents) {
     MASTER_EVENTS *curent = masterEvents;
-    //  printf("MASTER EVENTS\n");
+      printf("MASTER EVENTS\n");
     while (curent != NULL) {
-        //printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
-        // print_people(curent->people);
-        //print_date(curent->date);
-        // printf("DURACAO: %u\n", curent->duration);
-        printf("-- %s", curent->people.name);
-        //printf("PRECO: %.2f\n", curent->price);
-        //printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
+        printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
+        print_people(curent->people);
+        print_date(curent->date);
+        printf("DURACAO: %u\n", curent->duration);
+        printf("PRECO: %.2f\n", curent->price);
+        printf("TIPO DO EVENTO: %s\n", strMasterEvent(curent->typeMasterEvent));
         curent = curent->next;
     }
 

@@ -10,7 +10,7 @@
 **************************************/
 
 #define INICIAL 5
-#define HASHSIZE 20
+#define HASHSIZE 5
 
 #define ERRORMESSAGE(ARGV, MSG)({if(ARGV){perror(MSG"\n");exit(EXIT_FAILURE);}})
 #define EXISTENTE(ARGV, MSG)({if(ARGV){printf(MSG"\n");return;}})
@@ -104,8 +104,8 @@ typedef struct studios {
     char *extra;
     unsigned short capacity;
     unsigned short num_door;
-    unsigned int number_branch;
-    unsigned int sizeArrayBranch;
+    unsigned number_branch;
+    unsigned sizeArrayBranch;
     BRANCH_CALENDAR *branch_calendar;
     MASTER_EVENTS *masterEvents;
 } STUDIOS;
@@ -113,8 +113,8 @@ typedef struct studios {
 typedef struct buildings {
     char *name;
     LOCATION location;
-    unsigned int num_studios;
-    unsigned int sizeArray;
+    unsigned short num_studios;
+    unsigned sizeArray;
     STUDIOS *studios;
     struct buildings *next;
 } BUILDINGS;

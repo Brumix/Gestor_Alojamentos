@@ -43,4 +43,17 @@ int compare_date(DATE date1, DATE date2) {
     if (date1.min < date2.min)
         return -1;
 
+    return EXIT_FAILURE;
+}
+
+
+DATE now() {
+    time_t rawtime;
+    struct tm *timeinfo;
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    DATE now = add_date(timeinfo->tm_min, timeinfo->tm_hour, timeinfo->tm_mday, timeinfo->tm_mon + 1,
+                        timeinfo->tm_year + 1900);
+    return now;
 }

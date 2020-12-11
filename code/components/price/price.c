@@ -41,7 +41,10 @@ float findprice(PRICE *price, char *type) {
         if (strcmp(price[i].type, type) == 0)
             return price[i].price;
     }
-    return 1;
+    printf("type:%s\n", type);
+    float val = atoi(type);
+    printf("%.2f\n", val);
+    return val;
 }
 
 float calculate_price(PRICE *price, float baseprice, int argc, ...) {

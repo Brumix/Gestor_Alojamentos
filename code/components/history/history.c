@@ -6,7 +6,7 @@
 
 
 HISTORY *create_hash_table() {
-    HISTORY *history = malloc(HASHSIZE * sizeof(HISTORY));
+    HISTORY *history = (HISTORY *) malloc(HASHSIZE * sizeof(HISTORY));
     ERRORMESSAGE(history == NULL, "[CREATE HISTORY]");
     for (int i = 0; i < HASHSIZE; i++) {
         history[i].hystoryEvents = NULL;
@@ -30,18 +30,18 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
     HISTORY temp = add_hystory_event(platform, people, duration, price, date, typeMasterEvent);
     unsigned index = hash(temp.hystoryEvents->people.name);
 
-    if (current[index].hystoryEvents == NULL) {
+    if (current[index].hystoryEvents == NULL)
         current[index].hystoryEvents = temp.hystoryEvents;
-    } else {
+    else {
         ordena_history_events(&current[index].hystoryEvents, temp.hystoryEvents);
     }
 }
 
-void delete_history_event(HISTORY *history,char *name,DATE date){
-HISTORY*current=history;
-unsigned index=hash(name);
-EXISTENTE(current[index].hystoryEvents==NULL,"[PESSOA NAO ENCONTRADA]");
-remove_history_events(&current[index].hystoryEvents,name,date);
+void delete_history_event(HISTORY *history, char *name, DATE date) {
+    HISTORY *current = history;
+    unsigned index = hash(name);
+    EXISTENTE(current[index].hystoryEvents == NULL, "[PESSOA NAO ENCONTRADA]");
+    remove_history_events(&current[index].hystoryEvents, name, date);
 }
 
 
@@ -98,21 +98,21 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 }
 
 
-void remove_history_events(HYSTORY_EVENTS **history, char *name,DATE date) {
+void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
     HYSTORY_EVENTS *current = *history;
     if (strcmp(current->people.name, name) == 0) {
-        if(current->events->next==NULL)
-        *history = current->next;
+        if (current->events->next == NULL)
+            *history = current->next;
         else
-            delete_master_event(&current->events,date);
+            delete_master_event(&current->events, date);
         return;
     }
     while (current != NULL) {
         if (strcmp(current->next->people.name, name) == 0) {
-            if (current->next==NULL)
-            current->next = current->next->next;
+            if (current->next == NULL)
+                current->next = current->next->next;
             else
-                delete_master_event(&current->next->events,date);
+                delete_master_event(&current->next->events, date);
             return;
         }
         EXISTENTE(current->next->next == NULL, "[EDIFICIO NAO ENCONTRADO]");
@@ -121,27 +121,18 @@ void remove_history_events(HYSTORY_EVENTS **history, char *name,DATE date) {
     }
 }
 
-
-
-
-
-
-
-
-        void print_history(HISTORY *history) {
+void print_history(HISTORY *history) {
     HISTORY *current = history;
 
-    for (int i = 0; i < HASHSIZE; ++i) {
-        if (current[i].hystoryEvents == NULL) {
-            printf("%i--\n", i);
+    for (int i = 0; i < HASHSIZE; i++) {
+        if (current[i].hystoryEvents == NULL)
             continue;
-        } else {
-            printf("%i", i);
-            while (current[i].hystoryEvents != NULL) {
-                print_master_events(current[i].hystoryEvents->events);
-                current[i].hystoryEvents = current[i].hystoryEvents->next;
+        else {
+            HYSTORY_EVENTS *pHitoryEvents = current[i].hystoryEvents;
+            while (pHitoryEvents != NULL) {
+                print_master_events(pHitoryEvents->events);
+                pHitoryEvents = pHitoryEvents->next;
             }
-            printf("\n");
         }
     }
 }

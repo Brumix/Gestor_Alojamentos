@@ -81,6 +81,23 @@ void resizeStudios(BUILDINGS *head) {
 }
 
 
+int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door) {
+    if (low >= high || high <= low)
+        return -1;
+    int mid = low + (high - low) / 2;
+    if (buildings->studios[mid].num_door == door)
+        return mid;
+    if (buildings->studios[low].num_door == door)
+        return low;
+    if (buildings->studios[high].num_door == door)
+        return high;
+    if (buildings->studios[mid].num_door > door)
+        return find_studio(buildings, low, mid - 1, door);
+
+    return find_studio(buildings, mid + 1, high, door);
+}
+
+
 void shift_right_studio(STUDIOS *a, int index, STUDIOS val, unsigned size) {
     if (index == size) {
         a[index] = val;
