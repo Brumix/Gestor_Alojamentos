@@ -8,7 +8,7 @@
 
 #include "../../main/structures.h"
 
-PEOPLE add_people(unsigned id, char *nome, TYPE_PEOPLE typePeople);
+PEOPLE add_people(char *nome, TYPE_PEOPLE typePeople);
 
 void print_people(PEOPLE people);
 

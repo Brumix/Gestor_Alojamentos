@@ -4,7 +4,15 @@
 
 #include "branch_events.h"
 
-
+/**
+ *  adiciona um branch evento
+ * @param head  lista ligada de um branch event
+ * @param people pessoa a qual realizou o evento
+ * @param date  data do evento
+ * @param duration  duracao do evento
+ * @param price  custo do evento
+ * @param branchEvent  tipo de evento
+ */
 void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned duration, float price,
                       TYPE_BRANCH_EVENT branchEvent) {
     BRANCH_EVENTS *current = *head;
@@ -36,7 +44,11 @@ void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned d
     }
 }
 
-
+/**
+ * apaga um evento
+ * @param head  lista ligada dos eventos
+ * @param date  data do evento
+ */
 void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
     BRANCH_EVENTS *current = *head;
 
@@ -55,7 +67,15 @@ void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
     }
 }
 
-
+/**
+ * criacao do evento
+ * @param people  pessoa que realiza o evento
+ * @param date data do evento
+ * @param duration duracao do evento
+ * @param price  preco do evento
+ * @param branchEvent  tipo do evento
+ * @return  retorma um evento BRANCH_EVENTS
+ */
 BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, float price,
                                    TYPE_BRANCH_EVENT branchEvent) {
     BRANCH_EVENTS *temp = (BRANCH_EVENTS *) malloc(sizeof(BRANCH_EVENTS));
@@ -71,6 +91,10 @@ BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, 
 
 }
 
+/**
+ * imprime o array dos evento de uma dada plataforma
+ * @param branchEvents  lista ligada que quer imprimir
+ */
 void print_branch_events(BRANCH_EVENTS *branchEvents) {
     BRANCH_EVENTS *current = branchEvents;
     EXISTENTE(current == NULL, "[NAO EXISTE NENHUM BRANCH EVENT]");

@@ -5,6 +5,14 @@
 #include "studios.h"
 
 
+/**
+ * adicionar um estudio
+ * @param buildings array de estudios
+ * @param typeStudio tipo de estudios
+ * @param cap capacidade do estudio
+ * @param door numero da porta
+ * @param extra detalhes da poprieadade
+ */
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
     resizeStudios(buildings);
     STUDIOS temp = create_studio(typeStudio, cap, door, extra);

@@ -5,6 +5,10 @@
 #include "history.h"
 
 
+/**
+ * cria uma hash table
+ * @return hashtable
+ */
 HISTORY *create_hash_table() {
     HISTORY *history = (HISTORY *) malloc(HASHSIZE * sizeof(HISTORY));
     ERRORMESSAGE(history == NULL, "[CREATE HISTORY]");
@@ -14,6 +18,11 @@ HISTORY *create_hash_table() {
     return history;
 }
 
+/**
+ * gera um hash a partir de uma string
+ * @param name nome para criar um hash
+ * @return hash
+ */
 unsigned short hash(char *name) {
     int length = strlen(name);
     unsigned int value = 0;
@@ -24,6 +33,16 @@ unsigned short hash(char *name) {
     return value;
 }
 
+/**
+ * adiciona um historial
+ * @param history lista ligada do history
+ * @param platform plataforma do historial
+ * @param people pessoa do historial
+ * @param duration duracao do historial
+ * @param price custo do historial
+ * @param date data do historial
+ * @param typeMasterEvent tipo do historial
+ */
 void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned duration, float price, DATE date,
                  TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY *current = history;
@@ -37,6 +56,12 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned du
     }
 }
 
+/**
+ * apagar um evento
+ * @param history history event
+ * @param name nome do evento a apagar
+ * @param date  data do evento
+ */
 void delete_history_event(HISTORY *history, char *name, DATE date) {
     HISTORY *current = history;
     unsigned index = hash(name);
@@ -45,6 +70,16 @@ void delete_history_event(HISTORY *history, char *name, DATE date) {
 }
 
 
+/**
+ * criar um evento history
+ * @param platform plataforma
+ * @param people pessoa do historial
+ * @param duration duracao do evento
+ * @param price custo do evento
+ * @param date data do evento
+ * @param typeMasterEvent tipo do evento
+ * @return  history event
+ */
 HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, float price, DATE date,
                           TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY temp;
@@ -62,16 +97,20 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
     return temp;
 }
 
+/**
+ * reorganioza o array
+ * @param history lista ligada de historyevents
+ * @param temp historyevent a ordenar
+ */
 void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
     HYSTORY_EVENTS *current = *history;
 
     if (strcmp(current->people.name, temp->people.name) == 0) {
-        ordena_master_event(&current->events, temp->events);
+        ordena_id_history(&current, temp);
         return;
     }
     if (strcmp(current->people.name, temp->people.name) == 1) {
-
         temp->next = *history;
         *history = temp;
         return;
@@ -82,9 +121,7 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
             return;
         }
         if (strcmp(current->next->people.name, temp->people.name) == 0) {
-
-            ordena_master_event(&current->next->events, temp->events);
-
+            ordena_id_history(&current, temp);
             return;
         }
         if (strcmp(current->next->people.name, temp->people.name) == 1) {
@@ -98,6 +135,41 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 }
 
 
+void ordena_id_history(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
+    HYSTORY_EVENTS *current = *history;
+    if (current->people.id > temp->people.id) {
+        temp->next = *history;
+        *history = temp;
+        return;
+    }
+    if (current->people.id == temp->people.id) {
+        ordena_master_event(&current->events, temp->events);
+        return;
+    }
+    while (current != NULL) {
+        if (current->next == NULL) {
+            current->next = temp;
+            return;
+        }
+        if (current->next->people.id == temp->people.id) {
+            ordena_master_event(&current->next->events, temp->events);
+            return;
+        }
+        if (current->next->people.id > temp->people.id) {
+            temp->next = current->next;
+            current->next = temp;
+            return;
+        }
+        current = current->next;
+    }
+}
+
+/**
+ * apagar evento do historico
+ * @param history lista ligada do historial
+ * @param name  nome do historial a apagar
+ * @param date data do historial
+ */
 void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
     HYSTORY_EVENTS *current = *history;
     if (strcmp(current->people.name, name) == 0) {
@@ -121,6 +193,10 @@ void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
     }
 }
 
+/**
+ * imprimir lista ligada history
+ * @param history lista ligada da history
+ */
 void print_history(HISTORY *history) {
     HISTORY *current = history;
 

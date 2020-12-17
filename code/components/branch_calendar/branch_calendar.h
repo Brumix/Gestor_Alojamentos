@@ -8,13 +8,13 @@
 #include "../../main/structures.h"
 
 
-void add_branch_calendar(STUDIOS *studios, PLATFORM platform);
+void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned prioridade);
 
 int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform);
 
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform);
 
-BRANCH_CALENDAR create_branch_calendar(PLATFORM platform);
+BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority);
 
 void print_branch_calendar(STUDIOS *studios);
 

@@ -4,6 +4,13 @@
 
 #include "buildings.h"
 
+
+/**
+ * adiciona um edificio
+ * @param head lista ligada dos edificios
+ * @param name nome do edificio
+ * @param location  localizacao do edificio
+ */
 void add_building(BUILDINGS **head, char *name, LOCATION location) {
     BUILDINGS *current = *head;
     BUILDINGS *temp = create_building(name, location);
@@ -34,6 +41,11 @@ void add_building(BUILDINGS **head, char *name, LOCATION location) {
     }
 }
 
+/**
+ * apaga um edificio
+ * @param head lista ligada dos edificios
+ * @param name nome do edificio que quer apagar
+ */
 void delete_building(BUILDINGS **head, char *name) {
     BUILDINGS *current = *head;
     if (strcmp(current->name, name) == 0) {
@@ -51,6 +63,12 @@ void delete_building(BUILDINGS **head, char *name) {
     }
 }
 
+/**
+ * cria um edifico
+ * @param name  nome do edifico quie quer ligar
+ * @param location localizacao do edifico ligado
+ * @return  um edificio
+ */
 BUILDINGS *create_building(char *name, LOCATION location) {
 
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
@@ -65,6 +83,11 @@ BUILDINGS *create_building(char *name, LOCATION location) {
     return temp;
 }
 
+
+/**
+ * imprime uma lista ligada de um edifico
+ * @param head  cabeca da lista ligada
+ */
 void print_building_all(BUILDINGS *head) {
     BUILDINGS *current = head;
     EXISTENTE(current == NULL, "[NAO EXISTE NENHUM EDIFICIO]");
@@ -80,6 +103,12 @@ void print_building_all(BUILDINGS *head) {
 }
 
 
+/**
+ * identifica se existe ou nao um dado edificio
+ * @param head cabeca da lista ligada dos edificios
+ * @param name  nome do edificios
+ * @return 1(encontrou) ou 0(nao encontrou)
+ */
 short int find_hotel(BUILDINGS *head, char *name) {
     BUILDINGS *current;
     current = head;

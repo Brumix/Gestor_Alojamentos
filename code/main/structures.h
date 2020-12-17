@@ -44,6 +44,10 @@ typedef enum platform {
 ************ STRUCTURES **************
 **************************************/
 
+typedef struct plataforms {
+    PLATFORM platform;
+    unsigned priority;
+} PLATAFORMS;
 
 typedef struct date {
     unsigned short min;
@@ -95,7 +99,7 @@ typedef struct branch_events {
 
 
 typedef struct branch_calendar {
-    PLATFORM platform;
+    PLATAFORMS plataforms;
     BRANCH_EVENTS *branch_event;
 } BRANCH_CALENDAR;
 

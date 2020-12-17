@@ -4,7 +4,11 @@
 
 #include "enum.h"
 
-
+/**
+ * print do enum STUDIO
+ * @param ts emum studio
+ * @return  string
+ */
 char *strTypeStudio(TYPE_STUDIO ts) {
     switch (ts) {
         case T1:
@@ -22,6 +26,11 @@ char *strTypeStudio(TYPE_STUDIO ts) {
     }
 }
 
+/**
+ * print do enum plataforma
+ * @param platform  enum
+ * @return  string
+ */
 char *strPlatform(PLATFORM platform) {
     switch (platform) {
         case AIRPlaces:
@@ -37,6 +46,12 @@ char *strPlatform(PLATFORM platform) {
     }
 }
 
+
+/**
+ * print do enum people
+ * @param typePeople  enum
+ * @return string
+ */
 char *strTypePeople(TYPE_PEOPLE typePeople) {
     switch (typePeople) {
         case HOSPEDE:
@@ -48,6 +63,12 @@ char *strTypePeople(TYPE_PEOPLE typePeople) {
     }
 }
 
+
+/**
+ * print do enum branchevent
+ * @param typeBranchEvent enum
+ * @return string
+ */
 char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent) {
     switch (typeBranchEvent) {
         case LIVRE:
@@ -59,6 +80,11 @@ char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent) {
     }
 }
 
+/**
+ * print do enum Masterevent
+ * @param typeMasterEvent enum
+ * @return string
+ */
 char *strMasterEvent(TYPE_MASTER_EVENT typeMasterEvent) {
     switch (typeMasterEvent) {
         case OCUPADO:
