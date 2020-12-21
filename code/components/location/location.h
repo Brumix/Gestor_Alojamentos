@@ -12,7 +12,7 @@
 
 GPS add_gps(char *lat, char *lon);
 
-LOCATION add_location(char *address, char *lat, char *lon);
+LOCATION add_location(char *address, char *city, char *lat, char *lon);
 
 void print_location(LOCATION loc);
 

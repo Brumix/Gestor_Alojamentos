@@ -13,6 +13,7 @@ int POSICIONPRICE = 0;
  */
 PRICE *createPriceArray() {
     PRICE *price = malloc(INICIAL * sizeof(PRICE));
+    ERRORMESSAGE(price == NULL, "[MALLOC PRICE]");
     return price;
 }
 
@@ -20,12 +21,11 @@ PRICE *createPriceArray() {
  * reajustar o tamanho do array
  * @param price array dos precos
  */
-void resizeArray(PRICE *price) {
-    if (SIZEARRAY <= POSICIONPRICE * 0.8) {
+void resizeArray(PRICE **price) {
+    if (SIZEARRAY * 0.6 <= POSICIONPRICE) {
         SIZEARRAY *= 2;
-        price = (PRICE *) realloc(price, SIZEARRAY * sizeof(PRICE));
+        *price = (PRICE *) realloc(*price, SIZEARRAY * sizeof(PRICE));
         ERRORMESSAGE(price == NULL, "[RESIZE PRICE]");
-
     }
 }
 
@@ -35,8 +35,8 @@ void resizeArray(PRICE *price) {
  * @param type tipo dos precos
  * @param valor percentual do preco
  */
-void addprice(PRICE *array, char *type, float valor) {
-
+void add_price(PRICE *array, char *type, float valor) {
+    resizeArray(&array);
     array[POSICIONPRICE].price = valor;
     array[POSICIONPRICE].type = type;
     POSICIONPRICE++;

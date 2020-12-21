@@ -63,6 +63,7 @@ typedef struct gps {
 } GPS;
 
 typedef struct location {
+    char *city;
     char *address;
     GPS gps;
 } LOCATION;
@@ -72,6 +73,11 @@ typedef struct people {
     char *name;
     TYPE_PEOPLE typePeople;
 } PEOPLE;
+
+typedef struct holidays {
+    char *nome;
+    DATE *date;
+} HOLIDAYS;
 
 typedef struct price {
     char *type;
@@ -153,6 +159,7 @@ typedef struct history {
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"
 #include "../components/date/date.h"
+#include "../components/holidays/holidays.h"
 #include"../components/location/location.h"
 #include "../components/branch_events/branch_events.h"
 #include "../components/master_events/master_events.h"

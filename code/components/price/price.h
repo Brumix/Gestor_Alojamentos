@@ -9,11 +9,13 @@
 
 PRICE *createPriceArray();
 
-void addprice(PRICE *array, char *type, float valor);
+void add_price(PRICE *array, char *type, float valor);
 
 void printprice(PRICE *price);
 
 float findprice(PRICE *price, char *type);
+
+void resizeArray(PRICE **price);
 
 
 float calculate_price(PRICE *price, float baseprice, int argc, ...);

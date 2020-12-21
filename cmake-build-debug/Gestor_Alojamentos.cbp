@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/history/history.h">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/holidays/holidays.c">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
+		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/holidays/holidays.h">
+			<Option target="Gestor_Alojamentos"/>
+		</Unit>
 		<Unit filename="C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/location/location.c">
 			<Option target="Gestor_Alojamentos"/>
 		</Unit>

@@ -304,6 +304,33 @@ code/components/history/history.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/history/history.c.s
 .PHONY : code/components/history/history.c.s
 
+code/components/holidays/holidays.obj: code/components/holidays/holidays.c.obj
+
+.PHONY : code/components/holidays/holidays.obj
+
+# target to build an object file
+code/components/holidays/holidays.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/holidays/holidays.c.obj
+.PHONY : code/components/holidays/holidays.c.obj
+
+code/components/holidays/holidays.i: code/components/holidays/holidays.c.i
+
+.PHONY : code/components/holidays/holidays.i
+
+# target to preprocess a source file
+code/components/holidays/holidays.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/holidays/holidays.c.i
+.PHONY : code/components/holidays/holidays.c.i
+
+code/components/holidays/holidays.s: code/components/holidays/holidays.c.s
+
+.PHONY : code/components/holidays/holidays.s
+
+# target to generate assembly for a file
+code/components/holidays/holidays.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/holidays/holidays.c.s
+.PHONY : code/components/holidays/holidays.c.s
+
 code/components/location/location.obj: code/components/location/location.c.obj
 
 .PHONY : code/components/location/location.obj
@@ -493,6 +520,9 @@ help:
 	@echo ... code/components/history/history.obj
 	@echo ... code/components/history/history.i
 	@echo ... code/components/history/history.s
+	@echo ... code/components/holidays/holidays.obj
+	@echo ... code/components/holidays/holidays.i
+	@echo ... code/components/holidays/holidays.s
 	@echo ... code/components/location/location.obj
 	@echo ... code/components/location/location.i
 	@echo ... code/components/location/location.s

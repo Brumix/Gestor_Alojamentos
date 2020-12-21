@@ -9,8 +9,8 @@ int main(void) {
     printf("GESTOR ALOJAMENTOS\n\n");
 
     BUILDINGS *buildings = NULL;
-    LOCATION loc1 = add_location("Rua dos hereois", "34569N", "49657E");
-    LOCATION loc2 = add_location("Rua dos animais", "3675455S", "93884O");
+    LOCATION loc1 = add_location("Rua dos herois", "Porto", "34569N", "49657E");
+    LOCATION loc2 = add_location("Rua dos animais", "Lisboa", "3675455S", "93884O");
 
     add_building(&buildings, "B", loc2);
     add_building(&buildings, "A", loc2);
@@ -45,7 +45,7 @@ int main(void) {
 
     //delete_branchCalendar(&buildings->studios[0], AisBnE);
 
-    print_branch_calendar(&buildings->studios[0]);
+    //print_branch_calendar(&buildings->studios[0]);
 
 
     PEOPLE people = add_people("joao", HOSPEDE);
@@ -79,18 +79,25 @@ int main(void) {
     //print_master_events(masterEvents);
 
     PRICE *price = createPriceArray();
-    addprice(price, "zona", 1.20);
-    addprice(price, "natal", 1.50);
-    addprice(price, "pascoa", 1.50);
-    addprice(price, "ano novo", 1.70);
-    addprice(price, "familia", 0.10);
+    add_price(price, "zona", 1.20);
+    add_price(price, "natal", 1.50);
+    add_price(price, "pascoa", 1.50);
+    add_price(price, "ano novo", 1.70);
+    add_price(price, "familia", 0.10);
 
-    //printprice(price);
+
+    // printprice(price);
     //  printf("[DATE]:CALCULO AUTOMATICO COM A FUNCAO CALCULATE_PRICE\t\"ATOI PARA FLOAT\"\n");
     DATE natal[2];
     natal[0] = add_date(00, 00, 20, 12, now().Year);
     natal[1] = add_date(00, 00, 27, 12, now().Year);
 
+    HOLIDAYS *holidays = createHolidaysArray();
+    add_holiday(holidays, "NATAL",
+                add_date(00, 00, 20, 12, now().Year),
+                add_date(00, 00, 27, 12, now().Year));
+
+    print_holidays(holidays);
 
     // printf("%.2f\n", calculate_price(price, masterEvents->price, 3, "zona", "natal", "2.3"));
     //printf("%.2f\n", calculate_price(price, masterEvents->price, 1, "natal"));
@@ -124,7 +131,10 @@ int main(void) {
 
     return EXIT_SUCCESS;
 
-    //todo prioridade das aplicacoes
+    // esquema de epocas
+    // geolocalizacao (9)
+    // ficheiros de texto
+
 
 
 }
