@@ -43,10 +43,13 @@ int main(void) {
 
     refresh_master_event(buildings, history,people);
 
-    //print_master_events(buildings->studios[0].masterEvents);
+    print_master_events(buildings->studios[0].masterEvents);
 
-    print_history(history);
+    //print_history(history);
 
+    free(buildings);
+    free(history);
+    free(people);
 
     return EXIT_SUCCESS;
 
