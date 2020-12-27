@@ -43,11 +43,11 @@ unsigned short hash(char *name) {
  * @param date data do historial
  * @param typeMasterEvent tipo do historial
  */
-void add_history(HISTORY *history, PLATFORM platform, PEOPLE people, unsigned duration, float price, DATE date,
+void add_history(HISTORY *history, PLATFORM platform, PEOPLE *people,DATE date_end, float price, DATE date_begin,
                  TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY *current = history;
-    HISTORY temp = add_hystory_event(platform, people, duration, price, date, typeMasterEvent);
-    unsigned index = hash(temp.hystoryEvents->people.name);
+    HISTORY temp = add_hystory_event(platform, people, date_end, price, date_begin, typeMasterEvent);
+    unsigned index = hash(temp.hystoryEvents->people->name);
 
     if (current[index].hystoryEvents == NULL)
         current[index].hystoryEvents = temp.hystoryEvents;
@@ -76,11 +76,11 @@ void delete_history_event(HISTORY *history, char *name, DATE date) {
  * @param people pessoa do historial
  * @param duration duracao do evento
  * @param price custo do evento
- * @param date data do evento
+ * @param date_begin data do evento
  * @param typeMasterEvent tipo do evento
  * @return  history event
  */
-HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, float price, DATE date,
+HISTORY add_hystory_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price, DATE date_begin,
                           TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY temp;
     temp.hystoryEvents = malloc(sizeof(HYSTORY_EVENTS));
@@ -89,8 +89,8 @@ HISTORY add_hystory_event(PLATFORM platform, PEOPLE people, unsigned duration, f
     temp.hystoryEvents->events->people = people;
     temp.hystoryEvents->events->typeMasterEvent = typeMasterEvent;
     temp.hystoryEvents->events->platform = platform;
-    temp.hystoryEvents->events->date = date;
-    temp.hystoryEvents->events->duration = duration;
+   temp.hystoryEvents->events->date_begin = date_begin;
+    temp.hystoryEvents->events->date_end = date_end;
     temp.hystoryEvents->events->price = price;
     temp.hystoryEvents->events->next = NULL;
     temp.hystoryEvents->next = NULL;
@@ -106,11 +106,11 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
     HYSTORY_EVENTS *current = *history;
 
-    if (strcmp(current->people.name, temp->people.name) == 0) {
+    if (strcmp(current->people->name, temp->people->name) == 0) {
         ordena_id_history(&current, temp);
         return;
     }
-    if (strcmp(current->people.name, temp->people.name) == 1) {
+    if (strcmp(current->people->name, temp->people->name) == 1) {
         temp->next = *history;
         *history = temp;
         return;
@@ -120,11 +120,11 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
             current->next = temp;
             return;
         }
-        if (strcmp(current->next->people.name, temp->people.name) == 0) {
+        if (strcmp(current->next->people->name, temp->people->name) == 0) {
             ordena_id_history(&current, temp);
             return;
         }
-        if (strcmp(current->next->people.name, temp->people.name) == 1) {
+        if (strcmp(current->next->people->name, temp->people->name) == 1) {
 
             temp->next = current->next;
             current->next = temp;
@@ -137,12 +137,12 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
 
 void ordena_id_history(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
     HYSTORY_EVENTS *current = *history;
-    if (current->people.id > temp->people.id) {
+    if (current->people->id > temp->people->id) {
         temp->next = *history;
         *history = temp;
         return;
     }
-    if (current->people.id == temp->people.id) {
+    if (current->people->id == temp->people->id) {
         ordena_master_event(&current->events, temp->events);
         return;
     }
@@ -151,11 +151,11 @@ void ordena_id_history(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
             current->next = temp;
             return;
         }
-        if (current->next->people.id == temp->people.id) {
+        if (current->next->people->id == temp->people->id) {
             ordena_master_event(&current->next->events, temp->events);
             return;
         }
-        if (current->next->people.id > temp->people.id) {
+        if (current->next->people->id > temp->people->id) {
             temp->next = current->next;
             current->next = temp;
             return;
@@ -172,7 +172,7 @@ void ordena_id_history(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
  */
 void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
     HYSTORY_EVENTS *current = *history;
-    if (strcmp(current->people.name, name) == 0) {
+    if (strcmp(current->people->name, name) == 0) {
         if (current->events->next == NULL)
             *history = current->next;
         else
@@ -180,7 +180,7 @@ void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
         return;
     }
     while (current != NULL) {
-        if (strcmp(current->next->people.name, name) == 0) {
+        if (strcmp(current->next->people->name, name) == 0) {
             if (current->next == NULL)
                 current->next = current->next->next;
             else
@@ -205,8 +205,10 @@ void print_history(HISTORY *history) {
             continue;
         else {
             HYSTORY_EVENTS *pHitoryEvents = current[i].hystoryEvents;
+            print_people(*pHitoryEvents->people);
             while (pHitoryEvents != NULL) {
                 print_master_events(pHitoryEvents->events);
+                printf("\n");
                 pHitoryEvents = pHitoryEvents->next;
             }
         }

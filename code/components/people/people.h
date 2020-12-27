@@ -8,8 +8,15 @@
 
 #include "../../main/structures.h"
 
-PEOPLE add_people(char *nome, TYPE_PEOPLE typePeople);
+
+void add_people(PEOPLE **people, char *name, TYPE_PEOPLE typePeople);
 
 void print_people(PEOPLE people);
+
+PEOPLE* create_people(char * name,TYPE_PEOPLE typePeople);
+
+void print_all_people(PEOPLE *people);
+
+PEOPLE * find_people(PEOPLE *people,unsigned id);
 
 #endif //GESTOR_ALOJAMENTOS_PEOPLE_H

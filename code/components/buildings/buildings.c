@@ -11,14 +11,15 @@
  * @param name nome do edificio
  * @param location  localizacao do edificio
  */
-void add_building(BUILDINGS **head, char *name, LOCATION location) {
+void add_building(BUILDINGS **head, unsigned index,char *name, float price,LOCATION location) {
     BUILDINGS *current = *head;
-    BUILDINGS *temp = create_building(name, location);
+    BUILDINGS *temp = create_building(index,name, price,location);
     if (current == NULL) {
         *head = temp;
         return;
     }
-    EXISTENTE(strcmp(current->name, name) == 0, "[EDIFICIO EXISTENTE]");
+
+    EXISTENTE(strcmp(current->name, temp->name) == 0, "[EDIFICIO EXISTENTE]");
 
     if (strcmp(current->name, name) == 1) {
         temp->next = *head;
@@ -69,12 +70,13 @@ void delete_building(BUILDINGS **head, char *name) {
  * @param location localizacao do edifico ligado
  * @return  um edificio
  */
-BUILDINGS *create_building(char *name, LOCATION location) {
+BUILDINGS *create_building(unsigned index, char *name,float price, LOCATION location) {
 
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
     ERRORMESSAGE(temp == NULL, "[CREATE EDIFICIO]");
-
+    temp->index=index;
     temp->name = name;
+    temp->price_day=price;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
     temp->num_studios = 0;
@@ -94,8 +96,10 @@ void print_building_all(BUILDINGS *head) {
 
     printf("EDIFICIOS\n");
     while (current != NULL) {
+        printf("INDEX: %u\n",current->index);
         printf("NOME: %s\n", current->name);
         printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
+        printf("PRECO POR DIA: %.2f\n",current->price_day);
         print_location(current->location);
         current = current->next;
     }

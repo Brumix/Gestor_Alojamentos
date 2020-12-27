@@ -12,6 +12,12 @@
 #define INICIAL 5
 #define HASHSIZE 5
 
+#define FILEBUILDINGS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\edificios.csv"
+#define FILESTUDIOS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\estudios.csv"
+#define FILEEVENTS  "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\eventos.csv"
+#define FILEPOLITICS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\politicas.csv"
+#define FILESTUDIO_POLITICS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\estudio_politicas.csv"
+
 #define ERRORMESSAGE(ARGV, MSG)({if(ARGV){perror(MSG"\n");exit(EXIT_FAILURE);}})
 #define EXISTENTE(ARGV, MSG)({if(ARGV){printf(MSG"\n");return;}})
 
@@ -63,7 +69,6 @@ typedef struct gps {
 } GPS;
 
 typedef struct location {
-    char *city;
     char *address;
     GPS gps;
 } LOCATION;
@@ -72,6 +77,7 @@ typedef struct people {
     unsigned id;
     char *name;
     TYPE_PEOPLE typePeople;
+    struct people *next;
 } PEOPLE;
 
 typedef struct holidays {
@@ -86,19 +92,20 @@ typedef struct price {
 
 typedef struct master_events {
     PLATFORM platform;
-    PEOPLE people;
-    unsigned duration;
+    PEOPLE *people;
     float price;
-    DATE date;
+    DATE date_begin;
+    DATE date_end;
     TYPE_MASTER_EVENT typeMasterEvent;
     struct master_events *next;
 } MASTER_EVENTS;
 
 typedef struct branch_events {
-    PEOPLE people;
-    unsigned duration;
+    unsigned id;
+    unsigned people;
     float price;
-    DATE date;
+    DATE date_inicio;
+    DATE date_fim;
     TYPE_BRANCH_EVENT bevent;
     struct branch_events *next;
 } BRANCH_EVENTS;
@@ -111,7 +118,7 @@ typedef struct branch_calendar {
 
 typedef struct studios {
     TYPE_STUDIO typeStudio;
-    char *extra;
+    unsigned area;
     unsigned short capacity;
     unsigned short num_door;
     unsigned number_branch;
@@ -121,8 +128,10 @@ typedef struct studios {
 } STUDIOS;
 
 typedef struct buildings {
+    unsigned index;
     char *name;
     LOCATION location;
+    float price_day;
     unsigned short num_studios;
     unsigned sizeArray;
     STUDIOS *studios;
@@ -130,7 +139,7 @@ typedef struct buildings {
 } BUILDINGS;
 
 typedef struct hitory_events {
-    PEOPLE people;
+    PEOPLE *people;
     MASTER_EVENTS *events;
     struct hitory_events *next;
 } HYSTORY_EVENTS;
@@ -145,6 +154,7 @@ typedef struct history {
 **************************************/
 
 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -153,8 +163,9 @@ typedef struct history {
 #include <stdarg.h>
 #include <time.h>
 #include <assert.h>
+#include <fcntl.h>
 
-
+#include "../components/files/read/read.h"
 #include "../components/price/price.h"
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"
@@ -167,6 +178,7 @@ typedef struct history {
 #include "../components/history/history.h"
 #include "../components/studios/studios.h"
 #include"../components/buildings/buildings.h"
+#include "../components/files/write/write.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_STRUCTURES_H

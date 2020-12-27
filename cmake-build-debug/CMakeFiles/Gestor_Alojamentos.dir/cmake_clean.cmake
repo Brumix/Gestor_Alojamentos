@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/date/date.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/history/history.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/holidays/holidays.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj"

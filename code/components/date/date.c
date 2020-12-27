@@ -75,7 +75,7 @@ DATE now() {
 
     time(&rawtime);
     timeinfo = localtime(&rawtime);
-    DATE now = add_date(timeinfo->tm_min, timeinfo->tm_hour, timeinfo->tm_mday, timeinfo->tm_mon + 1,
+    DATE now = add_date(timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_mday, timeinfo->tm_mon + 1,
                         timeinfo->tm_year + 1900);
     return now;
 }

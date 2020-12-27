@@ -26,9 +26,8 @@ GPS add_gps(char *lat, char *lon) {
  * @param lon longuitude
  * @return localizacao
  */
-LOCATION add_location(char *address, char *city, char *lat, char *lon) {
+LOCATION add_location(char *address, char *lat, char *lon) {
     LOCATION temp;
-    temp.city = city;
     temp.address = address;
     temp.gps = add_gps(lat, lon);
     return temp;
@@ -41,7 +40,6 @@ LOCATION add_location(char *address, char *city, char *lat, char *lon) {
 void print_location(LOCATION loc) {
     printf("LOCALIZACAO:  ");
     printf("MORADA: %s  ", loc.address);
-    printf("CIdade: %s  ", loc.city);
     printf("LATITUDE: %s  ", loc.gps.latitude);
     printf("LONGUITUDE: %s  ", loc.gps.longitude);
     printf("\n");

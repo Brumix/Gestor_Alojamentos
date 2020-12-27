@@ -13,9 +13,9 @@
  * @param door numero da porta
  * @param extra detalhes da poprieadade
  */
-void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
+void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area) {
     resizeStudios(buildings);
-    STUDIOS temp = create_studio(typeStudio, cap, door, extra);
+    STUDIOS temp = create_studio(typeStudio, cap, door, area);
     for (int i = 0; i < buildings->sizeArray; i++) {
         if (i == buildings->num_studios) {
             buildings->studios[buildings->num_studios] = temp;
@@ -45,12 +45,12 @@ void delete_studio(BUILDINGS *buildings, unsigned short door) {
     printf("[ESTUDIO NAO ENCONTRADO]\n");
 }
 
-STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, char *extra) {
+STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area) {
     STUDIOS temp;
     temp.typeStudio = typeStudio;
     temp.num_door = door;
     temp.capacity = cap;
-    temp.extra = extra;
+    temp.area=area;
     temp.sizeArrayBranch = INICIAL;
     temp.number_branch = 0;
     temp.branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
@@ -71,7 +71,7 @@ void print_studio_all(BUILDINGS *buildings) {
         printf("TIPO DE ESTUDIO: %s\n", strTypeStudio(studio->typeStudio));
         printf("PORTA: %i\n", studio->num_door);
         printf("CAPACIDADE: %i \n", studio->capacity);
-        printf("EXTRA: %s \n", studio->extra);
+        printf("EXTRA: %u \n", studio->area);
     }
 
 }

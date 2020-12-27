@@ -64,7 +64,7 @@ float findprice(PRICE *price, char *type) {
             return price[i].price;
     }
     printf("type:%s\n", type);
-    float val = atoi(type);
+    float val = atof(type);
     printf("%.2f\n", val);
     return val;
 }

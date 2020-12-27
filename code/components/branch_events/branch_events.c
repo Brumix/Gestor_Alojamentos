@@ -13,17 +13,18 @@
  * @param price  custo do evento
  * @param branchEvent  tipo de evento
  */
-void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned duration, float price,
-                      TYPE_BRANCH_EVENT branchEvent) {
+void add_branch_event(BRANCH_EVENTS **head, int people, DATE date_inicio, DATE date_fim, float price,
+                      TYPE_BRANCH_EVENT branchEvent,PEOPLE *pPeople) {
     BRANCH_EVENTS *current = *head;
-    BRANCH_EVENTS *temp = create_branch_event(people, date, duration, price, branchEvent);
+    EXISTENTE(find_people(pPeople,people)==NULL,"[PESSOA INEXISTENTE]");
+    BRANCH_EVENTS *temp = create_branch_event(people, date_inicio,date_fim, price, branchEvent);
 
     if (current == NULL) {
         *head = temp;
         return;
     }
-    EXISTENTE(compare_date(current->date, date) == 0, "[BRANCH EVENT EXISTENTE]");
-    if (compare_date(current->date, date) == 1) {
+    EXISTENTE(compare_date(current->date_inicio, date_inicio) == 0, "[BRANCH EVENT EXISTENTE]");
+    if (compare_date(current->date_inicio, date_inicio) == 1) {
         temp->next = *head;
         *head = temp;
         return;
@@ -33,9 +34,9 @@ void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned d
             current->next = temp;
             return;
         }
-        EXISTENTE(compare_date(current->next->date, date) == 0, "[BRANCH EVENT EXISTENTE]");
+        EXISTENTE(compare_date(current->next->date_inicio, date_inicio) == 0, "[BRANCH EVENT EXISTENTE]");
 
-        if (compare_date(current->next->date, date) == 1) {
+        if (compare_date(current->next->date_inicio, date_inicio) == 1) {
             temp->next = current->next;
             current->next = temp;
             return;
@@ -52,12 +53,12 @@ void add_branch_event(BRANCH_EVENTS **head, PEOPLE people, DATE date, unsigned d
 void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
     BRANCH_EVENTS *current = *head;
 
-    if (compare_date(current->date, date) == 0) {
+    if (compare_date(current->date_inicio, date) == 0) {
         *head = current->next;
         return;
     }
     while (current != NULL) {
-        if (compare_date(current->next->date, date) == 0) {
+        if (compare_date(current->next->date_inicio, date) == 0) {
             current->next = current->next->next;
             return;
         }
@@ -76,14 +77,14 @@ void delete_branch_event(BRANCH_EVENTS **head, DATE date) {
  * @param branchEvent  tipo do evento
  * @return  retorma um evento BRANCH_EVENTS
  */
-BRANCH_EVENTS *create_branch_event(PEOPLE people, DATE date, unsigned duration, float price,
+BRANCH_EVENTS *create_branch_event(unsigned people, DATE date_inicio, DATE date_fim, float price,
                                    TYPE_BRANCH_EVENT branchEvent) {
     BRANCH_EVENTS *temp = (BRANCH_EVENTS *) malloc(sizeof(BRANCH_EVENTS));
     ERRORMESSAGE(temp == NULL, "[CREATE BRANCH EVENT]");
 
     temp->people = people;
-    temp->date = date;
-    temp->duration = duration;
+    temp->date_inicio = date_inicio;
+    temp->date_fim = date_fim;
     temp->price = price;
     temp->bevent = branchEvent;
     temp->next = NULL;
@@ -101,9 +102,9 @@ void print_branch_events(BRANCH_EVENTS *branchEvents) {
 
     printf("BRANCH EVENTS\n");
     while (current != NULL) {
-        print_people(current->people);
-        print_date(current->date);
-        printf("DURACAO: %u\n", current->duration);
+       // print_people(current->people);
+       // print_date(current->date);
+       // printf("DURACAO: %u\n", current->duration);
         printf("PRECO: %.2f\n", current->price);
         printf("TIPO DO EVENTO: %s\n", strTypeBranchEvent(current->bevent));
         current = current->next;

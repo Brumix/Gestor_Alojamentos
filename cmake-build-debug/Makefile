@@ -277,6 +277,60 @@ code/components/enum/enum.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/enum/enum.c.s
 .PHONY : code/components/enum/enum.c.s
 
+code/components/files/read/read.obj: code/components/files/read/read.c.obj
+
+.PHONY : code/components/files/read/read.obj
+
+# target to build an object file
+code/components/files/read/read.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.obj
+.PHONY : code/components/files/read/read.c.obj
+
+code/components/files/read/read.i: code/components/files/read/read.c.i
+
+.PHONY : code/components/files/read/read.i
+
+# target to preprocess a source file
+code/components/files/read/read.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.i
+.PHONY : code/components/files/read/read.c.i
+
+code/components/files/read/read.s: code/components/files/read/read.c.s
+
+.PHONY : code/components/files/read/read.s
+
+# target to generate assembly for a file
+code/components/files/read/read.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.s
+.PHONY : code/components/files/read/read.c.s
+
+code/components/files/write/write.obj: code/components/files/write/write.c.obj
+
+.PHONY : code/components/files/write/write.obj
+
+# target to build an object file
+code/components/files/write/write.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.obj
+.PHONY : code/components/files/write/write.c.obj
+
+code/components/files/write/write.i: code/components/files/write/write.c.i
+
+.PHONY : code/components/files/write/write.i
+
+# target to preprocess a source file
+code/components/files/write/write.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.i
+.PHONY : code/components/files/write/write.c.i
+
+code/components/files/write/write.s: code/components/files/write/write.c.s
+
+.PHONY : code/components/files/write/write.s
+
+# target to generate assembly for a file
+code/components/files/write/write.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.s
+.PHONY : code/components/files/write/write.c.s
+
 code/components/history/history.obj: code/components/history/history.c.obj
 
 .PHONY : code/components/history/history.obj
@@ -517,6 +571,12 @@ help:
 	@echo ... code/components/enum/enum.obj
 	@echo ... code/components/enum/enum.i
 	@echo ... code/components/enum/enum.s
+	@echo ... code/components/files/read/read.obj
+	@echo ... code/components/files/read/read.i
+	@echo ... code/components/files/read/read.s
+	@echo ... code/components/files/write/write.obj
+	@echo ... code/components/files/write/write.i
+	@echo ... code/components/files/write/write.s
 	@echo ... code/components/history/history.obj
 	@echo ... code/components/history/history.i
 	@echo ... code/components/history/history.s
