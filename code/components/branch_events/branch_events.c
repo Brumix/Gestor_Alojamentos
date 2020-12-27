@@ -102,11 +102,11 @@ void print_branch_events(BRANCH_EVENTS *branchEvents) {
 
     printf("BRANCH EVENTS\n");
     while (current != NULL) {
-       // print_people(current->people);
-       // print_date(current->date);
-       // printf("DURACAO: %u\n", current->duration);
+       printf("ID:%i\n",current->id);
         printf("PRECO: %.2f\n", current->price);
         printf("TIPO DO EVENTO: %s\n", strTypeBranchEvent(current->bevent));
+        print_date(current->date_inicio);
+        print_date(current->date_fim);
         current = current->next;
     }
 }

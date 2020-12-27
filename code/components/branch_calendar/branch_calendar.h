@@ -8,22 +8,24 @@
 #include "../../main/structures.h"
 
 
-void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned prioridade);
+void add_branch_calendar(STUDIOS *studios,PLATFORM platform,unsigned priority,char *politics);
 
-int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform);
+int find_branch_calendar(STUDIOS *studios, int low, int high,PLATFORM platform);
 
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform);
 
-BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority);
+BRANCH_CALENDAR create_branch_calendar(PLATFORM platform,unsigned priority,char *politics);
 
 void print_branch_calendar(STUDIOS *studios);
 
 void resize_branch_calendar(STUDIOS *studios);
 
-char *strPlatform(PLATFORM platform);
-
 void shift_right_branchCalendar(BRANCH_CALENDAR *a, int index, BRANCH_CALENDAR val, unsigned size);
 
 void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size);
+
+void add_config(CONFIGURATION **pConfiguration,char *name,float value);
+
+void print_config(CONFIGURATION * configuration);
 
 #endif //GESTOR_ALOJAMENTOS_BRANCH_CALENDAR_H

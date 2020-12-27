@@ -138,10 +138,10 @@ void refresh_master_event(BUILDINGS *buildings,HISTORY *history,PEOPLE *pPeople)
                 while (branchEvents != NULL) {
                     if (compare_date(branchEvents->date_inicio, now()) == -1) {
                         PEOPLE *people=find_people(pPeople, branchEvents->people);
-                        add_master_event(&studios[i].masterEvents, branchCalendar[j].plataforms.platform,
+                        add_master_event(&studios[i].masterEvents, branchCalendar[j].platform,
                                          people, branchEvents->date_fim, branchEvents->price, OCUPADO,
                                          branchEvents->date_inicio);
-                        add_history(history,branchCalendar[j].plataforms.platform,people, branchEvents->date_fim, branchEvents->price,
+                        add_history(history,branchCalendar[j].platform,people, branchEvents->date_fim, branchEvents->price,
                                     branchEvents->date_inicio,OCUPADO);
                     }
                     branchEvents = branchEvents->next;

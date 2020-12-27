@@ -10,6 +10,10 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_ca
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.c
+branch_events.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
+
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_events/branch_events.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
@@ -64,10 +68,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/s
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c
-structures.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
-
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 stdio.h
 -
@@ -87,8 +87,6 @@ assert.h
 -
 fcntl.h
 -
-../components/files/read/read.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/files/read/read.h
 ../components/price/price.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/price/price.h
 ../components/people/people.h
@@ -115,4 +113,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/s
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/buildings/buildings.h
 ../components/files/write/write.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/files/write/write.h
+../components/files/read/read.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/files/read/read.h
 

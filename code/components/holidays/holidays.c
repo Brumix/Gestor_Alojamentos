@@ -40,7 +40,6 @@ void resize_holidays(HOLIDAYS **holidays) {
     }
 }
 
-
 void print_holidays(HOLIDAYS *holidays) {
     HOLIDAYS *current = holidays;
     printf("HOLIDAYS\n");

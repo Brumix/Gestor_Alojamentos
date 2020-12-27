@@ -50,10 +50,11 @@ typedef enum platform {
 ************ STRUCTURES **************
 **************************************/
 
-typedef struct plataforms {
-    PLATFORM platform;
-    unsigned priority;
-} PLATAFORMS;
+typedef struct configuration{
+    char *name;
+    float value;
+    struct configuration *next;
+}CONFIGURATION;
 
 typedef struct date {
     unsigned short min;
@@ -112,7 +113,10 @@ typedef struct branch_events {
 
 
 typedef struct branch_calendar {
-    PLATAFORMS plataforms;
+    PLATFORM platform;
+    unsigned priority;
+    char * politics;
+    CONFIGURATION *configuration;
     BRANCH_EVENTS *branch_event;
 } BRANCH_CALENDAR;
 
@@ -165,7 +169,6 @@ typedef struct history {
 #include <assert.h>
 #include <fcntl.h>
 
-#include "../components/files/read/read.h"
 #include "../components/price/price.h"
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"
@@ -179,6 +182,7 @@ typedef struct history {
 #include "../components/studios/studios.h"
 #include"../components/buildings/buildings.h"
 #include "../components/files/write/write.h"
+#include "../components/files/read/read.h"
 
 
 #endif //GESTOR_ALOJAMENTOS_STRUCTURES_H

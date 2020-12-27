@@ -9,18 +9,18 @@
  * @param studios estrutura
  * @param platform  plataforma
  */
-void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned prioridade) {
+void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
     resize_branch_calendar(studios);
-    BRANCH_CALENDAR temp = create_branch_calendar(platform, prioridade);
+    BRANCH_CALENDAR temp = create_branch_calendar(platform, priority, politics);
     for (int i = 0; i < studios->sizeArrayBranch; i++) {
         if (i == studios->number_branch) {
             studios->branch_calendar[studios->number_branch] = temp;
             studios->number_branch++;
             return;
         }
-        EXISTENTE(studios->branch_calendar[i].plataforms.platform == platform, "[BRANCH CALENDAR EXISTENTE]");
+        EXISTENTE(studios->branch_calendar[i].platform == platform, "[BRANCH CALENDAR EXISTENTE]");
 
-        if (studios->branch_calendar[i].plataforms.priority > prioridade) {
+        if (studios->branch_calendar[i].priority > temp.priority) {
             shift_right_branchCalendar(studios->branch_calendar, i, temp, studios->number_branch);
             studios->number_branch++;
             return;
@@ -40,13 +40,13 @@ int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform)
     if (low >= high || high <= low)
         return -1;
     int mid = low + (high - low) / 2;
-    if (studios->branch_calendar[mid].plataforms.platform == platform)
+    if (studios->branch_calendar[mid].platform == platform)
         return mid;
-    if (studios->branch_calendar[low].plataforms.platform == platform)
+    if (studios->branch_calendar[low].platform == platform)
         return low;
-    if (studios->branch_calendar[high].plataforms.platform == platform)
+    if (studios->branch_calendar[high].platform == platform)
         return high;
-    if (studios->branch_calendar[mid].plataforms.platform > platform)
+    if (studios->branch_calendar[mid].platform > platform)
         return find_branch_calendar(studios, low, mid - 1, platform);
 
     return find_branch_calendar(studios, mid + 1, high, platform);
@@ -59,7 +59,7 @@ int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform)
  */
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform) {
     for (int i = 0; i < studios->number_branch; i++) {
-        if (studios->branch_calendar[i].plataforms.platform == platform) {
+        if (studios->branch_calendar[i].platform == platform) {
             shift_left_branchCalendar(studios->branch_calendar, i, studios->number_branch);
             studios->number_branch--;
             return;
@@ -68,18 +68,6 @@ void delete_branchCalendar(STUDIOS *studios, PLATFORM platform) {
     printf("[BRANCH CALENDAR NAO ENCONTRADO]\n");
 }
 
-/**
- * cria um calendario branch
- * @param platform  plataforma que quer cirar
- * @return  plataforma
- */
-BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority) {
-    BRANCH_CALENDAR temp;
-    temp.plataforms.platform = platform;
-    temp.plataforms.priority = priority;
-    temp.branch_event = NULL;
-    return temp;
-}
 
 /**
  * imprime todos os calendarios
@@ -89,10 +77,22 @@ void print_branch_calendar(STUDIOS *studios) {
     printf("BRANCH CALENDAR\n");
     for (int i = 0; i < studios->number_branch; ++i) {
         BRANCH_CALENDAR *branchCalendar = &studios->branch_calendar[i];
-        printf("PRIORIDADE: %u\n", branchCalendar->plataforms.priority);
-        printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->plataforms.platform));
+        printf("PRIORIDADE: %u\n", branchCalendar->priority);
+        printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
+        printf("POLITIC: %s\n", branchCalendar->politics);
+        print_config(branchCalendar->configuration);
     }
 
+}
+
+BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority, char *politics) {
+    BRANCH_CALENDAR branchCalendar;
+    branchCalendar.platform = platform;
+    branchCalendar.priority = priority;
+    branchCalendar.politics = politics;
+    branchCalendar.branch_event = NULL;
+    branchCalendar.configuration=NULL;
+    return branchCalendar;
 }
 
 /**
@@ -133,11 +133,30 @@ void shift_right_branchCalendar(BRANCH_CALENDAR *a, int index, BRANCH_CALENDAR v
  */
 void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size) {
     if (index == size - 1) {
-        a[index].plataforms.platform = -1;
+        a[index].platform = -1;
         return;
     }
     a[index] = a[index + 1];
     shift_left_branchCalendar(a, index + 1, size);
 }
 
+void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
+    CONFIGURATION *temp=(CONFIGURATION*)malloc(sizeof(CONFIGURATION));
+    temp->name=name;
+    temp->value=value;
+    temp->next=*pConfiguration;
+    *pConfiguration=temp;
 
+}
+
+
+void print_config(CONFIGURATION * configuration){
+    CONFIGURATION *current=configuration;
+    printf("CONFIGURATION\n");
+    while (current!=NULL){
+        printf("NAME:%s\n",current->name);
+        printf("VALUE: %.2f \n",current->value);
+        current=current->next;
+    }
+
+}
