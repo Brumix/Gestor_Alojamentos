@@ -14,6 +14,7 @@ int main(void) {
     //print_building_all(buildings);
 
 
+
     add_people(&people, "A", HOSPEDE);
     add_people(&people, "B", EMPREGADO);
 
@@ -48,7 +49,7 @@ int main(void) {
     //print_branch_events(buildings->studios[0].branch_calendar[1].branch_event);
 
     //print_branch_calendar(&buildings->studios[0]);
-    refresh_master_event(buildings, history, people);
+   // refresh_master_event(buildings, history, people);
 
     printf("\n\n");
     //print_master_events(buildings->studios[0].masterEvents);

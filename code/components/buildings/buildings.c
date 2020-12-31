@@ -11,9 +11,9 @@
  * @param name nome do edificio
  * @param location  localizacao do edificio
  */
-void add_building(BUILDINGS **head, unsigned index,char *name, float price,LOCATION location) {
+void add_building(BUILDINGS **head, unsigned index, char *name, float price, LOCATION location) {
     BUILDINGS *current = *head;
-    BUILDINGS *temp = create_building(index,name, price,location);
+    BUILDINGS *temp = create_building(index, name, price, location);
     if (current == NULL) {
         *head = temp;
         return;
@@ -69,14 +69,14 @@ void delete_building(BUILDINGS **head, char *name) {
  * @param location localizacao do edifico ligado
  * @return  um edificio
  */
-BUILDINGS *create_building(unsigned index, char *name,float price, LOCATION location) {
+BUILDINGS *create_building(unsigned index, char *name, float price, LOCATION location) {
 
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
     ERRORMESSAGE(temp == NULL, "[CREATE EDIFICIO]");
-    temp->index=index;
-    temp->name=malloc(25* sizeof(char *));
-    strcpy(temp->name,name);
-    temp->price_day=price;
+    temp->index = index;
+    temp->name = malloc(25 * sizeof(char *));
+    strcpy(temp->name, name);
+    temp->price_day = price;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
     temp->num_studios = 0;
@@ -95,14 +95,14 @@ void print_building_all(BUILDINGS *head) {
     EXISTENTE(current == NULL, "[NAO EXISTE NENHUM EDIFICIO]");
 
     printf("EDIFICIOS\n");
-    while (current != NULL) {
-        printf("INDEX: %u\n",current->index);
-        printf("NOME: %s\n", current->name);
-        printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
-        printf("PRECO POR DIA: %.2f\n",current->price_day);
-        print_location(current->location);
-        current = current->next;
-    }
+    //  while (current != NULL) {
+    printf("INDEX: %u\n", current->index);
+    printf("NOME: %s\n", current->name);
+    printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
+    printf("PRECO POR DIA: %.2f\n", current->price_day);
+    print_location(current->location);
+    //   current = current->next;
+    // }
 
 }
 
@@ -118,7 +118,7 @@ BUILDINGS *find_building(BUILDINGS *head, int ind) {
     current = head;
     while (current != NULL) {
 
-        if (current->index==ind)
+        if (current->index == ind)
             return current;
         if (current->next == NULL)
             return NULL;
