@@ -146,7 +146,6 @@ void refresh_master_event(BUILDINGS *buildings,HISTORY *history,PEOPLE *pPeople)
                     }
                     branchEvents = branchEvents->next;
                 }
-
             }
         }
         building = building->next;

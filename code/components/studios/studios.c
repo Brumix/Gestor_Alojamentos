@@ -90,7 +90,7 @@ void resizeStudios(BUILDINGS *head) {
 
 
 int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door) {
-    if (low >= high || high <= low)
+    if (low >= high)
         return -1;
     int mid = low + (high - low) / 2;
     if (buildings->studios[mid].num_door == door)
