@@ -9,13 +9,13 @@
 #include "../../main/structures.h"
 
 
-void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area);
+void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area);
 
 int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door);
 
 void delete_studio(BUILDINGS *buildings, unsigned short door);
 
-STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area );
+STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area );
 
 void print_studio_all(BUILDINGS *buildings);
 

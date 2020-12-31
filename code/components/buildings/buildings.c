@@ -18,7 +18,6 @@ void add_building(BUILDINGS **head, unsigned index,char *name, float price,LOCAT
         *head = temp;
         return;
     }
-
     EXISTENTE(strcmp(current->name, temp->name) == 0, "[EDIFICIO EXISTENTE]");
 
     if (strcmp(current->name, name) == 1) {
@@ -75,7 +74,8 @@ BUILDINGS *create_building(unsigned index, char *name,float price, LOCATION loca
     BUILDINGS *temp = (BUILDINGS *) malloc(sizeof(BUILDINGS));
     ERRORMESSAGE(temp == NULL, "[CREATE EDIFICIO]");
     temp->index=index;
-    temp->name = name;
+    temp->name=malloc(25* sizeof(char *));
+    strcpy(temp->name,name);
     temp->price_day=price;
     temp->location = location;
     temp->studios = (STUDIOS *) malloc(INICIAL * sizeof(STUDIOS));
@@ -113,15 +113,15 @@ void print_building_all(BUILDINGS *head) {
  * @param name  nome do edificios
  * @return 1(encontrou) ou 0(nao encontrou)
  */
-short int find_hotel(BUILDINGS *head, char *name) {
+BUILDINGS *find_building(BUILDINGS *head, int ind) {
     BUILDINGS *current;
     current = head;
     while (current != NULL) {
 
-        if (strcmp(current->name, name) == 0)
-            return 1;
+        if (current->index==ind)
+            return current;
         if (current->next == NULL)
-            return 0;
+            return NULL;
         current = current->next;
     }
     return 0;

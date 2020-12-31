@@ -12,4 +12,6 @@ void read_file_buildigns(BUILDINGS **);
 
 void read_file_studio_politics();
 
+void read_file_estudio(BUILDINGS *buildings);
+
 #endif //GESTOR_ALOJAMENTOS_READ_H

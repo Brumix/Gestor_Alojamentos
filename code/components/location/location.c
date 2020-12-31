@@ -12,8 +12,10 @@
  */
 GPS add_gps(char *lat, char *lon) {
     GPS temp;
-    temp.longitude = lon;
-    temp.latitude = lat;
+    temp.longitude=malloc(25* sizeof(char *));
+    temp.latitude=malloc(25* sizeof(char *));
+    strcpy(temp.longitude, lon);
+    strcpy(temp.latitude, lat);
     return temp;
 }
 
@@ -28,7 +30,8 @@ GPS add_gps(char *lat, char *lon) {
  */
 LOCATION add_location(char *address, char *lat, char *lon) {
     LOCATION temp;
-    temp.address = address;
+    temp.address=(char *)malloc(25* sizeof(char *));
+    strcpy( temp.address, address);
     temp.gps = add_gps(lat, lon);
     return temp;
 }

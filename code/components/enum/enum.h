@@ -10,6 +10,8 @@
 
 char *strTypeStudio(TYPE_STUDIO ts);
 
+TYPE_STUDIO enumTypeStudio(char *ts);
+
 char *strPlatform(PLATFORM platform);
 
 char *strTypePeople(TYPE_PEOPLE typePeople);

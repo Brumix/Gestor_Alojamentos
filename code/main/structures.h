@@ -38,7 +38,7 @@ typedef enum branch_event {
 } TYPE_BRANCH_EVENT;
 
 typedef enum type_studio {
-    T1, T2, T3D, SUITE, SUITEPRESIDENCIAL
+   T0, T1, T2, T3, NE
 } TYPE_STUDIO;
 
 typedef enum platform {
@@ -123,7 +123,7 @@ typedef struct branch_calendar {
 typedef struct studios {
     TYPE_STUDIO typeStudio;
     unsigned area;
-    unsigned short capacity;
+    unsigned short index;
     unsigned short num_door;
     unsigned number_branch;
     unsigned sizeArrayBranch;
