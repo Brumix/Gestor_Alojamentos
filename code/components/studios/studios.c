@@ -9,13 +9,13 @@
  * adicionar um estudio
  * @param buildings array de estudios
  * @param typeStudio tipo de estudios
- * @param cap capacidade do estudio
+ * @param ind capacidade do estudio
  * @param door numero da porta
  * @param extra detalhes da poprieadade
  */
-void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area) {
+void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area) {
     resizeStudios(buildings);
-    STUDIOS temp = create_studio(typeStudio, cap, door, area);
+    STUDIOS temp = create_studio(typeStudio, ind, door, area);
     for (int i = 0; i < buildings->sizeArray; i++) {
         if (i == buildings->num_studios) {
             buildings->studios[buildings->num_studios] = temp;
@@ -45,11 +45,11 @@ void delete_studio(BUILDINGS *buildings, unsigned short door) {
     printf("[ESTUDIO NAO ENCONTRADO]\n");
 }
 
-STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short cap, unsigned short door, unsigned area) {
+STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area) {
     STUDIOS temp;
     temp.typeStudio = typeStudio;
     temp.num_door = door;
-    temp.capacity = cap;
+    temp.index = ind;
     temp.area=area;
     temp.sizeArrayBranch = INICIAL;
     temp.number_branch = 0;
@@ -68,10 +68,11 @@ void print_studio_all(BUILDINGS *buildings) {
     printf("ESTUDIOS\n");
     for (int i = 0; i < current->num_studios; i++) {
         STUDIOS *studio = &current->studios[i];
+        printf("INDEX: %i \n", studio->index);
         printf("TIPO DE ESTUDIO: %s\n", strTypeStudio(studio->typeStudio));
         printf("PORTA: %i\n", studio->num_door);
-        printf("CAPACIDADE: %i \n", studio->capacity);
         printf("EXTRA: %u \n", studio->area);
+        printf("\n");
     }
 
 }

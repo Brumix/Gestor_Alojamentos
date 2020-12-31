@@ -11,19 +11,31 @@
  */
 char *strTypeStudio(TYPE_STUDIO ts) {
     switch (ts) {
+        case T0:
+            return "T0";
         case T1:
             return "T1";
         case T2:
             return "T2";
-        case T3D:
+        case T3:
             return "T3D";
-        case SUITE:
-            return "SUITE";
-        case SUITEPRESIDENCIAL:
-            return "SUITEPRESIDENCIAL";
         default:
             return "Nao existente";
     }
+}
+
+
+TYPE_STUDIO enumTypeStudio(char *ts) {
+
+    if (strcmp(ts, "T0") == 0)
+        return T0;
+    if (strcmp(ts, "T1") == 0)
+        return T1;
+    if (strcmp(ts, "T2") == 0)
+        return T2;
+    if (strcmp(ts, "T3") == 0)
+        return T3;
+    else return NE;
 }
 
 /**

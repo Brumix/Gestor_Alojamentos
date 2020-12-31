@@ -9,28 +9,16 @@ int main(void) {
     PEOPLE *people = NULL;
     printf("GESTOR ALOJAMENTOS\n\n");
     read_file_buildigns(&buildings);
+    read_file_estudio(buildings);
     // read_file_studio_politics();
+    //print_building_all(buildings);
 
-    printf("\n\n\n");
-    print_building_all(buildings);
-/*
+
     add_people(&people, "A", HOSPEDE);
     add_people(&people, "B", EMPREGADO);
 
-
-
     //print_all_people(people);
 
-    LOCATION loc1 = add_location("a", "a", "a");
-    add_building(&buildings, 1, "C", 1.2f, loc1);
-    add_building(&buildings, 1, "A", 1.2f, loc1);
-    add_building(&buildings, 1, "B", 1.2f, loc1);
-
-    add_studio(buildings, T2, 4, 20, 200);
-
-
-
-    printf("%d\n", find_studio(buildings, 0, buildings->num_studios, 20));
 
     DATE date1 = add_date(12, 12, 01, 03, 2020);
     DATE date2 = add_date(12, 12, 02, 04, 2020);
@@ -60,20 +48,19 @@ int main(void) {
     //print_branch_events(buildings->studios[0].branch_calendar[1].branch_event);
 
     //print_branch_calendar(&buildings->studios[0]);
-
     refresh_master_event(buildings, history, people);
 
-    // print_master_events(buildings->studios[0].masterEvents);
+    printf("\n\n");
+    //print_master_events(buildings->studios[0].masterEvents);
 
     //print_history(history);
-*/
+
     free(buildings);
     free(history);
     free(people);
 
     return EXIT_SUCCESS;
 
-// local de evento damos o estudio e edificio ou so edifici e depois brute force
 }
 
 

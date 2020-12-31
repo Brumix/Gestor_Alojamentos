@@ -19,7 +19,7 @@ BUILDINGS *create_building(unsigned index,char *name,float price, LOCATION locat
 
 void print_building_all(BUILDINGS *head);
 
-short int find_hotel(BUILDINGS *head, char *name);
+BUILDINGS *find_building(BUILDINGS *head, int ind);
 
 
 #endif //GESTOR_ALOJAMENTOS_BUILDINGS_H
