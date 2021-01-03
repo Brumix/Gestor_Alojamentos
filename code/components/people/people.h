@@ -11,7 +11,7 @@
 
 void add_people(PEOPLE **people, char *name, TYPE_PEOPLE typePeople);
 
-void print_people(PEOPLE people);
+void print_people(PEOPLE *people);
 
 PEOPLE* create_people(char * name,TYPE_PEOPLE typePeople);
 

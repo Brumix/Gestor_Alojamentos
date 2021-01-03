@@ -27,4 +27,6 @@ void shift_left_studio(STUDIOS *a, int index, unsigned size);
 
 char *strTypeStudio(TYPE_STUDIO ts);
 
+STUDIOS *find_studio_everyhere(BUILDINGS *building,unsigned door);
+
 #endif //GESTOR_ALOJAMENTOS_STUDIOS_H

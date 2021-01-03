@@ -134,7 +134,11 @@ void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
     }
 }
 
-
+/**
+ * ordena por id os historicos
+ * @param history struct
+ * @param temp evento a ordebar
+ */
 void ordena_id_history(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp) {
     HYSTORY_EVENTS *current = *history;
     if (current->people->id > temp->people->id) {
@@ -176,15 +180,16 @@ void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
         if (current->events->next == NULL)
             *history = current->next;
         else
-            delete_master_event(&current->events, date);
+            delete_master_event(&current->events, date,current->events->platform);
         return;
     }
     while (current != NULL) {
         if (strcmp(current->next->people->name, name) == 0) {
-            if (current->next == NULL)
+          /*  if (current->next == NULL)
                 current->next = current->next->next;
-            else
-                delete_master_event(&current->next->events, date);
+                todo verificar se é preciso
+            else*/
+                delete_master_event(&current->next->events, date,current->next->events->platform);
             return;
         }
         EXISTENTE(current->next->next == NULL, "[EDIFICIO NAO ENCONTRADO]");
@@ -205,7 +210,7 @@ void print_history(HISTORY *history) {
             continue;
         else {
             HYSTORY_EVENTS *pHitoryEvents = current[i].hystoryEvents;
-            print_people(*pHitoryEvents->people);
+            print_people(pHitoryEvents->people);
             while (pHitoryEvents != NULL) {
                 print_master_events(pHitoryEvents->events);
                 printf("\n");

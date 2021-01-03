@@ -466,6 +466,33 @@ code/components/people/people.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.s
 .PHONY : code/components/people/people.c.s
 
+code/components/politics/politics.obj: code/components/politics/politics.c.obj
+
+.PHONY : code/components/politics/politics.obj
+
+# target to build an object file
+code/components/politics/politics.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj
+.PHONY : code/components/politics/politics.c.obj
+
+code/components/politics/politics.i: code/components/politics/politics.c.i
+
+.PHONY : code/components/politics/politics.i
+
+# target to preprocess a source file
+code/components/politics/politics.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.i
+.PHONY : code/components/politics/politics.c.i
+
+code/components/politics/politics.s: code/components/politics/politics.c.s
+
+.PHONY : code/components/politics/politics.s
+
+# target to generate assembly for a file
+code/components/politics/politics.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.s
+.PHONY : code/components/politics/politics.c.s
+
 code/components/price/price.obj: code/components/price/price.c.obj
 
 .PHONY : code/components/price/price.obj
@@ -592,6 +619,9 @@ help:
 	@echo ... code/components/people/people.obj
 	@echo ... code/components/people/people.i
 	@echo ... code/components/people/people.s
+	@echo ... code/components/politics/politics.obj
+	@echo ... code/components/politics/politics.i
+	@echo ... code/components/politics/politics.s
 	@echo ... code/components/price/price.obj
 	@echo ... code/components/price/price.i
 	@echo ... code/components/price/price.s

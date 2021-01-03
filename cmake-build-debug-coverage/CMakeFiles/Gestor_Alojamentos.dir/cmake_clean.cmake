@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/location/location.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/master_events/master_events.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"

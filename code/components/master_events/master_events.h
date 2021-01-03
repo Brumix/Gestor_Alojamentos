@@ -12,7 +12,7 @@
 void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE *people,DATE date_end, float price,
                       TYPE_MASTER_EVENT masterEvent, DATE date_begin);
 
-void delete_master_event(MASTER_EVENTS **head, DATE date);
+void delete_master_event(MASTER_EVENTS **head, DATE date,PLATFORM platform);
 
 MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE *people,DATE date_end, float price,
                                    TYPE_MASTER_EVENT masterEvent, DATE date_begin);
@@ -22,5 +22,9 @@ void print_master_events(MASTER_EVENTS *masterEvents);
 void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp);
 
 void refresh_master_event(BUILDINGS *buildings,HISTORY *history,PEOPLE *pPeople);
+
+int equal_master_event(MASTER_EVENTS* masterEvents,PLATFORM platform, DATE begin);
+
+void check_consistency_master(MASTER_EVENTS ** masterEvents,STUDIOS * studios,unsigned size);
 
 #endif //GESTOR_ALOJAMENTOS_MASTER_EVENTS_H

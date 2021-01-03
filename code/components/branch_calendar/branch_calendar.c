@@ -9,9 +9,9 @@
  * @param studios estrutura
  * @param platform  plataforma
  */
-void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
+void add_branch_calendar(POLITICS * politicsS ,STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
     resize_branch_calendar(studios);
-    BRANCH_CALENDAR temp = create_branch_calendar(platform, priority, politics);
+    BRANCH_CALENDAR temp = create_branch_calendar(politicsS, platform, priority, politics);
     for (int i = 0; i < studios->sizeArrayBranch; i++) {
         if (i == studios->number_branch) {
             studios->branch_calendar[studios->number_branch] = temp;
@@ -85,13 +85,22 @@ void print_branch_calendar(STUDIOS *studios) {
 
 }
 
-BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority, char *politics) {
+/**
+ * cria um branch_calendar
+ * @param politicsS struct politicas
+ * @param platform plataforma
+ * @param priority prioridade
+ * @param politics nome da politica a implementar
+ * @return branch_calendar criado
+ */
+BRANCH_CALENDAR create_branch_calendar(POLITICS * politicsS, PLATFORM platform, unsigned priority, char *politics) {
     BRANCH_CALENDAR branchCalendar;
     branchCalendar.platform = platform;
     branchCalendar.priority = priority;
     branchCalendar.politics = politics;
     branchCalendar.branch_event = NULL;
     branchCalendar.configuration=NULL;
+    combine_config(politicsS,&branchCalendar);
     return branchCalendar;
 }
 
@@ -140,6 +149,12 @@ void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size) {
     shift_left_branchCalendar(a, index + 1, size);
 }
 
+/**
+ * adiciona um configuracao á politica
+ * @param pConfiguration  configuracao
+ * @param name  nome
+ * @param value valor
+ */
 void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
     CONFIGURATION *temp=(CONFIGURATION*)malloc(sizeof(CONFIGURATION));
     temp->name=name;
@@ -150,6 +165,10 @@ void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
 }
 
 
+/**
+ * imprime as configuracoes
+ * @param configuration  configuracao struct
+ */
 void print_config(CONFIGURATION * configuration){
     CONFIGURATION *current=configuration;
     printf("CONFIGURATION\n");
@@ -159,4 +178,43 @@ void print_config(CONFIGURATION * configuration){
         current=current->next;
     }
 
+}
+/**
+ * combina as configuracoes
+ * @param politics struct politicas
+ * @param branchCalendar struct branch_calendar
+ */
+ void combine_config(POLITICS * politics,BRANCH_CALENDAR * branchCalendar){
+    POLITICS * current= politics;
+     while (current!=NULL){
+         if(strcmp(current->name,branchCalendar->politics)==0 && current->platform== branchCalendar->platform){
+             CONFIGURATION * configPrinc=current->configuration;
+             CONFIGURATION ** configBranch= &branchCalendar->configuration;
+             while (configPrinc!=NULL){
+                 add_config(configBranch,configPrinc->name,-1);
+                 configPrinc=configPrinc->next;
+             }
+         }
+         current=current->next;
+     }
+}
+
+/**
+ * adicionar um valor á combifuracao previament combinada
+ * @param pConfiguration  struct combinacao
+ * @param value  valor a implementar
+ */
+void add_value_config(CONFIGURATION ** pConfiguration, float value){
+    CONFIGURATION * current= *pConfiguration;
+    if(current->value==-1){
+        (*pConfiguration)->value=value;
+        return;
+    }
+    while (current!=NULL){
+        if(current->value== -1){
+            current->value=value;
+            return;
+        }
+        current=current->next;
+    }
 }

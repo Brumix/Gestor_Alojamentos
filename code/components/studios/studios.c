@@ -34,6 +34,11 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind
     }
 }
 
+/**
+ * apaga um estudio
+ * @param buildings struct buildings
+ * @param door int door
+ */
 void delete_studio(BUILDINGS *buildings, unsigned short door) {
     for (int i = 0; i < buildings->num_studios; i++) {
         if (buildings->studios[i].num_door == door) {
@@ -45,6 +50,14 @@ void delete_studio(BUILDINGS *buildings, unsigned short door) {
     printf("[ESTUDIO NAO ENCONTRADO]\n");
 }
 
+/**
+ * cria um estudio
+ * @param typeStudio enum tipo de estudio
+ * @param ind int index
+ * @param door unsigned door
+ * @param area unsigned area
+ * @return STUDIO
+ */
 STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area) {
     STUDIOS temp;
     temp.typeStudio = typeStudio;
@@ -58,7 +71,10 @@ STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short
     return temp;
 }
 
-
+/**
+ * imprime todos os estudios
+ * @param buildings struct buildings
+ */
 void print_studio_all(BUILDINGS *buildings) {
     BUILDINGS *current = buildings;
     if (current == NULL) {
@@ -77,6 +93,10 @@ void print_studio_all(BUILDINGS *buildings) {
 
 }
 
+/**
+ * aumenta o tamanho do array
+ * @param head struct buildings
+ */
 void resizeStudios(BUILDINGS *head) {
     if (head->sizeArray * 0.6 <= head->num_studios) {
         head->sizeArray *= 2;
@@ -89,7 +109,14 @@ void resizeStudios(BUILDINGS *head) {
 
 }
 
-
+/**
+ * encontra um estudio
+ * @param buildings struct buildings
+ * @param low int
+ * @param high int
+ * @param door unsigned
+ * @return int index
+ */
 int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door) {
     if (low >= high)
         return -1;
@@ -106,7 +133,13 @@ int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door) {
     return find_studio(buildings, mid + 1, high, door);
 }
 
-
+/**
+ * reajusta as posicoes do array
+ * @param a struct STUDIOS
+ * @param index posicao no array
+ * @param val valor que queremos adicionar
+ * @param size taamanho
+ */
 void shift_right_studio(STUDIOS *a, int index, STUDIOS val, unsigned size) {
     if (index == size) {
         a[index] = val;
@@ -117,6 +150,12 @@ void shift_right_studio(STUDIOS *a, int index, STUDIOS val, unsigned size) {
     shift_right_studio(a, index + 1, aux, size);
 }
 
+/**
+ * realusta o array para eliminar uma posicao
+ * @param a  struct studis
+ * @param index int
+ * @param size int
+ */
 void shift_left_studio(STUDIOS *a, int index, unsigned size) {
     if (index == size - 1) {
         a[index].num_door = 0;
@@ -124,4 +163,21 @@ void shift_left_studio(STUDIOS *a, int index, unsigned size) {
     }
     a[index] = a[index + 1];
     shift_left_studio(a, index + 1, size);
+}
+
+/**
+ * pesquisa um estudio
+ * @param building struct buildings
+ * @param door unsigned
+ * @return STUDIOS *
+ */
+STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned door){
+        BUILDINGS *current= building;
+    while (current!=NULL){
+           int index=find_studio(current,0,current->num_studios,door);
+           if (index!= -1)
+               return &building->studios[index];
+        current=current->next;
+    }
+    return NULL;
 }

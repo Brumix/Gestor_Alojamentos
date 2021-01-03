@@ -10,8 +10,10 @@
 
 void read_file_buildigns(BUILDINGS **);
 
-void read_file_studio_politics();
+void read_file_studio_politics(BUILDINGS *buildings,POLITICS* politics);
 
 void read_file_estudio(BUILDINGS *buildings);
+
+void read_politics(POLITICS **pPolitics);
 
 #endif //GESTOR_ALOJAMENTOS_READ_H

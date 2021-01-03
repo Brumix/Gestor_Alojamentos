@@ -14,6 +14,8 @@ TYPE_STUDIO enumTypeStudio(char *ts);
 
 char *strPlatform(PLATFORM platform);
 
+PLATFORM enumTypePlataform(char *ts);
+
 char *strTypePeople(TYPE_PEOPLE typePeople);
 
 char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent);

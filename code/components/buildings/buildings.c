@@ -95,14 +95,14 @@ void print_building_all(BUILDINGS *head) {
     EXISTENTE(current == NULL, "[NAO EXISTE NENHUM EDIFICIO]");
 
     printf("EDIFICIOS\n");
-    //  while (current != NULL) {
+      while (current != NULL) {
     printf("INDEX: %u\n", current->index);
     printf("NOME: %s\n", current->name);
     printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
     printf("PRECO POR DIA: %.2f\n", current->price_day);
     print_location(current->location);
-    //   current = current->next;
-    // }
+      current = current->next;
+    }
 
 }
 

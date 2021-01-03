@@ -27,12 +27,13 @@
 **************************************/
 
 typedef enum type_people {
-    HOSPEDE, EMPREGADO
+    HOSPEDE, EMPREGADO,ORGANIZACAO
 } TYPE_PEOPLE;
 
 typedef enum master_event {
     OCUPADO, LIMPEZA, MANUTENCAO, FATURACAO, GREACAO_DE_RELATORIOS
 } TYPE_MASTER_EVENT;
+
 typedef enum branch_event {
     RESERVADO, LIVRE
 } TYPE_BRANCH_EVENT;
@@ -42,7 +43,7 @@ typedef enum type_studio {
 } TYPE_STUDIO;
 
 typedef enum platform {
-    AirBnc, AisBnD, AisBnE, AIRPlaces
+    AirBnc, AisBnD, AirBnE, AIRPlaces, NP
 } PLATFORM;
 
 
@@ -56,9 +57,15 @@ typedef struct configuration{
     struct configuration *next;
 }CONFIGURATION;
 
+typedef struct politics{
+    char *name;
+    PLATFORM platform;
+    int size;
+    CONFIGURATION * configuration;
+    struct politics *next;
+}POLITICS;
+
 typedef struct date {
-    unsigned short min;
-    unsigned short hour;
     unsigned short day;
     unsigned short month;
     unsigned short Year;
@@ -103,19 +110,18 @@ typedef struct master_events {
 
 typedef struct branch_events {
     unsigned id;
-    unsigned people;
+    PEOPLE *people;
     float price;
-    DATE date_inicio;
-    DATE date_fim;
+    DATE date_begin;
+    DATE date_end;
     TYPE_BRANCH_EVENT bevent;
     struct branch_events *next;
 } BRANCH_EVENTS;
 
-
 typedef struct branch_calendar {
     PLATFORM platform;
     unsigned priority;
-    char * politics;
+    char *politics;
     CONFIGURATION *configuration;
     BRANCH_EVENTS *branch_event;
 } BRANCH_CALENDAR;
@@ -153,6 +159,8 @@ typedef struct history {
 } HISTORY;
 
 
+HOLIDAYS * holidays;
+POLITICS *politics;
 /**************************************
 ************ INCLUDES *****************
 **************************************/
@@ -169,6 +177,7 @@ typedef struct history {
 #include <assert.h>
 #include <fcntl.h>
 
+#include "../components/politics/politics.h"
 #include "../components/price/price.h"
 #include "../components/people/people.h"
 #include "../components/enum/enum.h"

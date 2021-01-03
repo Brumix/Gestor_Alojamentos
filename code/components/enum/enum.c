@@ -51,13 +51,31 @@ char *strPlatform(PLATFORM platform) {
             return "AirBnc";
         case AisBnD:
             return "AisBnD";
-        case AisBnE:
-            return "AisBnE";
+        case AirBnE:
+            return "AirBnE";
         default:
             return "Nao existente";
     }
 }
 
+/**
+ * transforma a string num enum
+ * @param ts char*
+ * @return enum
+ */
+PLATFORM enumTypePlataform(char *ts) {
+
+    if (strcmp(ts, "airbnc") == 0)
+        return AirBnc;
+    if (strcmp(ts, "airbnd") == 0)
+        return AisBnD;
+    if (strcmp(ts, "AIRPlaces") == 0)
+        return AIRPlaces;
+    if (strcmp(ts, "airbne") == 0)
+        return AirBnE;
+
+    else return NP;
+}
 
 /**
  * print do enum people
@@ -70,6 +88,8 @@ char *strTypePeople(TYPE_PEOPLE typePeople) {
             return "HOSPEDE";
         case EMPREGADO:
             return "EMPREGADO";
+        case ORGANIZACAO:
+            return "ORGANIZACAO";
         default:
             return "Nao existente";
     }

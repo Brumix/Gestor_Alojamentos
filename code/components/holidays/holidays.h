@@ -10,12 +10,14 @@
 
 HOLIDAYS *createHolidaysArray();
 
-void add_holiday(HOLIDAYS *holidays, char *nome, DATE date1, DATE date2);
+void add_holiday( char *nome, DATE date1, DATE date2);
 
 HOLIDAYS create_holiday(char *nome, DATE date1, DATE date2);
 
-void resize_holidays(HOLIDAYS **holidays);
+void resize_holidays();
 
-void print_holidays(HOLIDAYS *holidays);
+void print_holidays();
+
+int holiday_secion(DATE date);
 
 #endif //GESTOR_ALOJAMENTOS_HOLIDAYS_H
