@@ -41,8 +41,8 @@ int main(void) {
     DATE future2 = add_date(01, 03, 2022);
     STUDIOS *studios1 = &buildings->studios[0];
 
-    add_branch_calendar(politics, studios1, AirBnc, 1, "p1");
-    add_branch_calendar(politics, studios1, AirBnE, 10, "p1");
+    add_branch_calendar( studios1, AirBnc, 1, "p1");
+    add_branch_calendar( studios1, AirBnE, 10, "p1");
     add_value_config(&buildings->studios[0].branch_calendar[0].configuration, 0.2f);
     add_value_config(&buildings->studios[0].branch_calendar[0].configuration, 0.5f);
     add_value_config(&buildings->studios[0].branch_calendar[0].configuration, 0.6f);

@@ -9,9 +9,9 @@
  * @param studios estrutura
  * @param platform  plataforma
  */
-void add_branch_calendar(POLITICS * politicsS ,STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
+void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
     resize_branch_calendar(studios);
-    BRANCH_CALENDAR temp = create_branch_calendar(politicsS, platform, priority, politics);
+    BRANCH_CALENDAR temp = create_branch_calendar( platform, priority, politics);
     for (int i = 0; i < studios->sizeArrayBranch; i++) {
         if (i == studios->number_branch) {
             studios->branch_calendar[studios->number_branch] = temp;
@@ -93,14 +93,14 @@ void print_branch_calendar(STUDIOS *studios) {
  * @param politics nome da politica a implementar
  * @return branch_calendar criado
  */
-BRANCH_CALENDAR create_branch_calendar(POLITICS * politicsS, PLATFORM platform, unsigned priority, char *politics) {
+BRANCH_CALENDAR create_branch_calendar( PLATFORM platform, unsigned priority, char *politics) {
     BRANCH_CALENDAR branchCalendar;
     branchCalendar.platform = platform;
     branchCalendar.priority = priority;
     branchCalendar.politics = politics;
     branchCalendar.branch_event = NULL;
     branchCalendar.configuration=NULL;
-    combine_config(politicsS,&branchCalendar);
+    combine_config(&branchCalendar);
     return branchCalendar;
 }
 
@@ -184,7 +184,7 @@ void print_config(CONFIGURATION * configuration){
  * @param politics struct politicas
  * @param branchCalendar struct branch_calendar
  */
- void combine_config(POLITICS * politics,BRANCH_CALENDAR * branchCalendar){
+ void combine_config(BRANCH_CALENDAR * branchCalendar){
     POLITICS * current= politics;
      while (current!=NULL){
          if(strcmp(current->name,branchCalendar->politics)==0 && current->platform== branchCalendar->platform){

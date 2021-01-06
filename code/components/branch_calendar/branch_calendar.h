@@ -8,13 +8,13 @@
 #include "../../main/structures.h"
 
 
-void add_branch_calendar(POLITICS *,STUDIOS *studios,PLATFORM platform,unsigned priority,char *politics);
+void add_branch_calendar(STUDIOS *studios,PLATFORM platform,unsigned priority,char *politics);
 
 int find_branch_calendar(STUDIOS *studios, int low, int high,PLATFORM platform);
 
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform);
 
-BRANCH_CALENDAR create_branch_calendar(POLITICS *,PLATFORM platform,unsigned priority,char *politics);
+BRANCH_CALENDAR create_branch_calendar(PLATFORM platform,unsigned priority,char *politics);
 
 void print_branch_calendar(STUDIOS *studios);
 
@@ -28,7 +28,7 @@ void add_config(CONFIGURATION **pConfiguration,char *name,float value);
 
 void print_config(CONFIGURATION * configuration);
 
-void combine_config(POLITICS * politics,BRANCH_CALENDAR * branchCalendar);
+void combine_config(BRANCH_CALENDAR * branchCalendar);
 
 void add_value_config(CONFIGURATION ** pConfiguration, float value);
 

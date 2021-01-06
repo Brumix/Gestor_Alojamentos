@@ -93,7 +93,7 @@ void read_file_studio_politics(BUILDINGS *buildings) {
         fscanf(file_read, "%d", &estudio);
         fscanf(file_read, " %*s %[^,]s", politica);
         fscanf(file_read, " %*s ");
-        indexstudio= find_studio_all(buildings,estudio);
+        indexstudio= find_studio_everyhere(buildings,estudio);
         ERRORMESSAGE(indexstudio==-1,"[READ FILE ESTUDIO:ESTUDIO INEXISTENTE]");
 
 
