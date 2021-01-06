@@ -67,14 +67,13 @@ void read_politics() {
     while (!feof(file_read)) {
         fscanf(file_read, " %s  %*s", name);
         fscanf(file_read, " %s  %*s", plataform);
-        add_politics( name, enumTypePlataform(plataform), sizerules[size]);
+        add_politics(name, enumTypePlataform(plataform), sizerules[size]);
         for (int i = 0; i < sizerules[size]; i++) {
             fscanf(file_read, " %s  ", regras);
+            add_config(&politics->configuration, regras, -1);
         }
         size++;
-
     }
-
     fclose(file_read);
 }
 
