@@ -52,7 +52,7 @@ void read_file_estudio(BUILDINGS *buildings) {
 }
 
 
-void read_politics(POLITICS **pPolitics) {
+void read_politics() {
 
     FILE *file_read = fopen(FILEPOLITICS, "r");
     ERRORMESSAGE(file_read == NULL, "[FILE POLITICS]");
@@ -87,29 +87,27 @@ void read_file_studio_politics(BUILDINGS *buildings) {
     unsigned estudio = 0;
     char *politica = malloc(25 * sizeof(char *));
     float re;
-    int indexstudio,j=2;
+    int j=2;
     fscanf(file_read, "%*s");
     while (!feof(file_read)) {
         fscanf(file_read, "%d", &estudio);
         fscanf(file_read, " %*s %[^,]s", politica);
         fscanf(file_read, " %*s ");
-        indexstudio= find_studio_everyhere(buildings,estudio);
-        ERRORMESSAGE(indexstudio==-1,"[READ FILE ESTUDIO:ESTUDIO INEXISTENTE]");
+        STUDIOS * studios= find_studio_everyhere(buildings,estudio);
+        ERRORMESSAGE(studios==NULL,"[READ FILE ESTUDIO:ESTUDIO INEXISTENTE]");
 
 
-        printf(" %i estudio=%d index=%i  %s \n",indexstudio,estudio,buildings->studios[indexstudio].index,politica);
+        printf(" %i estudio=%d index=%i  %s \n",studios->index,estudio,studios->index,politica);
 
         POLITICS *findPolitics= find_politics(politica);
         ERRORMESSAGE(findPolitics==NULL,"[READ FILE ESTUDIO:POLITICA INEXISTENTE]");
 
-        add_branch_calendar(&buildings->studios[indexstudio],findPolitics->platform,1,findPolitics->name);
+        add_branch_calendar(studios,findPolitics->platform,1,findPolitics->name);
 
-        CONFIGURATION * pConfiguration=buildings->studios[indexstudio]
-                .branch_calendar[buildings->studios[indexstudio].number_branch -1].configuration;
+        CONFIGURATION * pConfiguration=studios->branch_calendar[studios->number_branch-1].configuration;
 
 
         printf(" Iteracao =%i\n",j);
-
 
         j++;
         for (int i = 0; i < findPolitics->size; i++) {

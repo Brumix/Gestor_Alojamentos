@@ -11,10 +11,14 @@ int main(void) {
     holidays = createHolidaysArray();
 
     printf("GESTOR ALOJAMENTOS\n\n");
-    // read_politics(&politics);
-    // read_file_buildigns(&buildings);
-    //read_file_estudio(buildings);
-    // print_politics(politics);// todo name all equals
+    read_politics(&politics);
+     read_file_buildigns(&buildings);
+    read_file_estudio(buildings);
+
+    read_file_studio_politics(buildings);
+     print_politics();
+
+    exit(13);
 
     add_politics("p1", AirBnc, 3);
     add_config(&politics->configuration, "configuracao", 0.0f);

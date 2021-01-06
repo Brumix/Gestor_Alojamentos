@@ -28,7 +28,6 @@ POLITICS *create_politics(char *name, PLATFORM platform, int size) {
     ERRORMESSAGE(temp == NULL, "[POLITICS EDIFICIO]");
     temp->name = malloc(25 * sizeof(char));
     strcpy(temp->name, name);
-    temp->name = name;
     temp->platform = platform;
     temp->size = size;
     temp->configuration = NULL;
@@ -54,8 +53,8 @@ void print_politics() {
  */
 POLITICS *find_politics(char *politic) {
     POLITICS *current = politics;
-    while (current != politics) {
-        if (strcmp(politics->name, politic) == 0)
+    while (current != NULL) {
+        if (strcmp(current->name, politic) == 0)
             return current;
         current = current->next;
     }
