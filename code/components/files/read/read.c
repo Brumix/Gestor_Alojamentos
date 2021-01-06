@@ -78,33 +78,45 @@ void read_politics(POLITICS **pPolitics) {
     fclose(file_read);
 }
 
-void read_file_studio_politics(BUILDINGS *buildings, POLITICS *politics) {
 
+
+void read_file_studio_politics(BUILDINGS *buildings) {
     FILE *file_read = fopen(FILESTUDIO_POLITICS, "r");
     ERRORMESSAGE(file_read == NULL, "[FILE STUDIO POLITICS]");
 
     unsigned estudio = 0;
     char *politica = malloc(25 * sizeof(char *));
     float re;
-
+    int indexstudio,j=2;
     fscanf(file_read, "%*s");
-    // while (!feof(file_read)) {
-    fscanf(file_read, "%d", &estudio);
-    fscanf(file_read, " %*s %[^,]s", politica);
-    fscanf(file_read, " %*s ");
+    while (!feof(file_read)) {
+        fscanf(file_read, "%d", &estudio);
+        fscanf(file_read, " %*s %[^,]s", politica);
+        fscanf(file_read, " %*s ");
+        indexstudio= find_studio_all(buildings,estudio);
+        ERRORMESSAGE(indexstudio==-1,"[READ FILE ESTUDIO:ESTUDIO INEXISTENTE]");
 
-    STUDIOS *studios = find_studio_everyhere(buildings, estudio);
-    ERRORMESSAGE(studios == NULL, "[FILE ESTUDIO POLITICAS: ESTUDUIO NAO ENCONTRADO]");
 
-   // POLITICS *politics1 = find_politics(politics, politica);
-   // ERRORMESSAGE(politics1 == NULL, "[FILE ESTUDIO POLITICAS: POlITICA NAO ENCONTRADO]");
+        printf(" %i estudio=%d index=%i  %s \n",indexstudio,estudio,buildings->studios[indexstudio].index,politica);
 
-   // printf("<<<<<<<<<<<<%s \n", politics1->name);
-    for (int i = 0; i < 3; i++) {
-        fscanf(file_read, " %f ", &re);
-        printf(" %.2f", re);
+        POLITICS *findPolitics= find_politics(politica);
+        ERRORMESSAGE(findPolitics==NULL,"[READ FILE ESTUDIO:POLITICA INEXISTENTE]");
+
+        add_branch_calendar(&buildings->studios[indexstudio],findPolitics->platform,1,findPolitics->name);
+
+        CONFIGURATION * pConfiguration=buildings->studios[indexstudio]
+                .branch_calendar[buildings->studios[indexstudio].number_branch -1].configuration;
+
+
+        printf(" Iteracao =%i\n",j);
+
+
+        j++;
+        for (int i = 0; i < findPolitics->size; i++) {
+            fscanf(file_read, " %f ", &re);
+            add_value_config(&pConfiguration,re);
+        }
+        printf("\n");
     }
-    printf("\n");
-    // }
     fclose(file_read);
 }
