@@ -114,23 +114,23 @@ void resizeStudios(BUILDINGS *head) {
  * @param buildings struct buildings
  * @param low int
  * @param high int
- * @param door unsigned
+ * @param index unsigned
  * @return int index
  */
-int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door) {
-    if (low >= high)
+int find_studio(BUILDINGS *buildings, int low, int high, unsigned short index) {
+    if (low > high)
         return -1;
     int mid = low + (high - low) / 2;
-    if (buildings->studios[mid].num_door == door)
+    if (buildings->studios[mid].index == index)
         return mid;
-    if (buildings->studios[low].num_door == door)
+    if (buildings->studios[low].index == index)
         return low;
-    if (buildings->studios[high].num_door == door)
+    if (buildings->studios[high].index == index)
         return high;
-    if (buildings->studios[mid].num_door > door)
-        return find_studio(buildings, low, mid - 1, door);
+    if (buildings->studios[mid].index > index)
+        return find_studio(buildings, low, mid - 1, index);
 
-    return find_studio(buildings, mid + 1, high, door);
+    return find_studio(buildings, mid + 1, high, index);
 }
 
 /**
@@ -168,13 +168,13 @@ void shift_left_studio(STUDIOS *a, int index, unsigned size) {
 /**
  * pesquisa um estudio
  * @param building struct buildings
- * @param door unsigned
+ * @param index unsigned
  * @return STUDIOS *
  */
-STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned door){
+STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned ind){
         BUILDINGS *current= building;
     while (current!=NULL){
-           int index=find_studio(current,0,current->num_studios,door);
+           int index=find_studio(current, 0, current->num_studios, ind);
            if (index!= -1)
                return &building->studios[index];
         current=current->next;

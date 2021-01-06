@@ -11,7 +11,7 @@
 
 void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area);
 
-int find_studio(BUILDINGS *buildings, int low, int high, unsigned short door);
+int find_studio(BUILDINGS *buildings, int low, int high, unsigned short index);
 
 void delete_studio(BUILDINGS *buildings, unsigned short door);
 
@@ -27,6 +27,6 @@ void shift_left_studio(STUDIOS *a, int index, unsigned size);
 
 char *strTypeStudio(TYPE_STUDIO ts);
 
-STUDIOS *find_studio_everyhere(BUILDINGS *building,unsigned door);
+STUDIOS *find_studio_everyhere(BUILDINGS *building,unsigned index);
 
 #endif //GESTOR_ALOJAMENTOS_STUDIOS_H

@@ -97,7 +97,9 @@ BRANCH_CALENDAR create_branch_calendar( PLATFORM platform, unsigned priority, ch
     BRANCH_CALENDAR branchCalendar;
     branchCalendar.platform = platform;
     branchCalendar.priority = priority;
-    branchCalendar.politics = politics;
+    branchCalendar.politics=malloc(4* sizeof(char* ));
+    strcpy(branchCalendar.politics,politics);
+
     branchCalendar.branch_event = NULL;
     branchCalendar.configuration=NULL;
     combine_config(&branchCalendar);

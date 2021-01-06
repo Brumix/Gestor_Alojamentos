@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.c
+branch_calendar.h
+C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
+
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/branch_calendar/branch_calendar.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
@@ -55,10 +59,6 @@ C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/people/people.h
 ../../main/structures.h
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/structures.h
-
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/politics/politics.c
-politics.h
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/politics/politics.h
 
 C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/politics/politics.h
 ../../main/structures.h
