@@ -12,7 +12,6 @@ int main(void) {
 
     printf("GESTOR ALOJAMENTOS\n\n");
     read_politics();
-
      read_file_buildigns(&buildings);
     read_file_estudio(buildings);
     read_file_studio_politics(buildings);

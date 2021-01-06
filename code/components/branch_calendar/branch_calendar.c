@@ -208,10 +208,7 @@ void print_config(CONFIGURATION * configuration){
  */
 void add_value_config(CONFIGURATION ** pConfiguration, float value){
     CONFIGURATION * current= *pConfiguration;
-    if(current->value==-1){
-        (*pConfiguration)->value=value;
-        return;
-    }
+    ERRORMESSAGE(current==NULL,"[CONFIGURATION ADD VALUE: CONFIGURACAO VAIZA]");
     while (current!=NULL){
         if(current->value== -1){
             current->value=value;
