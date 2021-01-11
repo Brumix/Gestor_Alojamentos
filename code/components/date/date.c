@@ -90,13 +90,11 @@ int valid_date(DATE date) {
                 } else if (date.day > 28) {
                     is_valid = 0;
                 }
-            }
-            else if (date.month == 4 || date.month == 6 || date.month == 9 || date.month == 11) {
+            } else if (date.month == 4 || date.month == 6 || date.month == 9 || date.month == 11) {
                 if (date.day > 30) {
                     is_valid = 0;
                 }
-            }
-            else if (date.day > 31) {
+            } else if (date.day > 31) {
                 is_valid = 0;
             }
         } else {
@@ -148,9 +146,120 @@ int getDifferenceDays(DATE dt1, DATE dt2) {
     for (int i = 0; i < dt2.month - 1; i++)
         n2 += monthDays[i];
     n2 += countLeapYears(dt2);
-
     return (n2 - n1);
 }
 
 
+int isLeap(int y) {
+    if (y % 100 != 0 && y % 4 == 0 || y % 400 == 0)
+        return 1;
+    return 0;
+}
 
+int offsetDays(DATE d) {
+    int offset = d.day;
+
+    switch (d.month - 1) {
+        case 11:
+            offset += 30;
+        case 10:
+            offset += 31;
+        case 9:
+            offset += 30;
+        case 8:
+            offset += 31;
+        case 7:
+            offset += 31;
+        case 6:
+            offset += 30;
+        case 5:
+            offset += 31;
+        case 4:
+            offset += 30;
+        case 3:
+            offset += 31;
+        case 2:
+            offset += 28;
+        case 1:
+            offset += 31;
+    }
+    if (isLeap(d.Year) && d.month > 2)
+        offset += 1;
+    return offset;
+}
+
+void revoffsetDays(int offset, int y, int *d, int *m) {
+    int month[13] = {0, 31, 28, 31, 30, 31, 30,
+                     31, 31, 30, 31, 30, 31};
+
+    if (isLeap(y))
+        month[2] = 29;
+
+    int i;
+    for (i = 1; i <= 12; i++) {
+        if (offset <= month[i])
+            break;
+        offset = offset - month[i];
+    }
+
+    *d = offset;
+    *m = i;
+}
+
+DATE addDays(DATE date, int x) {
+    int offset1 = offsetDays(date);
+    int remDays = isLeap(date.Year) ? (366 - offset1) : (365 - offset1);
+
+    int y2, offset2;
+    if (x <= remDays) {
+        y2 = date.Year;
+        offset2 = offset1 + x;
+    } else {
+        x -= remDays;
+        y2 = date.Year + 1;
+        int y2days = isLeap(y2) ? 366 : 365;
+        while (x >= y2days) {
+            x -= y2days;
+            y2++;
+            y2days = isLeap(y2) ? 366 : 365;
+        }
+        offset2 = x;
+    }
+    int m2, d2;
+    revoffsetDays(offset2, y2, &d2, &m2);
+    DATE date1 = add_date(d2, m2, y2);
+    return date1;
+}
+
+void next_date_avalabe(STUDIOS *studios, BRANCH_EVENTS **branchEvents, BRANCH_EVENTS *branchEvent,
+                       BRANCH_CALENDAR *branchCalendar) {
+    print_branch_event(branchEvent);
+    delete_branch_event_only(branchEvents, branchEvent->date_begin);
+    DATE dateAvalableBegin = branchEvent->date_begin;
+    DATE dateAvalableEnd = branchEvent->date_end;
+    while (1) {
+        dateAvalableBegin = addDays(dateAvalableBegin,1);
+        dateAvalableEnd = addDays(dateAvalableEnd, 1);
+        BRANCH_CALENDAR *calendar = check_consistency_master(studios, studios->masterEvents, branchCalendar->platform,
+                                                             dateAvalableBegin, dateAvalableEnd);
+        if (calendar == NULL) {
+            printf("A  PROXIMA DATA LIVRE E\n");
+            print_date(dateAvalableBegin);
+            print_date(dateAvalableEnd);
+            break;
+        }
+    }
+}
+
+
+int colision_dates(DATE begin1, DATE end1, DATE begin2, DATE end2) {
+    if (compare_date(end1, begin2) == -1)
+        return 0;
+    if (compare_date(end2, begin1) == -1)
+        return 0;
+    if (compare_date(end1, begin2) == 0)
+        return 0;
+    if (compare_date(end2, begin1) == 0)
+        return 0;
+    return 1;
+}

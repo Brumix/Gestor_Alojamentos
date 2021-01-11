@@ -18,6 +18,8 @@ PLATFORM enumTypePlataform(char *ts);
 
 char *strTypePeople(TYPE_PEOPLE typePeople);
 
+TYPE_PEOPLE enumTypePeople(char * s);
+
 char *strTypeBranchEvent(TYPE_BRANCH_EVENT typeBranchEvent);
 
 char *strMasterEvent(TYPE_MASTER_EVENT typeMasterEvent);

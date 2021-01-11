@@ -4,91 +4,84 @@
 
 #include "price.h"
 
-int SIZEARRAY = INICIAL;
-int POSICIONPRICE = 0;
+
+
+float calculate_price(float price,float conf){
+    if (price >= 1)
+        return price*conf;
+
+       return (price -(price * conf));
+
+}
+
 
 /**
- * cria um array de preco
- * @return array
+ * calcula o preco do evvento
+ * @param buildings struct edificios
+ * @param id ip do evento a calcular
+ * @return float
  */
-PRICE *createPriceArray() {
-    PRICE *price = malloc(INICIAL * sizeof(PRICE));
-    ERRORMESSAGE(price == NULL, "[MALLOC PRICE]");
+float calculate_event_price(BUILDINGS *buildings, unsigned id) {
+    BUILDINGS *building = buildings;
+    float price = buildings->price_day;
+    while (building != NULL) {
+        STUDIOS *studios = building->studios;
+        price *= (float) studios->area;
+        for (int i = 0; i < building->num_studios; i++) {
+            BRANCH_CALENDAR *branchCalendar = studios[i].branch_calendar;
+            for (int j = 0; j < studios->number_branch; j++) {
+                BRANCH_EVENTS *branchEvents = branchCalendar[j].branch_event;
+                while (branchEvents != NULL) {
+
+                    if (branchEvents->id == id) {
+                        price *= (float) getDifferenceDays(branchEvents->date_begin, branchEvents->date_end);
+                        return calculate_config_price(&branchCalendar[j], price);
+                    }
+                    branchEvents = branchEvents->next;
+                }
+            }
+        }
+        building = building->next;
+    }
+    return -1;
+}
+
+/**
+ * calcula o preco com base nas comfiguracoes
+ * @param branchCalendar struct branch_calendar
+ * @param price float preco
+ * @return float
+ */
+float calculate_config_price(BRANCH_CALENDAR *branchCalendar, float price) {
+    CONFIGURATION *configuration = branchCalendar->configuration;
+    BRANCH_EVENTS *branchEvents = branchCalendar->branch_event;
+    while (configuration != NULL) {
+        if (strcmp(configuration->name, "configuracao") == 0);
+
+        else if
+                (strcmp(configuration->name, "duracao") == 0){
+            if (getDifferenceDays(branchEvents->date_begin, branchEvents->date_end) >= 5)
+                price=calculate_price(price,configuration->value);
+        }
+        else  if (strcmp(configuration->name, "epoca") == 0)
+            if (holiday_secion(branchEvents->date_begin) || holiday_secion(branchEvents->date_end))
+                price=calculate_price(price,configuration->value);
+
+            else if (strcmp(configuration->name, "ocupacao") == 0);
+
+
+            else if (strcmp(configuration->name, "modalidade") == 0)
+                if (branchEvents->people->typePeople == ORGANIZACAO)
+                    price=calculate_price(price,configuration->value);
+
+
+                else if (strcmp(configuration->name, "antecedencia") == 0)
+                    if (getDifferenceDays(now(), branchEvents->date_begin) > 7)
+                        price=calculate_price(price,configuration->value);
+
+
+
+        configuration = configuration->next;
+    }
     return price;
-}
-
-/**
- * reajustar o tamanho do array
- * @param price array dos precos
- */
-void resizeArray(PRICE **price) {
-    if (SIZEARRAY * 0.6 <= POSICIONPRICE) {
-        SIZEARRAY *= 2;
-        *price = (PRICE *) realloc(*price, SIZEARRAY * sizeof(PRICE));
-        ERRORMESSAGE(price == NULL, "[RESIZE PRICE]");
-    }
-}
-
-/**
- * adiciona um proprieadade de preco ao array
- * @param array  array dos precos
- * @param type tipo dos precos
- * @param valor percentual do preco
- */
-void add_price(PRICE *array, char *type, float valor) {
-    resizeArray(&array);
-    array[POSICIONPRICE].price = valor;
-    array[POSICIONPRICE].type = type;
-    POSICIONPRICE++;
-}
-
-/**
- * imprime o array dos precos
- * @param price  array de precos
- */
-void printprice(PRICE *price) {
-    for (int i = 0; i < POSICIONPRICE; i++) {
-        printf("%s >>%.2f\n", price[i].type, price[i].price);
-    }
-}
-
-/**
- * retorna a posicao do argomento para saber a percentagem a aplicar
- * @param price array dos precos
- * @param type tipo de preco
- * @return float preco
- */
-float findprice(PRICE *price, char *type) {
-    for (int i = 0; i < POSICIONPRICE; ++i) {
-        if (strcmp(price[i].type, type) == 0)
-            return price[i].price;
-    }
-    printf("type:%s\n", type);
-    float val = atof(type);
-    printf("%.2f\n", val);
-    return val;
-}
-
-/**
- * calcula o custo de um evento comforme um evento
- * @param price array dos precos
- * @param baseprice preco base
- * @param argc argumentos para calcular o preco
- * @param ... lista dos argumentos
- * @return float preco final
- */
-float calculate_price(PRICE *price, float baseprice, int argc, ...) {
-    float finalprice = baseprice;
-    float increase;
-    va_list intArgumentPointer;
-    va_start(intArgumentPointer, argc);
-    for (int i = 0; i < argc; i++) {
-        increase = findprice(price, va_arg(intArgumentPointer, char*));
-        if (increase >= 1)
-            finalprice *= increase;
-        else
-            finalprice -= finalprice * increase;
-    }
-    va_end(intArgumentPointer);
-    return finalprice;
 }

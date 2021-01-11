@@ -13,12 +13,16 @@ void add_branch_event(BUILDINGS *buildings, BRANCH_EVENTS **head, unsigned id, D
 
 void delete_branch_event(MASTER_EVENTS **masterEvents,BRANCH_EVENTS **head,PLATFORM  platform,DATE date);
 
+void delete_branch_event_only(BRANCH_EVENTS **head,DATE date);
+
 BRANCH_EVENTS *create_branch_event(unsigned, DATE, DATE, TYPE_BRANCH_EVENT,PEOPLE *pPeople);
 
 void print_branch_events(BRANCH_EVENTS *branchEvents);
 
-float calculate_event_price(BUILDINGS * buildings, unsigned );
+void print_branch_event(BRANCH_EVENTS *branchEvents);
 
-float calculate_config_price(BRANCH_CALENDAR * branchCalendar,float );
+void clean_branch_event( BRANCH_CALENDAR * branchCalendar,int size);
+
+BRANCH_EVENTS * find_branch_event(BRANCH_CALENDAR* branchCalendar,DATE begin);
 
 #endif //GESTOR_ALOJAMENTOS_BRANCH_EVENTS_H

@@ -22,10 +22,7 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind
             buildings->num_studios++;
             return;
         }
-        if (buildings->studios[i].num_door == door) {
-            printf("[ESTUDIO EXISTENTE]\n");
-            return;
-        }
+        EXISTENTE(buildings->studios[i].num_door == door,"[ESTUDIO EXISTENTE]");
         if (buildings->studios[i].num_door > door) {
             shift_right_studio(buildings->studios, i, temp, buildings->num_studios);
             buildings->num_studios++;
@@ -67,6 +64,7 @@ STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short
     temp.sizeArrayBranch = INICIAL;
     temp.number_branch = 0;
     temp.branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
+    clean_branch_event(temp.branch_calendar,INICIAL);
     temp.masterEvents = NULL;
     return temp;
 }
@@ -176,7 +174,7 @@ STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned ind){
     while (current!=NULL){
            int index=find_studio(current, 0, current->num_studios, ind);
            if (index!= -1)
-               return &building->studios[index];
+               return &current->studios[index];
         current=current->next;
     }
     return NULL;

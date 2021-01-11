@@ -7,17 +7,13 @@
 
 #include "../../main/structures.h"
 
-PRICE *createPriceArray();
-
-void add_price(PRICE *array, char *type, float valor);
-
-void printprice(PRICE *price);
-
-float findprice(PRICE *price, char *type);
-
-void resizeArray(PRICE **price);
 
 
-float calculate_price(PRICE *price, float baseprice, int argc, ...);
+
+float calculate_price( float, float);
+
+float calculate_event_price(BUILDINGS * buildings, unsigned );
+
+float calculate_config_price(BRANCH_CALENDAR * branchCalendar,float );
 
 #endif //GESTOR_ALOJAMENTOS_PRICE_H

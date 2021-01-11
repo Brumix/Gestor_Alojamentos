@@ -49,7 +49,8 @@ PEOPLE* create_people(char *name, TYPE_PEOPLE typePeople) {
     people->id=idPessoa;
     idPessoa++;
     people->typePeople = typePeople;
-    people->name = name;
+    people->name=malloc(4* sizeof(char* ));
+    strcpy(people->name,name);
     people->next=NULL;
     return people;
 }

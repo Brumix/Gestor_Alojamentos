@@ -46,7 +46,7 @@ unsigned short hash(char *name) {
 void add_history(HISTORY *history, PLATFORM platform, PEOPLE *people,DATE date_end, float price, DATE date_begin,
                  TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY *current = history;
-    HISTORY temp = add_hystory_event(platform, people, date_end, price, date_begin, typeMasterEvent);
+    HISTORY temp = create_hystory_event(platform, people, date_end, price, date_begin, typeMasterEvent);
     unsigned index = hash(temp.hystoryEvents->people->name);
 
     if (current[index].hystoryEvents == NULL)
@@ -80,8 +80,8 @@ void delete_history_event(HISTORY *history, char *name, DATE date) {
  * @param typeMasterEvent tipo do evento
  * @return  history event
  */
-HISTORY add_hystory_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price, DATE date_begin,
-                          TYPE_MASTER_EVENT typeMasterEvent) {
+HISTORY create_hystory_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price, DATE date_begin,
+                             TYPE_MASTER_EVENT typeMasterEvent) {
     HISTORY temp;
     temp.hystoryEvents = malloc(sizeof(HYSTORY_EVENTS));
     temp.hystoryEvents->events = malloc(sizeof(MASTER_EVENTS));
@@ -183,12 +183,9 @@ void remove_history_events(HYSTORY_EVENTS **history, char *name, DATE date) {
             delete_master_event(&current->events, date,current->events->platform);
         return;
     }
+    EXISTENTE(current->next == NULL, "[EDIFICIO NAO ENCONTRADO]");
     while (current != NULL) {
         if (strcmp(current->next->people->name, name) == 0) {
-          /*  if (current->next == NULL)
-                current->next = current->next->next;
-                todo verificar se é preciso
-            else*/
                 delete_master_event(&current->next->events, date,current->next->events->platform);
             return;
         }

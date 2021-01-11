@@ -16,4 +16,8 @@ void read_file_estudio(BUILDINGS *buildings);
 
 void read_politics();
 
+void read_events(BUILDINGS* buildings,PEOPLE* people);
+
+void read_people(PEOPLE ** people);
+
 #endif //GESTOR_ALOJAMENTOS_READ_H

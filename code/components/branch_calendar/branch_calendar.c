@@ -36,16 +36,16 @@ void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned priority,
  * @param platform  plataforma que quero encontrar
  * @return posicao de uma possicao do array
  */
-int find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform) {
+BRANCH_CALENDAR *find_branch_calendar(STUDIOS *studios, int low, int high, PLATFORM platform) {
     if (low >= high || high <= low)
-        return -1;
+        return NULL;
     int mid = low + (high - low) / 2;
     if (studios->branch_calendar[mid].platform == platform)
-        return mid;
+        return &studios->branch_calendar[mid];
     if (studios->branch_calendar[low].platform == platform)
-        return low;
+        return  &studios->branch_calendar[low];
     if (studios->branch_calendar[high].platform == platform)
-        return high;
+        return  &studios->branch_calendar[high];
     if (studios->branch_calendar[mid].platform > platform)
         return find_branch_calendar(studios, low, mid - 1, platform);
 
@@ -99,7 +99,6 @@ BRANCH_CALENDAR create_branch_calendar( PLATFORM platform, unsigned priority, ch
     branchCalendar.priority = priority;
     branchCalendar.politics=malloc(4* sizeof(char* ));
     strcpy(branchCalendar.politics,politics);
-
     branchCalendar.branch_event = NULL;
     branchCalendar.configuration=NULL;
     combine_config(&branchCalendar);
@@ -159,13 +158,13 @@ void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size) {
  */
 void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
     CONFIGURATION *temp=(CONFIGURATION*)malloc(sizeof(CONFIGURATION));
-    temp->name=name;
+    temp->name=malloc(25* sizeof(char*));
+    strcpy(temp->name,name);
     temp->value=value;
     temp->next=*pConfiguration;
     *pConfiguration=temp;
 
 }
-
 
 /**
  * imprime as configuracoes

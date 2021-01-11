@@ -17,8 +17,8 @@ void add_history(HISTORY *history, PLATFORM platform, PEOPLE *people, DATE date_
 
 void delete_history_event(HISTORY *history, char *name, DATE date);
 
-HISTORY add_hystory_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price, DATE date_begin,
-                          TYPE_MASTER_EVENT typeMasterEvent);
+HISTORY create_hystory_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price, DATE date_begin,
+                             TYPE_MASTER_EVENT typeMasterEvent);
 
 void ordena_history_events(HYSTORY_EVENTS **history, HYSTORY_EVENTS *temp);
 

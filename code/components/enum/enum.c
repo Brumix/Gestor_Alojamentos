@@ -65,13 +65,13 @@ char *strPlatform(PLATFORM platform) {
  */
 PLATFORM enumTypePlataform(char *ts) {
 
-    if (strcmp(ts, "airbnc") == 0)
+    if (strcmp(ts, "airbnc") == 0 || strcmp(ts, "AirBnC") == 0)
         return AirBnc;
-    if (strcmp(ts, "airbnd") == 0)
+    if (strcmp(ts, "airbnd") == 0 || strcmp(ts, "AirBnD") == 0)
         return AisBnD;
     if (strcmp(ts, "AIRPlaces") == 0)
         return AIRPlaces;
-    if (strcmp(ts, "airbne") == 0)
+    if (strcmp(ts, "airbne") == 0 || strcmp(ts, "AirBnE") == 0)
         return AirBnE;
 
     else return NP;
@@ -93,6 +93,18 @@ char *strTypePeople(TYPE_PEOPLE typePeople) {
         default:
             return "Nao existente";
     }
+}
+
+TYPE_PEOPLE enumTypePeople(char *ts) {
+
+
+    if (strcmp(ts, "HOSPEDE") == 0)
+        return HOSPEDE;
+    if (strcmp(ts, "EMPREGADO") == 0)
+        return EMPREGADO;
+    if (strcmp(ts, "ORGANIZACAO") == 0)
+        return ORGANIZACAO;
+
 }
 
 

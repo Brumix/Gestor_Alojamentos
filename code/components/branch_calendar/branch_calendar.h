@@ -10,7 +10,7 @@
 
 void add_branch_calendar(STUDIOS *studios,PLATFORM platform,unsigned priority,char *politics);
 
-int find_branch_calendar(STUDIOS *studios, int low, int high,PLATFORM platform);
+BRANCH_CALENDAR *find_branch_calendar(STUDIOS *studios, int low, int high,PLATFORM platform);
 
 void delete_branchCalendar(STUDIOS *studios, PLATFORM platform);
 

@@ -12,6 +12,7 @@
 #define INICIAL 5
 #define HASHSIZE 5
 
+#define FILEPEOPLE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\pessoas.csv"
 #define FILEBUILDINGS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\edificios.csv"
 #define FILESTUDIOS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\estudios.csv"
 #define FILEEVENTS  "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\eventos.csv"

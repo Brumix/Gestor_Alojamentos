@@ -9,22 +9,26 @@
 #include "../../main/structures.h"
 
 
-void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE *people,DATE date_end, float price,
+void add_master_event(MASTER_EVENTS **pMasterEvents, PLATFORM platform, PEOPLE *people, DATE date_end, float price,
                       TYPE_MASTER_EVENT masterEvent, DATE date_begin);
 
-void delete_master_event(MASTER_EVENTS **head, DATE date,PLATFORM platform);
+void delete_master_event(MASTER_EVENTS **head, DATE date, PLATFORM platform);
 
-MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE *people,DATE date_end, float price,
+MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE *people, DATE date_end, float price,
                                    TYPE_MASTER_EVENT masterEvent, DATE date_begin);
 
 void print_master_events(MASTER_EVENTS *masterEvents);
 
 void ordena_master_event(MASTER_EVENTS **head, MASTER_EVENTS *temp);
 
-void refresh_master_event(BUILDINGS *buildings,HISTORY *history,PEOPLE *pPeople);
+void refresh_master_event(BUILDINGS *buildings, HISTORY *history, PEOPLE *pPeople);
 
-int equal_master_event(MASTER_EVENTS* masterEvents,PLATFORM platform, DATE begin);
+int equal_master_event(MASTER_EVENTS *masterEvents, PLATFORM platform, DATE begin);
 
-void check_consistency_master(MASTER_EVENTS ** masterEvents,STUDIOS * studios,unsigned size);
+BRANCH_CALENDAR *
+check_consistency_master(STUDIOS *studios, MASTER_EVENTS *masterEvents, PLATFORM platform, DATE begin, DATE end);
+
+void fix_colision(STUDIOS *studios, BRANCH_EVENTS **branchEvents, BRANCH_EVENTS *branchEvents1, BRANCH_CALENDAR *branchCalendar1,
+                  BRANCH_EVENTS *branchEvents2, BRANCH_CALENDAR *branchCalendar2);
 
 #endif //GESTOR_ALOJAMENTOS_MASTER_EVENTS_H
