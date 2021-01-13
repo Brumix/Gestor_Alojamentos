@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_calendar/branch_calendar.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/branch_events/branch_events.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/buildings/buildings.c.obj"
@@ -13,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/people/people.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj"
+  "CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj"
   "CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   "Gestor_Alojamentos.exe"

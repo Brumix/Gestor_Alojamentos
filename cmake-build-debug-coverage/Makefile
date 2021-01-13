@@ -142,6 +142,33 @@ Gestor_Alojamentos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/build
 .PHONY : Gestor_Alojamentos/fast
 
+code/components/billing/billing.obj: code/components/billing/billing.c.obj
+
+.PHONY : code/components/billing/billing.obj
+
+# target to build an object file
+code/components/billing/billing.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj
+.PHONY : code/components/billing/billing.c.obj
+
+code/components/billing/billing.i: code/components/billing/billing.c.i
+
+.PHONY : code/components/billing/billing.i
+
+# target to preprocess a source file
+code/components/billing/billing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.i
+.PHONY : code/components/billing/billing.c.i
+
+code/components/billing/billing.s: code/components/billing/billing.c.s
+
+.PHONY : code/components/billing/billing.s
+
+# target to generate assembly for a file
+code/components/billing/billing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.s
+.PHONY : code/components/billing/billing.c.s
+
 code/components/branch_calendar/branch_calendar.obj: code/components/branch_calendar/branch_calendar.c.obj
 
 .PHONY : code/components/branch_calendar/branch_calendar.obj
@@ -520,6 +547,33 @@ code/components/price/price.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.s
 .PHONY : code/components/price/price.c.s
 
+code/components/reports/reports.obj: code/components/reports/reports.c.obj
+
+.PHONY : code/components/reports/reports.obj
+
+# target to build an object file
+code/components/reports/reports.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj
+.PHONY : code/components/reports/reports.c.obj
+
+code/components/reports/reports.i: code/components/reports/reports.c.i
+
+.PHONY : code/components/reports/reports.i
+
+# target to preprocess a source file
+code/components/reports/reports.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.i
+.PHONY : code/components/reports/reports.c.i
+
+code/components/reports/reports.s: code/components/reports/reports.c.s
+
+.PHONY : code/components/reports/reports.s
+
+# target to generate assembly for a file
+code/components/reports/reports.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.s
+.PHONY : code/components/reports/reports.c.s
+
 code/components/studios/studios.obj: code/components/studios/studios.c.obj
 
 .PHONY : code/components/studios/studios.obj
@@ -583,6 +637,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Gestor_Alojamentos
+	@echo ... code/components/billing/billing.obj
+	@echo ... code/components/billing/billing.i
+	@echo ... code/components/billing/billing.s
 	@echo ... code/components/branch_calendar/branch_calendar.obj
 	@echo ... code/components/branch_calendar/branch_calendar.i
 	@echo ... code/components/branch_calendar/branch_calendar.s
@@ -625,6 +682,9 @@ help:
 	@echo ... code/components/price/price.obj
 	@echo ... code/components/price/price.i
 	@echo ... code/components/price/price.s
+	@echo ... code/components/reports/reports.obj
+	@echo ... code/components/reports/reports.i
+	@echo ... code/components/reports/reports.s
 	@echo ... code/components/studios/studios.obj
 	@echo ... code/components/studios/studios.i
 	@echo ... code/components/studios/studios.s

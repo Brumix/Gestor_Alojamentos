@@ -284,6 +284,32 @@ CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\politics\politics.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\components\politics\politics.c.s
 
+CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
+CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj: ../code/components/reports/reports.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\code\components\reports\reports.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\reports\reports.c"
+
+CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\reports\reports.c" > CMakeFiles\Gestor_Alojamentos.dir\code\components\reports\reports.c.i
+
+CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\reports\reports.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\components\reports\reports.c.s
+
+CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj: CMakeFiles/Gestor_Alojamentos.dir/flags.make
+CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj: ../code/components/billing/billing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Gestor_Alojamentos.dir\code\components\billing\billing.c.obj   -c "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\billing\billing.c"
+
+CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\billing\billing.c" > CMakeFiles\Gestor_Alojamentos.dir\code\components\billing\billing.c.i
+
+CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\code\components\billing\billing.c" -o CMakeFiles\Gestor_Alojamentos.dir\code\components\billing\billing.c.s
+
 # Object files for target Gestor_Alojamentos
 Gestor_Alojamentos_OBJECTS = \
 "CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj" \
@@ -301,7 +327,9 @@ Gestor_Alojamentos_OBJECTS = \
 "CMakeFiles/Gestor_Alojamentos.dir/code/components/holidays/holidays.c.obj" \
 "CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.obj" \
 "CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.obj" \
-"CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj"
+"CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj" \
+"CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj" \
+"CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj"
 
 # External object files for target Gestor_Alojamentos
 Gestor_Alojamentos_EXTERNAL_OBJECTS =
@@ -322,11 +350,13 @@ Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/holida
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/files/read/read.c.obj
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/files/write/write.c.obj
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/politics/politics.c.obj
+Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj
+Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/code/components/billing/billing.c.obj
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/build.make
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/linklibs.rsp
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/objects1.rsp
 Gestor_Alojamentos.exe: CMakeFiles/Gestor_Alojamentos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable Gestor_Alojamentos.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Bruno Miguel\CLionProjects\Gestor_Alojamentos\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Linking C executable Gestor_Alojamentos.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Gestor_Alojamentos.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

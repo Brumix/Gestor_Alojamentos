@@ -12,6 +12,17 @@
 #define INICIAL 5
 #define HASHSIZE 5
 
+#define BASEPATH "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\"
+#define FILEBILLING "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\billing.txt"
+#define FILEOCUPACION_RATE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\ocupacionrate.txt"
+#define FILEBUILDING_WRITE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\building.txt"
+#define FILEBUILDING_BIN "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\buildingbin.bin"
+#define FILESTUDIO_WRITE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\studio.txt"
+#define FILESTUDIO_BIN "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\studio.bin"
+#define FILEHISTORY_WRITE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\history.txt"
+#define FILEHISTORY_BIN "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\myData\\history.bin"
+
+
 #define FILEPEOPLE "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\pessoas.csv"
 #define FILEBUILDINGS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\edificios.csv"
 #define FILESTUDIOS "C:\\Users\\Bruno Miguel\\CLionProjects\\Gestor_Alojamentos\\data\\estudios.csv"
@@ -178,6 +189,9 @@ POLITICS *politics;
 #include <assert.h>
 #include <fcntl.h>
 
+
+#include "../components/billing/billing.h"
+#include "../components/reports/reports.h"
 #include "../components/politics/politics.h"
 #include "../components/price/price.h"
 #include "../components/people/people.h"

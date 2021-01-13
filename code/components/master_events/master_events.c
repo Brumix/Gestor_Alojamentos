@@ -75,12 +75,14 @@ MASTER_EVENTS *create_master_event(PLATFORM platform, PEOPLE *people, DATE date_
  * imprime a lista dos eventos
  * @param masterEvents lista dos eventos
  */
+
 void print_master_events(MASTER_EVENTS *masterEvents) {
     MASTER_EVENTS *curent = masterEvents;
     printf("MASTER EVENTS\n");
+
     while (curent != NULL) {
         printf("PLATAFORMA:%s\n", strPlatform(curent->platform));
-        //print_people(curent->people);
+        print_people(curent->people);
         print_date(curent->date_begin);
         print_date(curent->date_end);
         printf("PRECO: %.2f\n", curent->price);
@@ -207,7 +209,8 @@ check_consistency_master(STUDIOS *studios, MASTER_EVENTS *masterEvents, PLATFORM
             current->platform != NP &&
             compare_date(begin, current->date_begin) == 0)
             return find_branch_calendar(studios, 0, (int) studios->number_branch, current->platform);
-        else if (platform != current->platform && current->platform != NP && colision_dates(begin,end,current->date_begin,current->date_end)==1)
+        else if (platform != current->platform && current->platform != NP &&
+                 colision_dates(begin, end, current->date_begin, current->date_end) == 1)
             return find_branch_calendar(studios, 0, (int) studios->number_branch, platform);
         current = current->next;
     }
