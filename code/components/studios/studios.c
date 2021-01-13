@@ -179,3 +179,25 @@ STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned ind){
     }
     return NULL;
 }
+
+
+void update_studio(BUILDINGS*buildings,int id,int new){
+    STUDIOS *studios=buildings->studios;
+    if (unique_id(studios,buildings->num_studios,new)==1) {
+        printf("INDEX ALREADY EXITS\n");
+        return;
+    }
+    for (int i = 0; i < buildings->num_studios; ++i) {
+        if(studios[i].index==id)
+            studios[i].index=new;
+    }
+
+}
+
+int unique_id(STUDIOS*studios,int size,int id){
+    for (int i = 0; i < size; ++i) {
+        if(studios[i].index==id)
+            return 1;
+    }
+    return 0;
+}

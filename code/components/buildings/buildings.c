@@ -113,17 +113,42 @@ void print_building_all(BUILDINGS *head) {
  * @param name  nome do edificios
  * @return 1(encontrou) ou 0(nao encontrou)
  */
-BUILDINGS *find_building(BUILDINGS *head, int ind) {
+BUILDINGS *find_building(BUILDINGS *head, int index) {
     BUILDINGS *current;
     current = head;
     while (current != NULL) {
 
-        if (current->index == ind)
+        if (current->index==index)
             return current;
         if (current->next == NULL)
             return NULL;
         current = current->next;
     }
-    return 0;
+    return NULL;
 }
 
+BUILDINGS *find_building_by_name(BUILDINGS *head, char *name) {
+    BUILDINGS *current;
+    current = head;
+    while (current != NULL) {
+
+        if (strcmp(current->name,name)==0)
+            return current;
+        if (current->next == NULL)
+            return NULL;
+        current = current->next;
+    }
+    return NULL;
+}
+
+void update_building(BUILDINGS* buildings,char *name,char *new){
+    BUILDINGS *current=buildings;
+    while (current!=NULL){
+        if(strcmp(current->name,name)==0)
+            strcpy(current->name,new);
+
+        current=current->next;
+    }
+
+
+}

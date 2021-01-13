@@ -38,6 +38,23 @@ TYPE_STUDIO enumTypeStudio(char *ts) {
     else return NE;
 }
 
+
+
+int getPeople_TypeStudio(TYPE_STUDIO ts) {
+    switch (ts) {
+        case T0:
+            return 1;
+        case T1:
+            return 2;
+        case T2:
+            return 3;
+        case T3:
+            return 4;
+        default:
+            return 0;
+    }
+}
+
 /**
  * print do enum plataforma
  * @param platform  enum

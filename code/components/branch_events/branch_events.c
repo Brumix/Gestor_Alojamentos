@@ -164,3 +164,17 @@ BRANCH_EVENTS * find_branch_event(BRANCH_CALENDAR* branchCalendar,DATE begin){
     }
     return NULL;
 }
+
+void update_branch_event(BRANCH_EVENTS* branchEvents,DATE begin,float price){
+    BRANCH_EVENTS *curent=branchEvents;
+    while (curent!=NULL){
+        if(compare_date(curent->date_begin,begin)==0) {
+            curent->price = price;
+            return;
+        }
+        curent=curent->next;
+    }
+
+
+
+}

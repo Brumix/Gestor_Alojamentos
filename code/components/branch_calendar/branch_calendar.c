@@ -11,7 +11,7 @@
  */
 void add_branch_calendar(STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
     resize_branch_calendar(studios);
-    BRANCH_CALENDAR temp = create_branch_calendar( platform, priority, politics);
+    BRANCH_CALENDAR temp = create_branch_calendar(platform, priority, politics);
     for (int i = 0; i < studios->sizeArrayBranch; i++) {
         if (i == studios->number_branch) {
             studios->branch_calendar[studios->number_branch] = temp;
@@ -43,9 +43,9 @@ BRANCH_CALENDAR *find_branch_calendar(STUDIOS *studios, int low, int high, PLATF
     if (studios->branch_calendar[mid].platform == platform)
         return &studios->branch_calendar[mid];
     if (studios->branch_calendar[low].platform == platform)
-        return  &studios->branch_calendar[low];
+        return &studios->branch_calendar[low];
     if (studios->branch_calendar[high].platform == platform)
-        return  &studios->branch_calendar[high];
+        return &studios->branch_calendar[high];
     if (studios->branch_calendar[mid].platform > platform)
         return find_branch_calendar(studios, low, mid - 1, platform);
 
@@ -78,10 +78,22 @@ void print_branch_calendar(STUDIOS *studios) {
     for (int i = 0; i < studios->number_branch; ++i) {
         BRANCH_CALENDAR *branchCalendar = &studios->branch_calendar[i];
         printf("PRIORIDADE: %u\n", branchCalendar->priority);
-        printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
-        printf("POLITIC: %s\n", branchCalendar->politics);
-        print_config(branchCalendar->configuration);
+        //  printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
+        //  printf("POLITIC: %s\n", branchCalendar->politics);
+        //  print_config(branchCalendar->configuration);
     }
+
+}
+
+
+void print_branch_calendar_unique(BRANCH_CALENDAR *branchCalendar) {
+    printf("BRANCH CALENDAR\n");
+
+    printf("PRIORIDADE: %u\n", branchCalendar->priority);
+    printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
+    printf("POLITIC: %s\n", branchCalendar->politics);
+    print_config(branchCalendar->configuration);
+
 
 }
 
@@ -93,14 +105,14 @@ void print_branch_calendar(STUDIOS *studios) {
  * @param politics nome da politica a implementar
  * @return branch_calendar criado
  */
-BRANCH_CALENDAR create_branch_calendar( PLATFORM platform, unsigned priority, char *politics) {
+BRANCH_CALENDAR create_branch_calendar(PLATFORM platform, unsigned priority, char *politics) {
     BRANCH_CALENDAR branchCalendar;
     branchCalendar.platform = platform;
     branchCalendar.priority = priority;
-    branchCalendar.politics=malloc(4* sizeof(char* ));
-    strcpy(branchCalendar.politics,politics);
+    branchCalendar.politics = malloc(4 * sizeof(char *));
+    strcpy(branchCalendar.politics, politics);
     branchCalendar.branch_event = NULL;
-    branchCalendar.configuration=NULL;
+    branchCalendar.configuration = NULL;
     combine_config(&branchCalendar);
     return branchCalendar;
 }
@@ -156,13 +168,13 @@ void shift_left_branchCalendar(BRANCH_CALENDAR *a, int index, unsigned size) {
  * @param name  nome
  * @param value valor
  */
-void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
-    CONFIGURATION *temp=(CONFIGURATION*)malloc(sizeof(CONFIGURATION));
-    temp->name=malloc(25* sizeof(char*));
-    strcpy(temp->name,name);
-    temp->value=value;
-    temp->next=*pConfiguration;
-    *pConfiguration=temp;
+void add_config(CONFIGURATION **pConfiguration, char *name, float value) {
+    CONFIGURATION *temp = (CONFIGURATION *) malloc(sizeof(CONFIGURATION));
+    temp->name = malloc(25 * sizeof(char *));
+    strcpy(temp->name, name);
+    temp->value = value;
+    temp->next = *pConfiguration;
+    *pConfiguration = temp;
 
 }
 
@@ -170,34 +182,35 @@ void add_config(CONFIGURATION **pConfiguration,char *name,float value) {
  * imprime as configuracoes
  * @param configuration  configuracao struct
  */
-void print_config(CONFIGURATION * configuration){
-    CONFIGURATION *current=configuration;
+void print_config(CONFIGURATION *configuration) {
+    CONFIGURATION *current = configuration;
     printf("CONFIGURATION\n");
-    while (current!=NULL){
-        printf("NAME:%s\n",current->name);
-        printf("VALUE: %.2f \n",current->value);
-        current=current->next;
+    while (current != NULL) {
+        printf("NAME:%s\n", current->name);
+        printf("VALUE: %.2f \n", current->value);
+        current = current->next;
     }
 
 }
+
 /**
  * combina as configuracoes
  * @param politics struct politicas
  * @param branchCalendar struct branch_calendar
  */
- void combine_config(BRANCH_CALENDAR * branchCalendar){
-    POLITICS * current= politics;
-     while (current!=NULL){
-         if(strcmp(current->name,branchCalendar->politics)==0 && current->platform== branchCalendar->platform){
-             CONFIGURATION * configPrinc=current->configuration;
-             CONFIGURATION ** configBranch= &branchCalendar->configuration;
-             while (configPrinc!=NULL){
-                 add_config(configBranch,configPrinc->name,-1);
-                 configPrinc=configPrinc->next;
-             }
-         }
-         current=current->next;
-     }
+void combine_config(BRANCH_CALENDAR *branchCalendar) {
+    POLITICS *current = politics;
+    while (current != NULL) {
+        if (strcmp(current->name, branchCalendar->politics) == 0 && current->platform == branchCalendar->platform) {
+            CONFIGURATION *configPrinc = current->configuration;
+            CONFIGURATION **configBranch = &branchCalendar->configuration;
+            while (configPrinc != NULL) {
+                add_config(configBranch, configPrinc->name, -1);
+                configPrinc = configPrinc->next;
+            }
+        }
+        current = current->next;
+    }
 }
 
 /**
@@ -205,14 +218,168 @@ void print_config(CONFIGURATION * configuration){
  * @param pConfiguration  struct combinacao
  * @param value  valor a implementar
  */
-void add_value_config(CONFIGURATION ** pConfiguration, float value){
-    CONFIGURATION * current= *pConfiguration;
-    ERRORMESSAGE(current==NULL,"[CONFIGURATION ADD VALUE: CONFIGURACAO VAIZA]");
-    while (current!=NULL){
-        if(current->value== -1){
-            current->value=value;
+void add_value_config(CONFIGURATION **pConfiguration, float value) {
+    CONFIGURATION *current = *pConfiguration;
+    ERRORMESSAGE(current == NULL, "[CONFIGURATION ADD VALUE: CONFIGURACAO VAIZA]");
+    while (current != NULL) {
+        if (current->value == -1) {
+            current->value = value;
             return;
         }
-        current=current->next;
+        current = current->next;
     }
+}
+
+
+void add_specif_event(BUILDINGS *head, DATE begin, DATE end, int dias, char *buildingname, int n_pessoas) {
+    BUILDINGS *buildings = find_building_by_name(head, buildingname);
+    EXISTENTE(buildings == NULL, "[EDIFICIO NAO EXISTENTE]");
+    EXISTENTE(getDifferenceDays(begin, end) < dias, "[INTERVALO DE TEMPO DEMASIADO CURTO]");
+    PEOPLE_ALOCATED *peopleAlocated = NULL;
+    if (check_people_can_have(begin, end, buildings, dias, n_pessoas, &peopleAlocated) == 0) {
+        printf("NAO FOU POSSIVEL ENCONTRAR UMA VAGA\n");
+        return;
+    } else {
+        print_people_alocated(peopleAlocated, n_pessoas);
+    }
+}
+
+int
+check_people_can_have(DATE begin, DATE end, BUILDINGS *head, int dias, int n_people, PEOPLE_ALOCATED **peopleAlocated) {
+
+    BUILDINGS *buildings = head;
+    DATE data_check_begin = begin;
+    DATE data_check_end = addDays(data_check_begin, dias);
+    int alocated = 0, temp;
+    while (1) {
+        for (int i = 0; i < buildings->num_studios; ++i) {
+            STUDIOS studios = buildings->studios[i];
+            temp = people_alocated(data_check_begin, data_check_end, studios.masterEvents, studios.typeStudio);
+            if (temp >= n_people) {
+                add_people_alocated(peopleAlocated, data_check_begin, data_check_end, temp, studios.index);
+                return 1;
+            }
+            if (temp > 0) {
+                add_people_alocated(peopleAlocated, data_check_begin, data_check_end, temp, studios.index);
+                alocated += temp;
+            }
+            if (alocated >= n_people)
+                return 1;
+        }
+        alocated = 0;
+        data_check_begin = addDays(data_check_begin, 1);
+        data_check_end = addDays(data_check_begin, dias);
+        if (getDifferenceDays(data_check_begin, end) < dias)
+            return 0;
+    }
+
+
+}
+
+int people_alocated(DATE begin, DATE end, MASTER_EVENTS *masterEvents, TYPE_STUDIO typeStudio) {
+    int alocated = 0;
+    MASTER_EVENTS *temp = masterEvents;
+    while (temp != NULL) {
+        if (compare_date(begin, temp->date_begin) == 1 && compare_date(end, temp->date_end) == -1) {
+            alocated = 1;
+            break;
+        }
+        temp = temp->next;
+    }
+    if (alocated == 0)
+        return getPeople_TypeStudio(typeStudio);
+    return 0;
+}
+
+
+void add_people_alocated(PEOPLE_ALOCATED **peopleAlocated, DATE begin, DATE end, int n_people, int index) {
+    PEOPLE_ALOCATED *temp = malloc(sizeof(PEOPLE_ALOCATED));
+    temp->n_people = n_people;
+    temp->index = index;
+    temp->begin = begin;
+    temp->end = end;
+    temp->next = NULL;
+
+    temp->next = (*peopleAlocated);
+    (*peopleAlocated) = temp;
+}
+
+void print_people_alocated(PEOPLE_ALOCATED *peopleAlocated, int n_people) {
+    printf("EXISTE VAGA NO PERIODO DE TEMPO\n");
+    print_date(peopleAlocated->begin);
+    print_date(peopleAlocated->end);
+    printf("NOS SEGINTES ESTUDIOS:\n");
+    PEOPLE_ALOCATED *temp = peopleAlocated;
+    int aloced = 0;
+    while (temp != NULL) {
+        aloced = n_people - (n_people - temp->n_people);
+        if (aloced > 0)
+            printf("\tESTUDIO: %i PARA %i PESSOAS\n", temp->index, aloced);
+        else
+            printf("\tESTUDIO: %i PARA %i PESSOAS\n", temp->index, aloced);
+
+        temp = temp->next;
+    }
+}
+
+
+void add_branch_calendar_merge(STUDIOS *studios, PLATFORM platform, unsigned priority, char *politics) {
+    resize_branch_calendar(studios);
+    BRANCH_CALENDAR temp = create_branch_calendar(platform, priority, politics);
+    studios->branch_calendar[studios->number_branch] = temp;
+    studios->number_branch++;
+
+}
+
+
+void merge_array_branch(BRANCH_CALENDAR *a, BRANCH_CALENDAR *aux, int lo, int mid, int hi)
+{
+    int k;
+    for (k = lo; k <= hi; k++)
+        *(aux + k) = *(a + k);
+    int i = lo, j = mid + 1;
+    for (k = lo; k <= hi; k++)
+    {
+        if (i > mid)
+            *(a + k) = *(aux + (j++));
+        else if (j > hi)
+            *(a + k) = *(aux + (i++));
+        else if ((aux + j)->priority < (aux + i)->priority)
+            *(a + k) = *(aux + (j++));
+        else
+            *(a + k) = *(aux + (i++));
+    }
+}
+
+void mergesort_recursivo_branch(BRANCH_CALENDAR *a, BRANCH_CALENDAR *aux, int lo, int hi)
+{
+    if (hi <= lo)
+        return;
+    int mid = lo + (hi - lo) / 2;
+    mergesort_recursivo_branch(a, aux, lo, mid);
+    mergesort_recursivo_branch(a, aux, mid + 1, hi);
+    if ((a + (mid + 1))->priority >= (a + mid)->priority)
+        return; // improvement
+    merge_array_branch(a, aux, lo, mid, hi);
+}
+
+void mergesort_run_branch(BRANCH_CALENDAR *a, int n, int lo, int hi)
+{
+    BRANCH_CALENDAR *aux;
+    aux = malloc(sizeof(int) * n);
+    mergesort_recursivo_branch(a, aux, lo, hi);
+//    free(aux);
+}
+
+void sort_branch_calendar(BUILDINGS * head){
+    BUILDINGS * buildings=head;
+    while (buildings!=NULL){
+        for (int i = 0; i < buildings->num_studios; ++i) {
+            STUDIOS studios=buildings->studios[i];
+            mergesort_run_branch(studios.branch_calendar, studios.number_branch, 0, studios.number_branch - 1);
+        }
+        buildings=buildings->next;
+    }
+
+
 }

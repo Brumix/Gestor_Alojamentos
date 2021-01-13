@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/price/price.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/components/price/price.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/reports/reports.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/components/reports/reports.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/studios/studios.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.obj"
+  "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/components/test/test.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/components/test/test.c.obj"
   "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/code/main/main.c" "C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir/code/main/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

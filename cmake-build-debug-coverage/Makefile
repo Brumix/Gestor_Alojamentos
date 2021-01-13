@@ -601,6 +601,33 @@ code/components/studios/studios.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/studios/studios.c.s
 .PHONY : code/components/studios/studios.c.s
 
+code/components/test/test.obj: code/components/test/test.c.obj
+
+.PHONY : code/components/test/test.obj
+
+# target to build an object file
+code/components/test/test.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/test/test.c.obj
+.PHONY : code/components/test/test.c.obj
+
+code/components/test/test.i: code/components/test/test.c.i
+
+.PHONY : code/components/test/test.i
+
+# target to preprocess a source file
+code/components/test/test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/test/test.c.i
+.PHONY : code/components/test/test.c.i
+
+code/components/test/test.s: code/components/test/test.c.s
+
+.PHONY : code/components/test/test.s
+
+# target to generate assembly for a file
+code/components/test/test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Gestor_Alojamentos.dir\build.make CMakeFiles/Gestor_Alojamentos.dir/code/components/test/test.c.s
+.PHONY : code/components/test/test.c.s
+
 code/main/main.obj: code/main/main.c.obj
 
 .PHONY : code/main/main.obj
@@ -688,6 +715,9 @@ help:
 	@echo ... code/components/studios/studios.obj
 	@echo ... code/components/studios/studios.i
 	@echo ... code/components/studios/studios.s
+	@echo ... code/components/test/test.obj
+	@echo ... code/components/test/test.i
+	@echo ... code/components/test/test.s
 	@echo ... code/main/main.obj
 	@echo ... code/main/main.i
 	@echo ... code/main/main.s

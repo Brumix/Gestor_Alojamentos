@@ -25,4 +25,6 @@ void clean_branch_event( BRANCH_CALENDAR * branchCalendar,int size);
 
 BRANCH_EVENTS * find_branch_event(BRANCH_CALENDAR* branchCalendar,DATE begin);
 
+void update_branch_event(BRANCH_EVENTS* branchEvents,DATE begin,float price);
+
 #endif //GESTOR_ALOJAMENTOS_BRANCH_EVENTS_H

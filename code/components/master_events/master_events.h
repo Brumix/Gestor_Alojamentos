@@ -31,4 +31,10 @@ check_consistency_master(STUDIOS *studios, MASTER_EVENTS *masterEvents, PLATFORM
 void fix_colision(STUDIOS *studios, BRANCH_EVENTS **branchEvents, BRANCH_EVENTS *branchEvents1, BRANCH_CALENDAR *branchCalendar1,
                   BRANCH_EVENTS *branchEvents2, BRANCH_CALENDAR *branchCalendar2);
 
+void merge_array_master(MASTER_EVENTS *a, MASTER_EVENTS *aux, int lo, int mid, int hi);
+
+void mergesort_recursivo_master(MASTER_EVENTS *a, MASTER_EVENTS *aux, int lo, int hi);
+
+void mergesort_master(MASTER_EVENTS *a, int n, int lo, int hi);
+
 #endif //GESTOR_ALOJAMENTOS_MASTER_EVENTS_H

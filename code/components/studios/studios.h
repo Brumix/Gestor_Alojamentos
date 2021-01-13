@@ -29,4 +29,8 @@ char *strTypeStudio(TYPE_STUDIO ts);
 
 STUDIOS *find_studio_everyhere(BUILDINGS *building,unsigned index);
 
+void update_studio(BUILDINGS*buildings,int id,int new);
+
+int unique_id(STUDIOS*studios,int size,int id);
+
 #endif //GESTOR_ALOJAMENTOS_STUDIOS_H

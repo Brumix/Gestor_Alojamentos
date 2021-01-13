@@ -235,3 +235,4 @@ void fix_colision(STUDIOS *studios, BRANCH_EVENTS **branchEvents, BRANCH_EVENTS 
         next_date_avalabe(studios, branchEvents, branchEvents2, branchCalendar2);
 
 }
+

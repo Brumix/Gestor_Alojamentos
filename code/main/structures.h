@@ -63,6 +63,8 @@ typedef enum platform {
 ************ STRUCTURES **************
 **************************************/
 
+
+
 typedef struct configuration{
     char *name;
     float value;
@@ -82,6 +84,14 @@ typedef struct date {
     unsigned short month;
     unsigned short Year;
 } DATE;
+
+typedef struct people_alocated{
+    int index;
+    int n_people;
+    DATE begin;
+    DATE end;
+    struct people_alocated *next;
+}PEOPLE_ALOCATED;
 
 typedef struct gps {
     char *latitude;
@@ -207,6 +217,6 @@ POLITICS *politics;
 #include"../components/buildings/buildings.h"
 #include "../components/files/write/write.h"
 #include "../components/files/read/read.h"
-
+#include "../components/test/test.h"
 
 #endif //GESTOR_ALOJAMENTOS_STRUCTURES_H

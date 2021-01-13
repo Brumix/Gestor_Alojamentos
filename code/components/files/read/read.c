@@ -86,7 +86,7 @@ void read_file_studio_politics(BUILDINGS *buildings) {
     char *politica = malloc(25 * sizeof(char *));
     float re;
     int num;
-    int priority[] = {1, 10, 100};
+    int priority[] = {1, 10, 100,1000};
     fscanf(file_read, "%*s");
     while (!feof(file_read)) {
         fscanf(file_read, "%d", &estudio);
@@ -97,7 +97,8 @@ void read_file_studio_politics(BUILDINGS *buildings) {
         POLITICS *findPolitics = find_politics(politica);
         ERRORMESSAGE(findPolitics == NULL, "[READ FILE ESTUDIO:POLITICA INEXISTENTE]");
         num = (rand() % 3);
-        add_branch_calendar(studios, findPolitics->platform, priority[num - 1], findPolitics->name);
+        add_branch_calendar_merge(studios, findPolitics->platform, priority[num], findPolitics->name);
+        //add_branch_calendar(studios, findPolitics->platform, priority[num - 1], findPolitics->name);
         CONFIGURATION *pConfiguration = studios->branch_calendar[studios->number_branch - 1].configuration;
 
         for (int i = 0; i < findPolitics->size; i++) {
@@ -111,6 +112,7 @@ void read_file_studio_politics(BUILDINGS *buildings) {
         // printf("##############################\n\n");
     }
     fclose(file_read);
+    sort_branch_calendar(buildings);
 }
 
 
@@ -153,7 +155,6 @@ void read_events(BUILDINGS *buildings, PEOPLE *people) {
             BRANCH_CALENDAR *branchCalendar = find_branch_calendar(studios, 0, (int) studios->number_branch,
                                                                    platform);
             if (branchCalendar == NULL) {
-                printf(" [READ FILE EVENTS:  BRANCH CALENDAR NAO EXISTENTE]\n");
                 continue;
             }
             add_branch_event(buildings, &branchCalendar->branch_event, id, begin, end, RESERVADO, findPeople);

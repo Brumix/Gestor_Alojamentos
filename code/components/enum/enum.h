@@ -12,6 +12,8 @@ char *strTypeStudio(TYPE_STUDIO ts);
 
 TYPE_STUDIO enumTypeStudio(char *ts);
 
+int getPeople_TypeStudio(TYPE_STUDIO ts);
+
 char *strPlatform(PLATFORM platform);
 
 PLATFORM enumTypePlataform(char *ts);
