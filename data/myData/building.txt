@@ -1,0 +1,8 @@
+ESTUDIO:1 PF Boavista 1.50
+	 LOCATION: Avenida da Boavista 41.162392 -8.655714
+ESTUDIO:3 PF Norte 1.30
+	 LOCATION: Rua do Norte 41.15 -8.61024
+ESTUDIO:2 PF Riberia 1.80
+	 LOCATION: Cais da Ribeira 41.140416 -8.612434
+ESTUDIO:4 PF Santa Catarina 1.70
+	 LOCATION: Rua Santa Catarina 41.14638 -8.60705
