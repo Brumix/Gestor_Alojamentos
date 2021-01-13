@@ -6,11 +6,11 @@
 
 
 void main_test(BUILDINGS *buildings, HISTORY *history, PEOPLE *people) {
-    //  criterio23(buildings, people, history);
-    // criterio45(buildings, people, history);
+    // criterio23(buildings, people, history);
+    //criterio45(buildings, people, history);
     //criterio67(buildings, people, history);
     //criterio8(buildings,people,history);
-   // criterio9(buildings,people,history);
+    // criterio9(buildings,people,history);
 
 }
 
@@ -112,7 +112,7 @@ void criterio8(BUILDINGS *buildings, PEOPLE *people, HISTORY *history) {
 }
 
 
-void criterio9(BUILDINGS *buildings, PEOPLE *people, HISTORY *history){
+void criterio9(BUILDINGS *buildings, PEOPLE *people, HISTORY *history) {
     read_politics();
     read_people(&people);
     read_file_buildigns(&buildings);
@@ -124,6 +124,6 @@ void criterio9(BUILDINGS *buildings, PEOPLE *people, HISTORY *history){
     DATE date2 = add_date(15, 03, 2020);
 
 
-    add_specif_event(buildings,date1,date2,7,"PF Boavista",13);
+    add_specif_event(buildings, date1, date2, 7, "PF Boavista", 13);
 
 }
