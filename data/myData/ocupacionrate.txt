@@ -214,3 +214,111 @@ EDIFICIO 4
 TOTALIDADE DA TAXA DE OCUPACAO COM 4 ESTUDIOS:50.00
 
 #####################################################################
+####################### 12/3/12/t12/3/2021 ##########################
+EDIFICIO 1
+	ESTUDIO: 1
+		 TOTAL 365 com uma taxa de ocupacao de 1.64 
+	ESTUDIO: 2
+		 TOTAL 365 com uma taxa de ocupacao de 1.64 
+	ESTUDIO: 4
+		 TOTAL 365 com uma taxa de ocupacao de 7.95 
+	ESTUDIO: 5
+		 TOTAL 365 com uma taxa de ocupacao de 0.55 
+	ESTUDIO: 14
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 17
+		 TOTAL 365 com uma taxa de ocupacao de 2.47 
+	ESTUDIO: 22
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 23
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 30
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 35
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 38
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 44
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 45
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+EDIFICIO 3
+	ESTUDIO: 3
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 6
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 7
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 11
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 12
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 21
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 27
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 28
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 31
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 39
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 40
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 41
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 43
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 47
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+EDIFICIO 2
+	ESTUDIO: 8
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 9
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 10
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 13
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 15
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 18
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 19
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 20
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 29
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 32
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 33
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 42
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 46
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 48
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 49
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+EDIFICIO 4
+	ESTUDIO: 16
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 24
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 25
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 26
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 34
+		 TOTAL 365 com uma taxa de ocupacao de 0.27 
+	ESTUDIO: 36
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 37
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+	ESTUDIO: 50
+		 TOTAL 365 com uma taxa de ocupacao de 0.00 
+TOTALIDADE DA TAXA DE OCUPACAO COM 4 ESTUDIOS:50.00
+
+#####################################################################

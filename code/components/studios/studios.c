@@ -22,7 +22,7 @@ void add_studio(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind
             buildings->num_studios++;
             return;
         }
-        EXISTENTE(buildings->studios[i].num_door == door,"[ESTUDIO EXISTENTE]");
+        EXISTENTE(buildings->studios[i].num_door == door, "[ESTUDIO EXISTENTE]");
         if (buildings->studios[i].num_door > door) {
             shift_right_studio(buildings->studios, i, temp, buildings->num_studios);
             buildings->num_studios++;
@@ -60,11 +60,11 @@ STUDIOS create_studio(TYPE_STUDIO typeStudio, unsigned short ind, unsigned short
     temp.typeStudio = typeStudio;
     temp.num_door = door;
     temp.index = ind;
-    temp.area=area;
+    temp.area = area;
     temp.sizeArrayBranch = INICIAL;
     temp.number_branch = 0;
     temp.branch_calendar = (BRANCH_CALENDAR *) malloc(INICIAL * sizeof(BRANCH_CALENDAR));
-    clean_branch_event(temp.branch_calendar,INICIAL);
+    clean_branch_event(temp.branch_calendar, INICIAL);
     temp.masterEvents = NULL;
     return temp;
 }
@@ -88,6 +88,18 @@ void print_studio_all(BUILDINGS *buildings) {
         printf("EXTRA: %u \n", studio->area);
         printf("\n");
     }
+
+}
+
+void print_studio(STUDIOS head) {
+    STUDIOS studio = head;
+
+    printf("ESTUDIOS\n");
+        printf("INDEX: %i \n", studio.index);
+        printf("TIPO DE ESTUDIO: %s\n", strTypeStudio(studio.typeStudio));
+        printf("PORTA: %i\n", studio.num_door);
+        printf("EXTRA: %u \n", studio.area);
+        printf("\n");
 
 }
 
@@ -169,35 +181,91 @@ void shift_left_studio(STUDIOS *a, int index, unsigned size) {
  * @param index unsigned
  * @return STUDIOS *
  */
-STUDIOS *find_studio_everyhere(BUILDINGS *building ,unsigned ind){
-        BUILDINGS *current= building;
-    while (current!=NULL){
-           int index=find_studio(current, 0, current->num_studios, ind);
-           if (index!= -1)
-               return &current->studios[index];
-        current=current->next;
+STUDIOS *find_studio_everyhere(BUILDINGS *building, unsigned ind) {
+    BUILDINGS *current = building;
+    while (current != NULL) {
+        int index = find_studio(current, 0, current->num_studios, ind);
+        if (index != -1)
+            return &current->studios[index];
+        current = current->next;
     }
     return NULL;
 }
 
 
-void update_studio(BUILDINGS*buildings,int id,int new){
-    STUDIOS *studios=buildings->studios;
-    if (unique_id(studios,buildings->num_studios,new)==1) {
+void update_studio(BUILDINGS *buildings, int id, int new) {
+    STUDIOS *studios = buildings->studios;
+    if (unique_id(studios, buildings->num_studios, new) == 1) {
         printf("INDEX ALREADY EXITS\n");
         return;
     }
     for (int i = 0; i < buildings->num_studios; ++i) {
-        if(studios[i].index==id)
-            studios[i].index=new;
+        if (studios[i].index == id)
+            studios[i].index = new;
     }
 
 }
 
-int unique_id(STUDIOS*studios,int size,int id){
+int unique_id(STUDIOS *studios, int size, int id) {
     for (int i = 0; i < size; ++i) {
-        if(studios[i].index==id)
+        if (studios[i].index == id)
             return 1;
     }
     return 0;
+}
+
+
+void
+add_studio_merge(BUILDINGS *buildings, TYPE_STUDIO typeStudio, unsigned short ind, unsigned short door, unsigned area) {
+    resizeStudios(buildings);
+    STUDIOS temp = create_studio(typeStudio, ind, door, area);
+    buildings->studios[buildings->num_studios] = temp;
+    buildings->num_studios++;
+}
+
+
+void merge_array_studio(STUDIOS *a, STUDIOS *aux, int lo, int mid, int hi) {
+    int k;
+    for (k = lo; k <= hi; k++)
+        *(aux + k) = *(a + k);
+    int i = lo, j = mid + 1;
+    for (k = lo; k <= hi; k++) {
+        if (i > mid)
+            *(a + k) = *(aux + (j++));
+        else if (j > hi)
+            *(a + k) = *(aux + (i++));
+        else if ((aux + j)->num_door < (aux + i)->num_door)
+            *(a + k) = *(aux + (j++));
+        else
+            *(a + k) = *(aux + (i++));
+    }
+}
+
+void mergesort_recursivo_studio(STUDIOS *a, STUDIOS *aux, int lo, int hi) {
+    if (hi <= lo)
+        return;
+    int mid = lo + (hi - lo) / 2;
+    mergesort_recursivo_studio(a, aux, lo, mid);
+    mergesort_recursivo_studio(a, aux, mid + 1, hi);
+    if ((a + (mid + 1))->num_door >= (a + mid)->num_door)
+        return; // improvement
+    merge_array_studio(a, aux, lo, mid, hi);
+}
+
+void mergesort_run_studio(STUDIOS *a, int n, int lo, int hi) {
+    STUDIOS *aux;
+    aux = malloc(sizeof(STUDIOS) * n);
+    mergesort_recursivo_studio(a, aux, lo, hi);
+//   free(aux);
+}
+
+void sort_studio(BUILDINGS *head) {
+    BUILDINGS *buildings = head;
+    while (buildings != NULL) {
+
+        mergesort_run_studio(buildings->studios, buildings->num_studios, 0, buildings->num_studios - 1);
+        buildings = buildings->next;
+    }
+
+
 }

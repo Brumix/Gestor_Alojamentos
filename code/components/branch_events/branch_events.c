@@ -146,7 +146,6 @@ void print_branch_event(BRANCH_EVENTS *branchEvents) {
         printf("TIPO DO EVENTO: %s\n", strTypeBranchEvent(current->bevent));
         print_date(current->date_begin);
         print_date(current->date_end);
-        current = current->next;
     }
 
 void clean_branch_event( BRANCH_CALENDAR * branchCalendar,int size){

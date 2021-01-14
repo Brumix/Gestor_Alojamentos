@@ -10,7 +10,7 @@ int main(void) {
     politics = NULL;
     holidays = createHolidaysArray();
 
-    goto TEST;
+     goto TEST;
 
 
     printf("REAL\n\n");
@@ -33,8 +33,8 @@ int main(void) {
      DATE future2 = add_date(01, 03, 2022);
 
 
-       add_branch_event(buildings, &buildings->studios[0].branch_calendar[0].branch_event, 1, past, past3, RESERVADO,
-                        people);
+      add_branch_event(buildings, &buildings->studios[1].branch_calendar[0].branch_event, 1, past, past3, RESERVADO,
+                       people);
        add_branch_event(buildings, &buildings->studios[0].branch_calendar[1].branch_event, 2, past2, past3, RESERVADO,
                         people);
 
@@ -63,21 +63,24 @@ int main(void) {
      //  read_studio_bin();
      //  read_history_bin();
 
+    free(buildings);
+    free(history);
+    free(people);
+    free(politics);
+    free(holidays);
 
-
+    return EXIT_SUCCESS;
 
     TEST:
     main_test(buildings, history, people);
 
 
 
-
-
     free(buildings);
-    free(history);
-    free(people);
-    free(politics);
-    free(holidays);
+     free(history);
+     free(people);
+     free(politics);
+     free(holidays);
 
     return EXIT_SUCCESS;
 }

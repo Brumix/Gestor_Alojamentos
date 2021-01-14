@@ -45,10 +45,12 @@ void read_file_estudio(BUILDINGS *buildings) {
         BUILDINGS *head = find_building(buildings, edificio);
         ERRORMESSAGE(head == NULL, "[READ STUDIOS: EDIFICIO NÂO ENCONTRADO]");
         ERRORMESSAGE(enumTypeStudio(configuracao) == NE, "[READ STUDIO: TIPO DE ESTUDIO INEXISTENTE]");
-        add_studio(head, enumTypeStudio(configuracao), estudio, numero, area);
+      //  add_studio(head, enumTypeStudio(configuracao), estudio, numero, area);
+        add_studio_merge(head, enumTypeStudio(configuracao), estudio, numero, area);
         // printf("%d  // %d // %d //%d// %d \n ", estudio, numero, edificio,enumTypeStudio(configuracao), area);
     }
     fclose(file_read);
+    sort_studio(buildings);
 }
 
 

@@ -106,6 +106,20 @@ void print_building_all(BUILDINGS *head) {
 
 }
 
+void print_building(BUILDINGS *head) {
+    BUILDINGS *current = head;
+    EXISTENTE(current == NULL, "[NAO EXISTE NENHUM EDIFICIO]");
+
+    printf("EDIFICIO\n");
+        printf("INDEX: %u\n", current->index);
+        printf("NOME: %s\n", current->name);
+        printf("NUMERO DE ESTUDIOS: %i\n", current->num_studios);
+        printf("PRECO POR DIA: %.2f\n", current->price_day);
+        print_location(current->location);
+
+
+}
+
 
 /**
  * identifica se existe ou nao um dado edificio
@@ -149,6 +163,31 @@ void update_building(BUILDINGS* buildings,char *name,char *new){
 
         current=current->next;
     }
+
+}
+
+void print_all(BUILDINGS * head){
+    BUILDINGS *buildings=head;
+    while (buildings!=NULL){
+        print_building(buildings);
+        for (int i = 0; i <buildings->num_studios ; ++i) {
+            print_studio(buildings->studios[i]);
+            for (int j = 0; j < buildings->studios[i].number_branch; ++j) {
+                print_branch_calendar_unique(&buildings->studios[i].branch_calendar[j]);
+                BRANCH_EVENTS* branchEvents=buildings->studios[i].branch_calendar[j].branch_event;
+                while (branchEvents!=NULL){
+                    print_branch_event(branchEvents);
+                    branchEvents=branchEvents->next;
+                }
+
+            }
+
+
+        }
+
+        buildings=buildings->next;
+    }
+
 
 
 }

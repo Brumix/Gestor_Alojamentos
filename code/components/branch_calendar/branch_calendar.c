@@ -78,9 +78,9 @@ void print_branch_calendar(STUDIOS *studios) {
     for (int i = 0; i < studios->number_branch; ++i) {
         BRANCH_CALENDAR *branchCalendar = &studios->branch_calendar[i];
         printf("PRIORIDADE: %u\n", branchCalendar->priority);
-        //  printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
-        //  printf("POLITIC: %s\n", branchCalendar->politics);
-        //  print_config(branchCalendar->configuration);
+        printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
+        printf("POLITIC: %s\n", branchCalendar->politics);
+        print_config(branchCalendar->configuration);
     }
 
 }
@@ -88,7 +88,6 @@ void print_branch_calendar(STUDIOS *studios) {
 
 void print_branch_calendar_unique(BRANCH_CALENDAR *branchCalendar) {
     printf("BRANCH CALENDAR\n");
-
     printf("PRIORIDADE: %u\n", branchCalendar->priority);
     printf("PLATAFORMA: %s\n", strPlatform(branchCalendar->platform));
     printf("POLITIC: %s\n", branchCalendar->politics);
@@ -331,55 +330,52 @@ void add_branch_calendar_merge(STUDIOS *studios, PLATFORM platform, unsigned pri
 
 }
 
-
-void merge_array_branch(BRANCH_CALENDAR *a, BRANCH_CALENDAR *aux, int lo, int mid, int hi)
-{
-    int k;
-    for (k = lo; k <= hi; k++)
-        *(aux + k) = *(a + k);
-    int i = lo, j = mid + 1;
-    for (k = lo; k <= hi; k++)
-    {
-        if (i > mid)
-            *(a + k) = *(aux + (j++));
-        else if (j > hi)
-            *(a + k) = *(aux + (i++));
-        else if ((aux + j)->priority < (aux + i)->priority)
-            *(a + k) = *(aux + (j++));
-        else
-            *(a + k) = *(aux + (i++));
-    }
-}
-
-void mergesort_recursivo_branch(BRANCH_CALENDAR *a, BRANCH_CALENDAR *aux, int lo, int hi)
-{
-    if (hi <= lo)
-        return;
-    int mid = lo + (hi - lo) / 2;
-    mergesort_recursivo_branch(a, aux, lo, mid);
-    mergesort_recursivo_branch(a, aux, mid + 1, hi);
-    if ((a + (mid + 1))->priority >= (a + mid)->priority)
-        return; // improvement
-    merge_array_branch(a, aux, lo, mid, hi);
-}
-
-void mergesort_run_branch(BRANCH_CALENDAR *a, int n, int lo, int hi)
-{
-    BRANCH_CALENDAR *aux;
-    aux = malloc(sizeof(int) * n);
-    mergesort_recursivo_branch(a, aux, lo, hi);
-//    free(aux);
-}
-
-void sort_branch_calendar(BUILDINGS * head){
-    BUILDINGS * buildings=head;
-    while (buildings!=NULL){
+void sort_branch_calendar(BUILDINGS *head) {
+    BUILDINGS *buildings = head;
+    while (buildings != NULL) {
         for (int i = 0; i < buildings->num_studios; ++i) {
-            STUDIOS studios=buildings->studios[i];
-            mergesort_run_branch(studios.branch_calendar, studios.number_branch, 0, studios.number_branch - 1);
+            STUDIOS studios = buildings->studios[i];
+            quicksort(studios.branch_calendar, 0, (int) studios.number_branch);
         }
-        buildings=buildings->next;
+        buildings = buildings->next;
     }
 
 
+}
+
+
+void quicksort(BRANCH_CALENDAR a[], int lo, int hi) {
+    if (hi <= lo) return;
+    int j;
+    j = partitionQuicksort(a, lo, hi);
+
+    quicksort(a, lo, j - 1);
+    quicksort(a, j + 1, hi);
+}
+
+int partitionQuicksort(BRANCH_CALENDAR a[], int lo, int hi) {
+    int i = lo, j = hi;
+    BRANCH_CALENDAR aux;
+
+    while (1) {
+        while (a[++i].priority < a[lo].priority) {
+
+            if (i == hi) break;
+        }
+        while (a[--j].priority > a[lo].priority) {
+
+            if (j == lo) break;
+        }
+        if (i >= j) break; // check if pointers cross
+
+
+        aux = a[i];
+        a[i] = a[j];
+        a[j] = aux; // swap
+    }
+
+    aux = a[lo];
+    a[lo] = a[j];
+    a[j] = aux;
+    return j;
 }

@@ -10,20 +10,23 @@
 #include "../location/location.h"
 
 
-void add_building(BUILDINGS **head,unsigned index,char *name, float price,LOCATION location);
+void add_building(BUILDINGS **head, unsigned index, char *name, float price, LOCATION location);
 
 
 void delete_building(BUILDINGS **head, char *name);
 
-BUILDINGS *create_building(unsigned index,char *name,float price, LOCATION location);
+BUILDINGS *create_building(unsigned index, char *name, float price, LOCATION location);
 
 void print_building_all(BUILDINGS *head);
+
+void print_building(BUILDINGS *head);
 
 BUILDINGS *find_building(BUILDINGS *head, int index);
 
 BUILDINGS *find_building_by_name(BUILDINGS *head, char *name);
 
-void update_building(BUILDINGS* buildings,char *name,char *new);
+void update_building(BUILDINGS *buildings, char *name, char *new);
 
+void print_all(BUILDINGS * head);
 
 #endif //GESTOR_ALOJAMENTOS_BUILDINGS_H
