@@ -1,3 +1,0 @@
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/Gestor_Alojamentos.dir
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Bruno Miguel/CLionProjects/Gestor_Alojamentos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
